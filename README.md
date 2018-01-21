@@ -1,4 +1,4 @@
-#Zespol AMPF; Aplikacja: Feed me
+# Zespol AMPF; Aplikacja: Feed me
 
 Aplikacja pozwala zaplanować posiłki na podstawie wybranych składników (zawartości lodówki),
 preferencji dietetycznych, alergenów. Aplikacja wygeneruje proponowane przepisy oraz wyszczególni
@@ -8,13 +8,13 @@ Zaproponowane przepisy wzbogacone będą informacją o kaloryczności, alergenac
 Pomoc przy dobieraniu diety bezglutenowej, bezlaktozowej, jarskiej, wegetariańskiej, vegańskiej
 czy zgodnej z zaleceniami lekarza/dietetyka.
 
-###Proponowane API:
+### Proponowane API:
 
 - [Proponowane API 1](https://spoonacular.com/food-api)
 - [Proponowane API 2](http://food2fork.com/about/api)
 - [Proponowane API 3](https://www.programmableweb.com/category/nutrition/api)
 
-###DoD: 
+### DoD: 
 - dostarczenie pełnego kodu
 - responsywność strony
 - sprawdzenie działania strony/aplikacji na chrome i firefox
