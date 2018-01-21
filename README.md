@@ -1,11 +1,12 @@
-# Zespol AMPF; Aplikacja: Feed me!
+# Aplikacja: Feed me!
 
 ### Autorzy
 
-- Agnieszka
-- Filip
-- Maciek
-- Paweł
+   Zespół AMPF w składzie:
+   - Agnieszka
+   - Filip
+   - Maciek
+   - Paweł
 
 ### Funkcjonalności
 
@@ -17,13 +18,13 @@ Zaproponowane przepisy wzbogacone będą informacją o kaloryczności, alergenac
 Pomoc przy dobieraniu diety bezglutenowej, bezlaktozowej, jarskiej, wegetariańskiej, vegańskiej
 czy zgodnej z zaleceniami lekarza/dietetyka.
 
-### Proponowane API
+### Technologie
 
 - [Proponowane API 1](https://spoonacular.com/food-api)
 - [Proponowane API 2](http://food2fork.com/about/api)
 - [Proponowane API 3](https://www.programmableweb.com/category/nutrition/api)
 
-### DoD
+### Definition of Done
 
 - dostarczenie pełnego kodu
 - responsywność strony
