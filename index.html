@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Landing page</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     </head>
 <body>
@@ -42,16 +45,34 @@
     </section>
 
     <!--formularz zapisu z emailem i zgodą na przetwarzanie + zapewnienie o bezp. danych / info o tylko jednym komunikacie-->
-    <section id="form">
-        <h4>Weź udział w projekcie Feed Me! Zapisz się już dziś!</h4>
-        <p class="top">Aby skorzystać z naszej aplikacji wystarczy wpisać adres e-mail i kliknąć "wyślij"</p>
-        <form>
-            <input type="email" name="Adres e-mail" placeholder="Twój adres e-mail...">
-            <input type="submit" value="Wyślij">
-        </form>
-        <p class="bottom">Przesłany adres e-mail zostanie wykorzystany wyłącznie do przesłania informacji
+    <section class="subscribe">
+        <div class="container">
+            <div class="row">
+            <div class="title col-xs-12">Weź udział w projekcie Feed Me!</div>
+            <div class="title col-xs-12">Zapisz się już dziś!</div>
+
+        <div class="top col-xs-12">
+            Aby skorzystać z naszej aplikacji wystarczy wpisać swój adres e-mail i kliknąć "wyślij"
+        </div>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <form class="form-group">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8">
+                        <input type="email" class="form-control" name="Adres e-mail" placeholder="Twój adres e-mail...">
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <input type="button" class="btn btn-default sub-button" value="Wyślij">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bottom col-xs-12">
+            Przesłany adres e-mail zostanie wykorzystany wyłącznie do przesłania informacji
             dotyczących projektu Feed me! Możesz być pewnym, że nie będziemy spamować twojej
-            skrzynki e-mail i wyślemy do Ciebie tylko jedno powiadomienie.</p>
+            skrzynki e-mail i wyślemy do Ciebie tylko jedno powiadomienie.
+        </div>
+        </div>
     </section>
 
     <!--info o zespole foto/name/social media/link do about me-->

@@ -1,47 +1,52 @@
 body {
-    display: flex;
-    flex-wrap: wrap;
-}
-#form {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: olivedrab;
-    width: 400px;
-    height: 200px;
-    align-content: space-around;
-    justify-content: center;
 }
 
-#form h4 {
+.subscribe {
+    background-color: #663300;
+}
+
+.subscribe form {
+    text-align: center;
+    width: 100%;
+    padding: 3%;
+}
+
+.title {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    padding: 2%;
+}
+
+.form h1     {
     color: white;
     justify-content: center;
 }
 
 .top {
-    font-size: 10px;
+    font-size: 25px;
     color: white;
     text-align: center;
-}
-
-#form input {
-    border-top-width: 1px;
-    border-top-color: white;
-    border-right-width: 1px;
-    border-right-color: white;
-    border-left-width: 1px;
-    border-left-color: white;
-    border-bottom-width: 1px;
-    border-bottom-color: white;
-    border-radius: 4px;
-    color: white;
-    background-color: olivedrab;
-    font-size: 8px;
-    justify-content: center;
-    padding: 3px;
+    padding: 2%;
 }
 
 .bottom {
-    font-size: 8px;
+    font-size: 20px;
     color: white;
     text-align: center;
+    padding: 3%;
 }
+
+::placeholder {
+    color: white;
+    opacity: 1; /*Firefox;*/
+}
+
+.sub-button {
+    width: 100%;
+    color: grey;
+ }
+
+.form-control {
+    text-align: center;
+         }
