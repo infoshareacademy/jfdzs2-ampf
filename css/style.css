@@ -1,0 +1,13 @@
+.function {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-function {
+    align-self: center;
+    margin: 1em 0 1em 0;
+}
+
+.functions-text {
+    text-align: justify;
+}
