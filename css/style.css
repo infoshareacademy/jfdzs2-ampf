@@ -1,7 +1,7 @@
 /*Feature-Info General*/
 
 .feature-info {
-    background-color: #cc9933;
+    background-color: #29B200;
     padding-top: 0.5em;
 }
 
@@ -25,6 +25,8 @@
 /*Feature-Info Zdjęcia*/
 
 .picture-info img {
+    padding: 0.2    em;
     max-height: 200px;
     margin: auto;
+    border: inset 5px #FF1900;
 }
