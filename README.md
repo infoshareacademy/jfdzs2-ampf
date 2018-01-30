@@ -3,7 +3,6 @@
 ### Autorzy
 
    Zespół AMPF w składzie:
-   - Agnieszka
    - Filip
    - Maciek
    - Paweł
