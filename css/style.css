@@ -1,7 +1,7 @@
 /*Feature Functions - General*/
 
 .feature-functions {
-    background-color: #cc9933;
+    background-color: ;
 }
 
 .function-detail {
@@ -23,7 +23,7 @@
 
 .functions-text p {
     font-size: 1.2em;
-    border-top: inset #996633;
+    border-top: inset 5px #29B200;
     padding-top: 0.5em;
     color: black;
 }
