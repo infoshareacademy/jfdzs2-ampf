@@ -1,0 +1,32 @@
+/*Feature-Info General*/
+
+.feature-info {
+    background-color: #29B200;
+    padding-top: 0.5em;
+}
+
+.info-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-text {
+    text-align: justify;
+}
+
+/*Feature-Info Teksty*/
+
+.info-text p {
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    color: black;
+}
+
+/*Feature-Info Zdjęcia*/
+
+.picture-info img {
+    padding: 0.2    em;
+    max-height: 200px;
+    margin: auto;
+    border: inset 5px #FF1900;
+}
