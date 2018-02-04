@@ -1,65 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Landing page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feed Me</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    </head>
+    <link rel="stylesheet" href="fonts/fonts.css">
+</head>
+
 <body>
-    <!--nawigacja w obrembie strony (poziome menu kierujące do sekcji / position fixed)) -->
-    <header>
-
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html#preview">Hello!</a>
-                </li>
-                <li>
-                    <a href="index.html#functions">The idea</a>
-                </li>
-                <li>
-                    <a href="index.html#form">Join</a>
-                </li>
-                <li>
-                    <a href="index.html#team">About us</a>
-                </li>
-                <li>
-                    <a href="index.html#description">Details</a>
-                </li>
-            </ul>
-        </nav>
-
-    </header>
-
-    <!--zajawka (duże zdjęcie tekst na zdjęciu dwa zdania opisu odniesienie do formularza-->
-    <section id="preview">
-
+    <section class="feature-info container-fluid">  <!--Informacja-->
+        <div class="info-detail col-xs-10 col-xs-offset-1 col-sm-5 "> <!--Informacja kolumna 1-->
+            <figure class="col-xs-12 picture-info"> <!--Ikona funkcji 1-->
+                <img class="img-responsive" src="images/info-picture1.jpg" alt="Picture1">
+            </figure>
+            <div class="col-xs-12 info-text"> <!--Opis funkcji 1-->
+                <p>
+                    Aplikacja 'Feed Me' pozwala zaplanować posiłki na podstawie wybranych składników np. zawartości lodówki, preferencji dietetycznych oraz alergenów.
+                    <br>Aplikacja wygeneruje proponowane przepisy oraz wyszczególni listę ewentualnie brakujących składników.
+                    <br>Możliwość sortowania przepisów: najbardziej popularne / najnowsze / najczęstrze itd.
+                </p>
+            </div>
+        </div>
+        <div class="info-detail col-xs-10 col-xs-push-1 col-sm-5 col-sm-push-0"> <!--Informacja kolumna 2-->
+            <figure class="col-xs-12 picture-info">
+                <img class="img-responsive" src="images/info-picture2.jpg" alt="Picture2">
+            </figure>
+            <div class="col-xs-12 info-text">
+                <p>
+                    Zaproponowane przepisy wzbogacone będą informacją o kaloryczności oraz alergenach.
+                    <br>Pomoc przy dobieraniu diety bezglutenowej, bezlaktozowej, jarskiej, wegetariańskiej, vegańskiej czy zgodnej z zaleceniami lekarza/dietetyka.
+                    <br>Proste użytkowanie i instalacja. Zapisz się do aplikacji i zacznij korzystać od zaraz!
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="feature-functions container-fluid">  <!--Funkcje-->
+        <div class="function-detail col-xs-12 col-sm-6 col-md-3"> <!--Funkcja 1-->
+            <figure class="col-xs-3 icon-function"> <!--Ikona funkcji 1-->
+                <img class="img-responsive" src="images/functions-icon1.svg" alt="Icon1">
+            </figure>
+            <div class="col-xs-12 functions-text"> <!--Opis funkcji 1-->
+                <p>
+                    Największa baza przepisów dostępna w jednym miejscu! 360 tysięcy różnych rozwiązań z ponad 80 tysięcy produktów!
+                </p>
+            </div>
+        </div>
+        <div class="function-detail col-xs-12 col-sm-6 col-md-3"> <!--Funkcja 2-->
+            <figure class="col-xs-3 icon-function">
+                <img class="img-responsive" src="images/functions-icon4.svg" alt="Icon2">
+            </figure>
+            <div class="col-xs-12 functions-text">
+                <p>
+                    Zostań szefem kuchni - znajdź idealny dla siebie przepis - nie ważne czy szukasz odpowiedniej dla siebie diety, chcesz kogoś zaskoczyć, czy szukasz inspiracji. To wszystko znajdziesz w aplikacji FeedMe.
+                </p>
+            </div>
+        </div>
+        <div class="function-detail col-xs-12 col-sm-6 col-md-3"> <!--Funkcja 3-->
+            <figure class="col-xs-3 icon-function">
+                <img class="img-responsive" src="images/functions-icon2.svg" alt="Icon3">
+            </figure>
+            <div class="col-xs-12 functions-text">
+                <p>
+                    Z naszej szerokiej bazy przepisów znajdziesz zarówno przepisy na dania serwowane w najlepszych restauracjach świata, jak i proste i łatwe do zrobienia dania. Z naszą aplikacją jedyne co Cię teraz ogranicza, to Twoja wyobraźnia.
+                </p>
+            </div>
+        </div>
+        <div class="function-detail col-xs-12 col-sm-6 col-md-3"> <!--Funkcja 4-->
+            <figure class="col-xs-3 icon-function">
+                <img class="img-responsive" src="images/functions-icon3.svg" alt="Icon4">
+            </figure>
+            <div class="col-xs-12 functions-text">
+                <p>
+                    To mega proste - po prostu wybierz składniki i/lub alergeny i zacznij swoją zupełnie unikatową podróż dookoła kuchni świata.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <!--spis funkcji - 4 ikony (poziomo obok siebie) + hasło o funkcji-->
-    <section id="functions">
-
+    <section class="team container-fluid">
+        <div class="title"><h2>Nasz zespół</h2></div>
+        <div class="row">
+            <div class="team1 col-xs-12 col-sm-4">
+                <div><img src="images/bp.jpg" alt="Filip Burakowski" class="img-responsive"></div>
+                <div>Filip Burakowski</div>
+                <div><a href="#"><img src="images/fbicon.ico" alt="FB" class="icon">Facebook</a></div>
+                <div><a href="#"><img src="images/ghicon.ico" alt="GH" class="icon">GitHub</a></div>
+            </div>
+            <div class="team2 col-xs-12 col-sm-4">
+                <div><img src="images/bp.jpg" alt="Maciej Sołtykiewicz" class="img-responsive"></div>
+                <div>Maciej Sołtykiewicz</div>
+                <div><a href="#"><img src="images/fbicon.ico" alt="FB" class="icon">Facebook</a></div>
+                <div><a href="#"><img src="images/ghicon.ico" alt="GH" class="icon">GitHub</a></div>
+            </div>
+            <div class="team3 col-xs-12 col-sm-4">
+                <div><img src="images/bp.jpg" alt="Paweł Skwirowski" class="img-responsive"></div>
+                <div>Paweł Skwirowski</div>
+                <div><a href="#"><img src="images/fbicon.ico" alt="FB" class="icon">Facebook</a></div>
+                <div><a href="#"><img src="images/ghicon.ico" alt="GH" class="icon">GitHub</a></div>
+            </div>
+        </div>
     </section>
-
-    <!--formularz zapisu z emailem i zgodą na przetwarzanie + zapewnienie o bezp. danych / info o tylko jednym komunikacie-->
-    <section id="form">
-
-    </section>
-
-    <!--info o zespole foto/name/social media/link do about me-->
-    <section id="team">
-
-    </section>
-
-    <!--opis funkcjonalności (7-8 sztuk)/ dodatkowe info / dwie kolumny- ikonki/zdjęcia dla każdej funkcjonalności/ aaaa-->
-    <section id="description">
-
-    </section>
-
-    <!---->
-    <footer>
-
-    </footer>
 
 </body>
 </html>
