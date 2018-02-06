@@ -1,9 +1,5 @@
 /*Feature Functions - General*/
 
-.feature-functions {
-    background-color: ;
-}
-
 .function-detail {
     display: flex;
     flex-direction: column;
@@ -22,17 +18,21 @@
 /*Feature Functions - Text*/
 
 .functions-text p {
-    font-size: 1.2em;
-    border-top: inset 5px #29B200;
+    font-size: 20px;
+    border-top: solid 5px #29B200;
     padding-top: 0.5em;
     color: black;
 }
 
 /*Feature Functions - Pictures*/
+.icon-function {
+    text-align: center;
+}
 
 .icon-function img {
-    min-width: 50px;
-    max-width: 70px;
+    width: 80px;
+
+
 
 }
 
