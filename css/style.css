@@ -67,3 +67,28 @@
     min-width: 50px;
     max-width: 70px;
 }
+
+
+.team {
+    margin: 10px 0px 10px 0px ;
+}
+.img-circle {
+max-width: 100%;
+}
+.icon {
+    max-width: 40px;
+}
+
+.team1,
+.team2,
+.team3 {
+    text-align: center;
+    padding-bottom: 0px;
+    font-size: 16px;
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
