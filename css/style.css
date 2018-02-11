@@ -1,6 +1,7 @@
 /*Feature Functions - General*/
 .feature-functions {
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .function-detail {
@@ -9,7 +10,7 @@
 }
 
 .icon-function {
-    margin: 10px 0 10px 0;
+    margin: 15px 0 15px 0;
 }
 
 .functions-text {
@@ -19,17 +20,18 @@
 /*Feature Functions - Text*/
 
 .functions-text p {
-    font-size: 10px;
+    font-size: 16px;
     border-top: solid 3px #29B200;
     padding-top: 10px;
     color: black;
 }
 
-.feature-functions h3 {
-    font-size: 15px;
+.feature-functions h2 {
+    font-size: 35px;
     text-transform: uppercase;
     text-align: center;
     color: black;
+    margin-bottom: 30px;
 }
 
 /*Feature Functions - Pictures*/
@@ -39,22 +41,18 @@
 }
 
 .icon-function img {
-    width: 35px;
+    width: 50px;
+    opacity: 0.8;
 }
 
 @media all and (min-width:768px) {
 
-    .feature-functions h3 {
-        font-size: 22px;
-    }
-
     .functions-text p {
-        font-size: 17px;
         border-top: solid 5px #29B200;
     }
 
     .icon-function img {
-        width: 70px;
+        width: 80px;
     }
 
 }
