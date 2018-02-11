@@ -2,24 +2,14 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Landing page</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Feed Me</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="fonts/fonts.css">
 </head>
 
 <body>
-    <!--nawigacja w obrembie strony (poziome menu kierujące do sekcji / position fixed)) -->
-    <header>
-
-
-    </header>
-
-    <!--zajawka (duże zdjęcie tekst na zdjęciu dwa zdania opisu odniesienie do formularza-->
-    <section id="preview">
-
     <section class="feature-info container-fluid">  <!--Informacja-->
         <div class="info-detail col-xs-10 col-xs-offset-1 col-sm-5 "> <!--Informacja kolumna 1-->
             <figure class="col-xs-12 picture-info"> <!--Ikona funkcji 1-->
@@ -93,22 +83,22 @@
     <section class="subscribe">
         <div class="container">
             <div class="row">
-            <div class="title col-xs-12">Weź udział w projekcie <img src="images/nav-page-logo.svg" class="icon"> Feed Me!</div>
+                <div class="title col-xs-12">Weź udział w projekcie <img src="images/nav-page-logo.svg" class="icon"> Feed Me!</div>
 
-        <div class="top col-xs-12">
-            Aby skorzystać z naszej aplikacji wystarczy wpisać swój adres e-mail i kliknąć "wyślij"
-        </div>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-            <form class="form-group">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-8">
-                        <input type="email" class="form-control" name="Adres e-mail" placeholder="Twój adres e-mail...">
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <input type="button" class="btn btn-success sub-button" value="Biorę udział!">
-                    </div>
+                <div class="top col-xs-12">
+                    Aby skorzystać z naszej aplikacji wystarczy wpisać swój adres e-mail i kliknąć "wyślij"
                 </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                <form class="form-group">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8">
+                            <input type="email" class="form-control" name="Adres e-mail" placeholder="Twój adres e-mail...">
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <input type="button" class="btn btn-success sub-button" value="Biorę udział!">
+                        </div>
+                    </div>
             </form>
         </div>
         <div class="bottom col-xs-12 col-sm-6 col-sm-offset-3">
@@ -118,21 +108,36 @@
         </div>
         </div>
     </section>
-
-    <!--info o zespole foto/name/social media/link do about me-->
-    <section id="team">
-
-    </section>
-
-    <!--opis funkcjonalności (7-8 sztuk)/ dodatkowe info / dwie kolumny- ikonki/zdjęcia dla każdej funkcjonalności/ aaaa-->
-    <section id="description">
-
-    </section>
-
-    <!---->
-    <footer>
-
-    </footer>
-
+    <div class="container">
+        <section class="team container">
+            <div class="title">Nasz zespół</div>
+            <div class="row">
+                <div class="team1 col-xs-12 col-sm-4">
+                    <img src="images/fb.jpg" alt="Filip Burakowski" class="img-circle">
+                    <div>Filip Burakowski</div>
+                    <div>
+                        <a href="https://www.facebook.com/filip.burakowski"><img src="images/fbicon.ico" alt="FB" class="icon"></a>
+                        <a href="https://github.com/karoob"><img src="images/ghicon.ico" alt="GH" class="icon"></a>
+                    </div>
+                </div>
+                <div class="team2 col-xs-12 col-sm-4">
+                    <div><img src="images/ms.jpg" alt="Maciej Sołtykiewicz" class="img-circle"></div>
+                    <div>Maciej Sołtykiewicz</div>
+                    <div>
+                        <a href="https://www.facebook.com/profile.php?id=100000778704485"><img src="images/fbicon.ico" alt="FB" class="icon"></a>
+                        <a href="https://github.com/soltykiewiczm"><img src="images/ghicon.ico" alt="GH" class="icon"></a>
+                    </div>
+                </div>
+                <div class="team3 col-xs-12 col-sm-4">
+                    <div><img src="images/ps.jpg" alt="Paweł Skwirowski" class="img-circle"></div>
+                    <div>Paweł Skwirowski</div>
+                    <div>
+                        <a href="https://www.facebook.com/profile.php?id=1721775710"><img src="images/fbicon.ico" alt="FB" class="icon"></a>
+                        <a href="https://github.com/skwirowski"><img src="images/ghicon.ico" alt="GH" class="icon"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
