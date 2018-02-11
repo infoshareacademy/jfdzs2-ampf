@@ -1,3 +1,106 @@
+body {
+}
+/*Feature-Info General*/
+
+.subscribe {
+    background-color: white;
+}
+
+.subscribe form {
+    text-align: center;
+    width: 100%;
+    padding: 1%;
+}
+
+.title {
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    padding: 1%;
+}
+
+.form h1     {
+    color: black;
+    justify-content: center;
+}
+
+.top {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 1%;
+}
+
+.bottom {
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    padding: 1%;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1; /*Firefox;*/
+}
+
+.sub-button {
+    width: 100%;
+    color: grey;
+}
+
+.form-control {
+    text-align: center;
+    border: solid #13B200 2px;
+    font-size: 16px;
+}
+
+.btn {
+    color: white;
+    font-size: 16px;
+    background-color: #13B200;
+}
+
+.icon {
+    max-width: 40px;
+}
+
+@media screen and (max-width: 768px){
+    .btn {
+        margin-top: 10px
+
+    }
+}
+.feature-info {
+    background-color: #29B200;
+    padding-top: 0.5em;
+}
+
+.info-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-text {
+    text-align: justify;
+}
+
+/*Feature-Info Teksty*/
+
+.info-text p {
+    font-size: 1.2em;
+    padding-top: 0.5em;
+    color: black;
+}
+
+/*Feature-Info Zdjęcia*/
+
+.picture-info img {
+    padding: 0.2em;
+    max-height: 200px;
+    margin: auto;
+    border: inset 5px #FF1900;
+}
+
 /*Feature Functions - General*/
 .feature-functions {
     margin-top: 10px;
@@ -43,6 +146,31 @@
 .icon-function img {
     width: 50px;
     opacity: 0.8;
+}
+
+/*Feature TEAM*/
+.team {
+    margin: 10px 0px 10px 0px ;
+}
+.img-circle {
+    max-width: 100%;
+}
+.icon {
+    max-width: 40px;
+}
+
+.team1,
+.team2,
+.team3 {
+    text-align: center;
+    padding-bottom: 0px;
+    font-size: 16px;
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
 }
 
 @media all and (min-width:768px) {
