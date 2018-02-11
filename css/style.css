@@ -1,5 +1,75 @@
+body {
+}
 /*Feature-Info General*/
 
+.subscribe {
+    background-color: white;
+}
+
+.subscribe form {
+    text-align: center;
+    width: 100%;
+    padding: 1%;
+}
+
+.title {
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    padding: 1%;
+}
+
+.form h1     {
+    color: black;
+    justify-content: center;
+}
+
+.top {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+    padding: 1%;
+}
+
+.bottom {
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    padding: 1%;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1; /*Firefox;*/
+}
+
+.sub-button {
+    width: 100%;
+    color: grey;
+ }
+
+.form-control {
+    text-align: center;
+    border: solid #13B200 2px;
+    font-size: 16px;
+      }
+
+.btn {
+    color: white;
+    font-size: 16px;
+    background-color: #13B200;
+}
+
+.icon {
+    max-width: 40px;
+}
+
+@media screen and (max-width: 768px){
+    .btn {
+        margin-top: 10px
+
+    }
+}
 .feature-info {
     background-color: #29B200;
     padding-top: 0.5em;
