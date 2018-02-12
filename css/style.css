@@ -1,3 +1,76 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Feature Functions - General*/
 .feature-functions {
     margin-top: 10px;
@@ -45,7 +118,7 @@
     opacity: 0.8;
 }
 
-@media all and (min-width:768px) {
+@media all and (min-width:768px) { /*Media Feature Functions*/
 
     .functions-text p {
         border-top: solid 5px #29B200;
