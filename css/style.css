@@ -1,186 +1,67 @@
-body {
-}
+/*------------FEATURE INFO ----------FILIP*/
+
 /*Feature-Info General*/
 
-.subscribe {
-    background-color: white;
-}
-
-.subscribe form {
+.feature-info h2 {
+    text-transform: uppercase;
     text-align: center;
-    width: 100%;
-    padding: 1%;
-}
-
-.title {
-    font-size: 26px;
+    font-size: 35px;
     color: black;
-    text-align: center;
-    padding: 1%;
 }
 
-.form h1     {
-    color: black;
-    justify-content: center;
-}
-
-.top {
-    font-size: 16px;
-    color: black;
-    text-align: center;
-    padding: 1%;
-}
-
-.bottom {
-    font-size: 14px;
-    color: black;
-    text-align: center;
-    padding: 1%;
-}
-
-::placeholder {
-    color: white;
-    opacity: 1; /*Firefox;*/
-}
-
-.sub-button {
-    width: 100%;
-    color: grey;
-}
-
-.form-control {
-    text-align: center;
-    border: solid #13B200 2px;
-    font-size: 16px;
-}
-
-.btn {
-    color: white;
-    font-size: 16px;
-    background-color: #13B200;
-}
-
-.icon {
-    max-width: 40px;
-}
-
-@media screen and (max-width: 768px){
-    .btn {
-        margin-top: 10px
-
-    }
-}
-.feature-info {
-    background-color: #29B200;
-    padding-top: 0.5em;
-}
-
-.info-detail {
+.info-set {
     display: flex;
     flex-direction: column;
-}
-
-.info-text {
-    text-align: justify;
+    align-items: center;
+    margin-top: 30px;
 }
 
 /*Feature-Info Teksty*/
 
+.info-text {
+    margin-top: 10px;
+}
+
 .info-text p {
-    font-size: 1.2em;
-    padding-top: 0.5em;
+    font-size: 16px;
+    text-align: center;
     color: black;
+    margin: 0;
 }
 
 /*Feature-Info Zdjęcia*/
 
+.picture-info {
+    text-align: center;
+}
+
 .picture-info img {
-    padding: 0.2em;
-    max-height: 200px;
-    margin: auto;
-    border: inset 5px #FF1900;
-}
-
-/*Feature Functions - General*/
-.feature-functions {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.function-detail {
-    display: flex;
-    flex-direction: column;
-}
-
-.icon-function {
-    margin: 15px 0 15px 0;
-}
-
-.functions-text {
-    text-align: center;
-}
-
-/*Feature Functions - Text*/
-
-.functions-text p {
-    font-size: 16px;
-    border-top: solid 3px #29B200;
-    padding-top: 10px;
-    color: black;
-}
-
-.feature-functions h2 {
-    font-size: 35px;
-    text-transform: uppercase;
-    text-align: center;
-    color: black;
-    margin-bottom: 30px;
-}
-
-/*Feature Functions - Pictures*/
-
-.icon-function {
-    text-align: center;
-}
-
-.icon-function img {
     width: 50px;
-    opacity: 0.8;
-}
-
-/*Feature TEAM*/
-.team {
-    margin: 10px 0px 10px 0px ;
-}
-.img-circle {
     max-width: 100%;
-}
-.icon {
-    max-width: 40px;
-}
-
-.team1,
-.team2,
-.team3 {
     text-align: center;
-    padding-bottom: 0px;
-    font-size: 16px;
 }
 
-.title {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 10px;
-}
+/*-----------KONIEC FEATURE INFO----------------*/
 
-@media all and (min-width:768px) {
+@media all and (min-width: 768px) {
 
-    .functions-text p {
-        border-top: solid 5px #29B200;
-    }
+    /*Media do Feature-Info*/
 
-    .icon-function img {
+    .picture-info img {
         width: 80px;
     }
 
+    .info-text {
+        margin-top: 0;
+    }
+
+    .equal {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+    }
+
+    .info-set {
+        flex-direction: row;
+    }
 }
