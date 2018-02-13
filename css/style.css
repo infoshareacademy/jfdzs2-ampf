@@ -94,6 +94,49 @@
 
 /*-----------KONIEC FEATURE FUNCTIONS----------------*/
 
+
+/*-----------Feature TEAM----------------------------*/
+
+.team {
+    margin: 100px 0px 10px 0px ;
+
+}
+
+.team .title {
+    margin: 10px;
+}
+.img-circle {
+    max-width: 100%;
+    border: solid 1px #29B200;
+    border-radius: 150px;
+}
+.icon {
+    max-width: 40px;
+
+}
+
+.person {
+    text-align: center;
+    padding-bottom: 0px;
+    font-size: 16px;
+
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.links {
+    text-align: center;
+
+    margin: 10px 80px 50px 80px;
+}
+
+/*-----------KONIEC FEATURE TEAM----------------*/
+
+/*-----------------MEDIA------------------------*/
 @media all and (min-width: 768px) {
 
     /*Media do Feature-Info*/
