@@ -194,6 +194,66 @@ header {
 
 /*-----------KONIEC FEATURE TEAM----------------*/
 
+/*-----------FEATURE-FORM--------------------*/
+
+.subscribe {
+    margin-top: 100px;
+}
+
+.subscribe form {
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.title {
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    padding: 1em;
+}
+
+.form h1     {
+    color: black;
+    justify-content: center;
+}
+
+.top {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.bottom {
+    font-size: 10px;
+    color: grey;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.sub-button {
+    width: 100%;
+    color: grey;
+}
+
+.form-control {
+    text-align: center;
+    border: solid #13B200 2px;
+    font-size: 16px;
+}
+
+.btn {
+    color: white;
+    font-size: 16px;
+    background-color: #13B200;
+    padding: 5px;
+}
+
+.icon {
+    max-width: 40px;
+}
+
+/*--------------KONIEC feature FORM--------------*/
 /*-----------------MEDIA------------------------*/
 @media all and (min-width: 768px) {
 
@@ -223,5 +283,13 @@ header {
 
     .icon-function img {
         width: 80px;
+    }
+}
+
+/*Media do feature -form*/
+
+@media screen and (max-width: 768px){
+    .btn {
+        margin-top: 10px
     }
 }
