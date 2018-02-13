@@ -47,7 +47,7 @@ nav a.navbar-brand {
 
 header {
     height: calc(100vh - 91px);
-    background-image: url(../images/header-carousel-01.jpg);
+    background-image: url(../images/header-background.jpg);
     background-size: cover;
     background-position: center;
 }
