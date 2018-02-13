@@ -11,6 +11,50 @@
 
     <body>
 
+<!-- !!!START SITE NAVIGATION!!! PAWEŁ  -->
+
+    <!--nawigacja w obrębie strony (poziome menu kierujące do sekcji / position fixed)) -->
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/nav-page-logo.svg" class="img-responsive">
+                    Feed Me
+                </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-dropdown">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="menu-dropdown">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Witaj!</a></li>
+                    <li><a href="#">Pomysł</a></li>
+                    <li class="active"><a href="#">Dołącz</a></li>
+                    <li><a href="#">O nas</a></li>
+                    <li><a href="#">Szczegóły</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- !!!PAGE HEADER!!! PAWEŁ  -->
+
+    <!--zajawka (duże zdjęcie tekst na zdjęciu dwa zdania opisu odniesienie do formularza-->
+
+    <header id="preview">
+        <div class="container">
+
+        </div>
+
+
+    </header>
+
+<!--!!!END PAGE HEADER!!! PAWEŁ  -->
+
+
 <!-- !!!FEATURE INFO!!! FILIP-->
 
         <section class="feature-info container">  <!--Informacja główny container-->
@@ -173,6 +217,26 @@
 
             </div>
         </section>
+
+<!--!!!jQuery & javaScript links!!! PAWEł-->
+
+        <!-- jQuery Core 3.3.1 -->
+        <script
+                src="http://code.jquery.com/jquery-3.3.1.min.js"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified JavaScript Bootstrap v3.3.7 -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
+
+        <script>
+            $(".nav li").on("click", function(){
+                $(".nav li").removeClass("active");
+                $(this).addClass("active");
+            });
+        </script>
+
 
     </body>
 </html>

@@ -1,3 +1,61 @@
+
+/*********************************************************************************/
+/* General Styling                                                               */
+/*********************************************************************************/
+
+body {
+    font-size: 16px;
+    padding-top: 91px;
+}
+
+
+/*********************************************************************************/
+/* Navigation Bar                                                                */
+/*********************************************************************************/
+
+nav.navbar {
+    padding: 20px 0;
+}
+
+nav .navbar-collapse {
+    float: right;
+}
+
+nav .navbar-brand {
+    padding: 0;
+}
+
+nav .navbar-brand img {
+    width: 125px;
+    background: #f8f8f8;
+    border-radius: 50%;
+    float: left;
+    margin: 0 15px;
+}
+
+nav a.navbar-brand {
+    padding: 0;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+/*********************************************************************************/
+/* Navigation Bar                                                                */
+/*********************************************************************************/
+
+header {
+    height: calc(100vh - 91px);
+    background-image: url(../images/header-background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/*********************************************************************************/
+/*                                                                               */
+/*********************************************************************************/
+
+
 /*------------FEATURE INFO ----------FILIP*/
 
 /*Feature-Info General*/
@@ -97,7 +155,6 @@
 @media all and (min-width: 768px) {
 
     /*Media do Feature-Info*/
-
     .picture-info img {
         width: 80px;
     }
@@ -117,7 +174,6 @@
     }
 
     /*Media do Feature-Functions*/
-
     .functions-text p {
         border-top: solid 5px #29B200;
     }
