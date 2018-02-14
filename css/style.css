@@ -38,6 +38,7 @@ nav a.navbar-brand {
     line-height: 50px;
     font-weight: bold;
     font-size: 50px;
+    color: #29B200;
 }
 
 /*********************************************************************************/
@@ -59,6 +60,10 @@ header {
 /*------------FEATURE INFO ----------FILIP*/
 
 /*Feature-Info General*/
+.feature-info {
+    margin-top: 20px;
+}
+
 
 .feature-info h2 {
     text-align: center;
@@ -104,7 +109,7 @@ header {
 
 /*Feature Functions - General*/
 .feature-functions {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -150,52 +155,10 @@ header {
 
 /*-----------KONIEC FEATURE FUNCTIONS----------------*/
 
-
-/*-----------Feature TEAM----------------------------*/
-
-.team {
-    margin: 40px 0px 10px 0px ;
-
-}
-
-.team .title {
-    margin: 10px;
-}
-.img-circle {
-    max-width: 100%;
-    border: solid 1px #29B200;
-    border-radius: 150px;
-}
-.icon {
-    max-width: 40px;
-
-}
-
-.person {
-    text-align: center;
-    padding-bottom: 0px;
-    font-size: 16px;
-
-}
-
-.title {
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 10px;
-}
-
-.links {
-    text-align: center;
-
-    margin: 10px 80px 50px 80px;
-}
-
-/*-----------KONIEC FEATURE TEAM----------------*/
-
 /*-----------FEATURE-FORM--------------------*/
 
 .subscribe {
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 .subscribe form {
@@ -236,14 +199,14 @@ header {
 
 .form-control {
     text-align: center;
-    border: solid #13B200 2px;
+    border: solid #29B200 2px;
     font-size: 16px;
 }
 
 .btn {
     color: white;
     font-size: 16px;
-    background-color: #13B200;
+    background-color: #29B200;
     padding: 5px;
 }
 
@@ -252,6 +215,50 @@ header {
 }
 
 /*--------------KONIEC feature FORM--------------*/
+
+/*-----------Feature TEAM----------------------------*/
+
+.team {
+    margin: 20px 0px 10px 0px ;
+
+}
+
+.team .title {
+    margin: 10px;
+}
+.img-circle {
+    max-width: 100%;
+    border: solid 5px #29B200;
+    border-radius: 150px;
+}
+.icon {
+    max-width: 40px;
+
+}
+
+.person {
+    text-align: center;
+    padding-bottom: 0px;
+    font-size: 16px;
+}
+.person .caption p {
+    font-size: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.links {
+    text-align: center;
+
+    margin: 10px 80px 50px 80px;
+}
+
+/*-----------KONIEC FEATURE TEAM----------------*/
+
 /*-----------------MEDIA------------------------*/
 @media all and (min-width: 768px) {
 
@@ -275,6 +282,8 @@ header {
     }
 
     /*Media do Feature-Functions*/
+
+
     .functions-text p {
         border-top: solid 5px #29B200;
     }
