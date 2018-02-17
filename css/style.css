@@ -1,40 +1,116 @@
-/*Feature-Info General*/
 
-.feature-info {
-    background-color: #29B200;
-    padding-top: 0.5em;
+/*********************************************************************************/
+/* General Styling                                                               */
+/*********************************************************************************/
+
+body {
+    font-size: 16px;
+    padding-top: 91px;
 }
 
-.info-detail {
+
+/*********************************************************************************/
+/* Navigation Bar                                                                */
+/*********************************************************************************/
+
+nav.navbar {
+    padding: 20px 0;
+}
+
+nav .navbar-collapse {
+    float: right;
+}
+
+nav .navbar-brand {
+    padding: 0;
+}
+
+nav .navbar-brand img {
+    width: 125px;
+    background: #f8f8f8;
+    border-radius: 50%;
+    float: left;
+    margin: 0 15px;
+}
+
+nav a.navbar-brand {
+    padding: 0;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 50px;
+    color: #29B200;
+}
+
+/*********************************************************************************/
+/* Navigation Bar                                                                */
+/*********************************************************************************/
+
+header {
+    height: calc(100vh - 91px);
+    background-image: url(../images/header-background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/*********************************************************************************/
+/*                                                                               */
+/*********************************************************************************/
+
+
+/*------------FEATURE INFO ----------FILIP*/
+
+/*Feature-Info General*/
+.feature-info {
+    margin-top: 20px;
+}
+
+
+.feature-info h2 {
+    text-align: center;
+    font-size: 35px;
+    color: black;
+}
+
+.info-set {
     display: flex;
     flex-direction: column;
-}
-
-.info-text {
-    text-align: justify;
+    align-items: center;
+    margin-top: 30px;
 }
 
 /*Feature-Info Teksty*/
 
+.info-text {
+    margin-top: 10px;
+}
+
 .info-text p {
-    font-size: 1.2em;
-    padding-top: 0.5em;
+    font-size: 16px;
+    text-align: center;
     color: black;
+    margin: 0;
 }
 
 /*Feature-Info Zdjęcia*/
 
-.picture-info img {
-    padding: 0.2em;
-    max-height: 200px;
-    margin: auto;
-    border: inset 5px #FF1900;
+.picture-info {
+    text-align: center;
 }
 
-/*Feature Functions - General*/
+.picture-info img {
+    width: 50px;
+    max-width: 100%;
+    text-align: center;
+}
 
+/*-----------KONIEC FEATURE INFO----------------*/
+
+/*------------FEATURE FUNCTIONS ----------FILIP*/
+
+/*Feature Functions - General*/
 .feature-functions {
-    background-color: ;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .function-detail {
@@ -43,27 +119,184 @@
 }
 
 .icon-function {
-    align-items: center;
-    align-self: center;
-    margin: 1em 0 1em 0;
+    margin: 15px 0 15px 0;
 }
 
 .functions-text {
-    text-align: justify;
+    text-align: center;
 }
 
 /*Feature Functions - Text*/
 
 .functions-text p {
-    font-size: 1.2em;
-    border-top: inset 5px #29B200;
-    padding-top: 0.5em;
+    font-size: 16px;
+    border-top: solid 3px #29B200;
+    padding-top: 10px;
     color: black;
+}
+
+.feature-functions h2 {
+    font-size: 35px;
+    text-align: center;
+    color: black;
+    margin-bottom: 30px;
 }
 
 /*Feature Functions - Pictures*/
 
+.icon-function {
+    text-align: center;
+}
+
 .icon-function img {
-    min-width: 50px;
-    max-width: 70px;
+    width: 50px;
+    opacity: 0.8;
+}
+
+/*-----------KONIEC FEATURE FUNCTIONS----------------*/
+
+/*-----------FEATURE-FORM--------------------*/
+
+.subscribe {
+    margin-top: 20px;
+}
+
+.subscribe form {
+    text-align: center;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.title {
+    font-size: 26px;
+    color: black;
+    text-align: center;
+    padding: 1em;
+}
+
+.form h1     {
+    color: black;
+    justify-content: center;
+}
+
+.top {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.bottom {
+    font-size: 10px;
+    color: grey;
+    text-align: center;
+    padding: 0.5em;
+}
+
+.sub-button {
+    width: 100%;
+    color: grey;
+}
+
+.form-control {
+    text-align: center;
+    border: solid #29B200 2px;
+    font-size: 16px;
+}
+
+.btn {
+    color: white;
+    font-size: 16px;
+    background-color: #29B200;
+    padding: 5px;
+}
+
+.icon {
+    max-width: 40px;
+}
+
+/*--------------KONIEC feature FORM--------------*/
+
+/*-----------Feature TEAM----------------------------*/
+
+.team {
+    margin: 20px 0px 10px 0px ;
+
+}
+
+.team .title {
+    margin: 10px;
+}
+.img-circle {
+    max-width: 100%;
+    border: solid 5px #29B200;
+    border-radius: 150px;
+}
+.icon {
+    max-width: 40px;
+
+}
+
+.person {
+    text-align: center;
+    padding-bottom: 0px;
+    font-size: 16px;
+}
+.person .caption p {
+    font-size: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.links {
+    text-align: center;
+
+    margin: 10px 80px 50px 80px;
+}
+
+/*-----------KONIEC FEATURE TEAM----------------*/
+
+/*-----------------MEDIA------------------------*/
+@media all and (min-width: 768px) {
+
+    /*Media do Feature-Info*/
+    .picture-info img {
+        width: 80px;
+    }
+
+    .info-text {
+        margin-top: 0;
+    }
+
+    .equal {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+    }
+
+    .info-set {
+        flex-direction: row;
+    }
+
+    /*Media do Feature-Functions*/
+
+
+    .functions-text p {
+        border-top: solid 5px #29B200;
+    }
+
+    .icon-function img {
+        width: 80px;
+    }
+}
+
+/*Media do feature -form*/
+
+@media screen and (max-width: 768px){
+    .btn {
+        margin-top: 10px
+    }
 }
