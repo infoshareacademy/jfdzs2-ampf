@@ -5,7 +5,7 @@
 
 body {
     font-size: 16px;
-    padding-top: 91px;
+    padding-top: 101px;
 }
 
 
@@ -13,24 +13,32 @@ body {
 /* Navigation Bar                                                                */
 /*********************************************************************************/
 
+
+
 nav.navbar {
-    padding: 20px 0;
+    padding: 25px 0 0 0;
+}
+
+nav div.navbar-header {
+    padding-bottom: 25px;
 }
 
 nav .navbar-collapse {
     float: right;
 }
 
-nav .navbar-brand {
+.navbar-default .navbar-brand {
     padding: 0;
+    font-family: 'Lobster', cursive;
+    color: #000000;
 }
 
 nav .navbar-brand img {
-    width: 125px;
+    width: 80px;
     background: #f8f8f8;
     border-radius: 50%;
     float: left;
-    margin: 0 15px;
+    margin: -15px 15px 0 15px;
 }
 
 nav a.navbar-brand {
@@ -46,7 +54,7 @@ nav a.navbar-brand {
 /*********************************************************************************/
 
 header {
-    height: calc(100vh - 91px);
+    height: calc(100vh - 101px);
     background-image: url(../images/header-background.jpg);
     background-size: cover;
     background-position: center;
