@@ -158,7 +158,7 @@ header {
 /*-----------FEATURE-FORM--------------------*/
 
 .subscribe {
-    margin-top: 20px;
+    padding-bottom: 60px;
 }
 
 .subscribe form {
@@ -167,8 +167,8 @@ header {
     margin-top: 1em;
 }
 
-.title {
-    font-size: 26px;
+.title h2 {
+    font-size: 35px;
     color: black;
     text-align: center;
     padding: 1em;
