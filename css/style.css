@@ -8,12 +8,9 @@ body {
     padding-top: 101px;
 }
 
-
 /*********************************************************************************/
 /* Navigation Bar                                                                */
 /*********************************************************************************/
-
-
 
 nav.navbar {
     padding: 25px 0 0 0;
@@ -33,6 +30,14 @@ nav .navbar-collapse {
     color: #000000;
 }
 
+.navbar-default .navbar-brand:hover {
+    color: #29B200;
+}
+
+.navbar-default .navbar-brand:focus {
+    color: #29B200;
+}
+
 nav .navbar-brand img {
     width: 80px;
     background: #f8f8f8;
@@ -46,11 +51,57 @@ nav a.navbar-brand {
     line-height: 50px;
     font-weight: bold;
     font-size: 50px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #333333;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #29B200;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
     color: #29B200;
 }
 
 /*********************************************************************************/
-/* Navigation Bar                                                                */
+/* Navigation Menu Links Offset                                                  */
+/*********************************************************************************/
+
+#feature-info:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-functions:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-form:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-team:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
 /*********************************************************************************/
 
 header {
@@ -60,10 +111,23 @@ header {
     background-position: center;
 }
 
-/*********************************************************************************/
-/*                                                                               */
-/*********************************************************************************/
+header .jumbotron {
+    background: transparent;
+    text-align: center;
+}
 
+header .jumbotron h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.5em;
+}
+
+header .jumbotron span{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+}
 
 /*------------FEATURE INFO ----------FILIP*/
 
@@ -301,10 +365,28 @@ header {
     }
 }
 
-/*Media do feature -form*/
-
 @media screen and (max-width: 768px){
+
+    /*Media Navbar*/
+
+    nav .container > .navbar-collapse {
+        margin-right: 0;
+    }
+
+    .navbar-default .navbar-collapse {
+        width: 100%;
+    }
+
+    /*Media do feature -form*/
+
     .btn {
         margin-top: 10px
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+    /*Media Header*/
+    header .jumbotron h1 {
+        font-size: 52px;
     }
 }
