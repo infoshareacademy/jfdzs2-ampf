@@ -12,50 +12,39 @@
 
 <body>
 
-<!-- !!!START SITE NAVIGATION!!! PAWEŁ  -->
-
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a href="index.html" class="navbar-brand">
-                <img src="images/nav-page-logo.svg">
-                Feed Me!
-            </a>
-            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-dropdown">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse" id="menu-dropdown">
-            <ul class="nav navbar-nav">
-                <li><a href="#">Witaj!</a></li>
-                <li><a href="#feature-info">Pomysł</a></li>
-                <li class="active"><a href="#feature-functions">Szczegóły</a></li>
-                <li><a href="#feature-form">Dołącz</a></li>
-                <li><a href="#feature-team">O nas</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- !!!PAGE HEADER!!! PAWEŁ  -->
-
-<header id="preview">
-    <div class="jumbotron">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <h1>Przynosimy <span>najlepsze</span> pomysły prosto do Ciebie. Pokaż nam co masz w lodówce, a
-                <span>Omelette Du Fromage</span> będzie prosty jak nigdy.
-            </h1>
-
-
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/nav-page-logo.png">
+                </a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-dropdown">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="menu-dropdown">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Witaj!</a></li>
+                    <li><a href="#feature-info">Pomysł</a></li>
+                    <li><a href="#feature-functions">Szczegóły</a></li>
+                    <li><a href="#feature-form">Dołącz</a></li>
+                    <li><a href="#feature-team">O nas</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
 
-</header>
-
-<!--!!!END PAGE HEADER!!! PAWEŁ  -->
-
+    <header id="preview">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Przynosimy <span>najlepsze</span> pomysły prosto do Ciebie. Pokaż nam co masz w lodówce, a
+                    <span>Omelette Du Fromage</span> będzie prosty jak nigdy.
+                </h1>
+            </div>
+        </div>
+    </header>
 
 <!-- !!!FEATURE INFO!!! FILIP-->
 
@@ -299,24 +288,22 @@
 
 <!--!!!KONIEC FEATURE TEAM!!! MACIEJ-->
 
-<!--!!!jQuery & javaScript links!!! PAWEł-->
-
-<!-- jQuery Core 3.3.1 -->
-<script
-        src="http://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-<!-- Latest compiled and minified JavaScript Bootstrap v3.3.7 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-
-<script>
-    $(".nav li").on("click", function(){
-        $(".nav li").removeClass("active");
-        $(this).addClass("active");
-    });
-</script>
+    <!-- jQuery Core 3.3.1 -->
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript Bootstrap v3.3.7 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <!-- javaScript navigation active <li> highlight -->
+    <script>
+        $(".nav li").on("click", function(){
+            $(".nav li").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
 
 </body>
 </html>
