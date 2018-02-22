@@ -5,32 +5,30 @@
 
 body {
     font-size: 16px;
-    padding-top: 91px;
+    padding-top: 101px;
 }
-
 
 /*********************************************************************************/
 /* Navigation Bar                                                                */
 /*********************************************************************************/
 
 nav.navbar {
-    padding: 20px 0;
+    padding: 25px 0 0 0;
+}
+
+nav div.navbar-header {
+    padding-bottom: 25px;
 }
 
 nav .navbar-collapse {
     float: right;
 }
 
-nav .navbar-brand {
-    padding: 0;
-}
-
 nav .navbar-brand img {
-    width: 125px;
+    height: 80px;
     background: #f8f8f8;
-    border-radius: 50%;
     float: left;
-    margin: 0 15px;
+    margin: -15px 15px 0 15px;
 }
 
 nav a.navbar-brand {
@@ -38,24 +36,81 @@ nav a.navbar-brand {
     line-height: 50px;
     font-weight: bold;
     font-size: 50px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #29B200;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
     color: #29B200;
 }
 
 /*********************************************************************************/
-/* Navigation Bar                                                                */
+/* Navigation Menu Links Offset                                                  */
+/*********************************************************************************/
+
+#feature-info:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-functions:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-form:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-team:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
 /*********************************************************************************/
 
 header {
-    height: calc(100vh - 91px);
+    height: calc(100vh - 101px);
     background-image: url(../images/header-background.jpg);
     background-size: cover;
     background-position: center;
 }
 
-/*********************************************************************************/
-/*                                                                               */
-/*********************************************************************************/
+header .jumbotron {
+    background: transparent;
+    text-align: center;
+}
 
+header .jumbotron h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.5em;
+}
+
+header .jumbotron span{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+}
 
 /*------------FEATURE INFO ----------FILIP*/
 
@@ -293,10 +348,28 @@ header {
     }
 }
 
-/*Media do feature -form*/
-
 @media screen and (max-width: 768px){
+
+    /*Media Navbar*/
+
+    nav .container > .navbar-collapse {
+        margin-right: 0;
+    }
+
+    .navbar-default .navbar-collapse {
+        width: 100%;
+    }
+
+    /*Media do feature -form*/
+
     .btn {
         margin-top: 10px
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+    /*Media Header*/
+    header .jumbotron h1 {
+        font-size: 52px;
     }
 }
