@@ -57,11 +57,11 @@ header {
 /*********************************************************************************/
 
 
-/*------------FEATURE INFO ----------FILIP*/
+/*------------FEATURE INFO ----------*/
 
 /*Feature-Info General*/
 .feature-info {
-    padding-bottom: 60px;
+    padding-top: 60px;
 }
 
 
@@ -78,7 +78,7 @@ header {
     margin-top: 30px;
 }
 
-/*Feature-Info Teksty*/
+/*Feature-Info Texts*/
 
 .info-text {
     margin-top: 10px;
@@ -91,7 +91,7 @@ header {
     margin: 0;
 }
 
-/*Feature-Info Zdjęcia*/
+/*Feature-Info Icons*/
 
 .picture-info {
     text-align: center;
@@ -103,7 +103,7 @@ header {
     text-align: center;
 }
 
-/*-----------KONIEC FEATURE INFO----------------*/
+/*-----------END FEATURE INFO----------------*/
 
 /*------------FEATURE FUNCTIONS ----------FILIP*/
 
@@ -262,7 +262,7 @@ header {
 /*-----------------MEDIA------------------------*/
 @media all and (min-width: 768px) {
 
-    /*Media do Feature-Info*/
+    /*Media for Feature-Info*/
     .picture-info img {
         width: 80px;
     }
