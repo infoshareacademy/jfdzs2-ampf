@@ -105,16 +105,17 @@ header {
 
 /*-----------KONIEC FEATURE INFO----------------*/
 
-/*------------FEATURE FUNCTIONS ----------FILIP*/
+/*------------FEATURE FUNCTIONS ----------*/
 
 /*Feature Functions - General*/
 .feature-functions {
-    padding-bottom: 60px;
+    padding: 60px 0 60px;
 }
 
 .function-detail {
     display: flex;
     flex-direction: column;
+    padding: 0;
 }
 
 .icon-function {
@@ -123,13 +124,14 @@ header {
 
 .functions-text {
     text-align: center;
+    padding: 0;
 }
 
 /*Feature Functions - Text*/
 
 .functions-text p {
     font-size: 16px;
-    border-top: solid 3px #29B200;
+    border-top: solid 5px #29B200;
     padding-top: 10px;
     color: black;
 }
@@ -152,7 +154,7 @@ header {
     opacity: 0.8;
 }
 
-/*-----------KONIEC FEATURE FUNCTIONS----------------*/
+/*-----------END FEATURE FUNCTIONS----------------*/
 
 /*-----------FEATURE-FORM--------------------*/
 
@@ -280,11 +282,10 @@ header {
         flex-direction: row;
     }
 
-    /*Media do Feature-Functions*/
+    /*Media for Feature-Functions*/
 
-
-    .functions-text p {
-        border-top: solid 5px #29B200;
+    .function-detail {
+        padding: 0 15px 0;
     }
 
     .icon-function img {
