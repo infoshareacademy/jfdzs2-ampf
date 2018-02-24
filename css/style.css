@@ -4,9 +4,14 @@
 /*********************************************************************************/
 
 body {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     padding-top: 101px;
     position: relative;
+}
+
+.logo-font {
+    font-family: 'Pacifico', cursive;
 }
 
 /*********************************************************************************/
@@ -40,7 +45,6 @@ nav a.navbar-brand {
 }
 
 .navbar-default .navbar-nav > li > a {
-    font-family: 'Montserrat', sans-serif;
     color: #333333;
 }
 
@@ -50,38 +54,6 @@ nav a.navbar-brand {
 
 .navbar-default .navbar-nav > li > a:focus {
     color: #29B200;
-}
-
-/*********************************************************************************/
-/* Navigation Menu Links Offset                                                  */
-/*********************************************************************************/
-
-#feature-info:before {
-    content:"";
-    display: block;
-    height: 101px; /* fixed header height*/
-    margin: -101px 0 0; /* negative fixed header height */
-}
-
-#feature-functions:before {
-    content:"";
-    display: block;
-    height: 101px; /* fixed header height*/
-    margin: -101px 0 0; /* negative fixed header height */
-}
-
-#feature-form:before {
-    content:"";
-    display: block;
-    height: 101px; /* fixed header height*/
-    margin: -101px 0 0; /* negative fixed header height */
-}
-
-#feature-team:before {
-    content:"";
-    display: block;
-    height: 101px; /* fixed header height*/
-    margin: -101px 0 0; /* negative fixed header height */
 }
 
 /*********************************************************************************/
@@ -98,17 +70,16 @@ header {
 header .jumbotron {
     background: transparent;
     text-align: center;
+    padding-top: 200px;
 }
 
 header .jumbotron h1 {
-    font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-style: normal;
     line-height: 1.5em;
 }
 
 header .jumbotron span{
-    font-family: 'Playfair Display', serif;
     font-weight: 400;
     font-style: italic;
 }
@@ -117,7 +88,7 @@ header .jumbotron span{
 
 /*Feature-Info General*/
 .feature-info {
-    padding-top: 60px;
+    padding-top: 90px;
 }
 
 
@@ -125,6 +96,7 @@ header .jumbotron span{
     text-align: center;
     font-size: 35px;
     color: black;
+    padding: 35px 0 35px 0;
 }
 
 .info-set {
@@ -165,7 +137,7 @@ header .jumbotron span{
 
 /*Feature Functions - General*/
 .feature-functions {
-    padding: 60px 0 60px;
+    padding-top: 90px;
 }
 
 .function-detail {
@@ -181,16 +153,16 @@ header .jumbotron span{
 /*Feature Functions - Text*/
 
 .functions-text p {
-    font-size: 16px;
     padding: 10px 0;
     color: black;
+
 }
 
 .feature-functions h2 {
     font-size: 35px;
     text-align: center;
     color: black;
-    margin-bottom: 30px;
+    padding: 35px 0 35px;
 }
 
 /*Feature Functions - Pictures*/
@@ -212,7 +184,7 @@ header .jumbotron span{
 /*-----------FEATURE-FORM--------------------*/
 
 .subscribe {
-    padding-bottom: 60px;
+    padding-top: 90px;
 }
 
 .subscribe form {
@@ -221,16 +193,11 @@ header .jumbotron span{
     margin-top: 1em;
 }
 
-.title h2 {
+.subscribe h2 {
     font-size: 35px;
     color: black;
     text-align: center;
-    padding: 1em;
-}
-
-.form h1     {
-    color: black;
-    justify-content: center;
+    padding: 35px 0 35px;
 }
 
 .top {
@@ -244,7 +211,7 @@ header .jumbotron span{
     color: grey;
     text-align: center;
     padding-top: 1em;
-    }
+}
 
 .sub-button {
     width: 100%;
@@ -259,13 +226,12 @@ header .jumbotron span{
 
 .btn {
     color: white;
-    font-size: 16px;
     background-color: #29B200;
     padding: 5px;
 }
 
 .icon {
-    max-width: 40px;
+    max-width: 55px;
 }
 
 /*--------------KONIEC feature FORM--------------*/
@@ -273,36 +239,40 @@ header .jumbotron span{
 /*-----------Feature TEAM----------------------------*/
 
 .team {
-    padding-bottom: 60px;
+    padding: 90px 0;
 
 }
 
 .team .title {
     margin: 10px;
 }
+
 .img-circle {
     max-width: 100%;
     border: solid 5px #29B200;
     border-radius: 150px;
 }
-.icon {
-    max-width: 40px;
 
+.social-icon {
+    max-width: 40px;
 }
 
 .person {
     text-align: center;
     font-size: 16px;
 }
+
 .person .caption p {
     margin: 10px 0px 10px 0px;
     font-size: 20px;
 }
 
-.title h2 {
+.team h2 {
     text-align: center;
     font-size: 35px;
     margin-bottom: 10px;
+    padding: 35px 0;
+    color: black;
 }
 
 .link1 {
