@@ -161,12 +161,11 @@ header .jumbotron span{
 
 /*-----------KONIEC FEATURE INFO----------------*/
 
-/*------------FEATURE FUNCTIONS ----------FILIP*/
+/*------------FEATURE FUNCTIONS ----------*/
 
 /*Feature Functions - General*/
 .feature-functions {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    padding: 60px 0 60px;
 }
 
 .function-detail {
@@ -174,20 +173,16 @@ header .jumbotron span{
     flex-direction: column;
 }
 
-.icon-function {
-    margin: 15px 0 15px 0;
-}
-
 .functions-text {
     text-align: center;
+
 }
 
 /*Feature Functions - Text*/
 
 .functions-text p {
     font-size: 16px;
-    border-top: solid 3px #29B200;
-    padding-top: 10px;
+    padding: 10px 0;
     color: black;
 }
 
@@ -202,6 +197,9 @@ header .jumbotron span{
 
 .icon-function {
     text-align: center;
+    border-bottom: solid 5px #29B200;
+    padding-bottom: 15px;
+
 }
 
 .icon-function img {
@@ -209,7 +207,7 @@ header .jumbotron span{
     opacity: 0.8;
 }
 
-/*-----------KONIEC FEATURE FUNCTIONS----------------*/
+/*-----------END FEATURE FUNCTIONS----------------*/
 
 /*-----------FEATURE-FORM--------------------*/
 
@@ -335,14 +333,10 @@ header .jumbotron span{
 
     .info-set {
         flex-direction: row;
+
     }
 
-    /*Media do Feature-Functions*/
-
-
-    .functions-text p {
-        border-top: solid 5px #29B200;
-    }
+    /*Media for Feature-Functions*/
 
     .icon-function img {
         width: 80px;
