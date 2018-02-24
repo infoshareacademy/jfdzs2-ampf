@@ -125,7 +125,7 @@ header .jumbotron span{
     text-align: center;
     font-size: 35px;
     color: black;
-    padding: 35px 0 5px 0;
+    padding: 35px 0 35px 0;
 }
 
 .info-set {
@@ -192,7 +192,7 @@ header .jumbotron span{
     font-size: 35px;
     text-align: center;
     color: black;
-    padding: 35px 0;
+    padding: 35px 0 35px;
 }
 
 /*Feature Functions - Pictures*/
@@ -227,7 +227,7 @@ header .jumbotron span{
     font-size: 35px;
     color: black;
     text-align: center;
-    padding: 1em;
+    padding: 35px 0 35px;
 }
 
 .top {
