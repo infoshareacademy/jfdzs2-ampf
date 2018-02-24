@@ -123,6 +123,7 @@ header .jumbotron span{
 
 .feature-info h2 {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
     font-size: 35px;
     color: black;
     padding: 35px 0 35px 0;
@@ -142,6 +143,7 @@ header .jumbotron span{
 }
 
 .info-text p {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     text-align: center;
     color: black;
@@ -182,6 +184,7 @@ header .jumbotron span{
 /*Feature Functions - Text*/
 
 .functions-text p {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     padding: 10px 0;
     color: black;
@@ -189,6 +192,7 @@ header .jumbotron span{
 }
 
 .feature-functions h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 35px;
     text-align: center;
     color: black;
@@ -224,6 +228,7 @@ header .jumbotron span{
 }
 
 .subscribe h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 35px;
     color: black;
     text-align: center;
@@ -231,12 +236,14 @@ header .jumbotron span{
 }
 
 .top {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: black;
     text-align: center;
 }
 
 .bottom {
+    font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     color: grey;
     text-align: center;
@@ -249,12 +256,14 @@ header .jumbotron span{
 }
 
 .form-control {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     border: solid #29B200 2px;
     font-size: 16px;
 }
 
 .btn {
+    font-family: 'Montserrat', sans-serif;
     color: white;
     font-size: 16px;
     background-color: #29B200;
@@ -294,11 +303,13 @@ header .jumbotron span{
 }
 
 .person .caption p {
+    font-family: 'Montserrat', sans-serif;
     margin: 10px 0px 10px 0px;
     font-size: 20px;
 }
 
 .team h2 {
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 35px;
     margin-bottom: 10px;
