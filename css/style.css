@@ -9,6 +9,10 @@ body {
     position: relative;
 }
 
+.logo-font {
+    font-family: 'Pacifico', cursive;
+}
+
 /*********************************************************************************/
 /* Navigation Bar                                                                */
 /*********************************************************************************/
@@ -271,7 +275,7 @@ header .jumbotron span{
 }
 
 .icon {
-    max-width: 40px;
+    max-width: 55px;
 }
 
 /*--------------KONIEC feature FORM--------------*/
@@ -293,7 +297,7 @@ header .jumbotron span{
     border-radius: 150px;
 }
 
-.icon {
+.social-icon {
     max-width: 40px;
 }
 
