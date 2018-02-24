@@ -273,7 +273,7 @@ header .jumbotron span{
 /*-----------Feature TEAM----------------------------*/
 
 .team {
-    margin: 20px 0px 10px 0px ;
+    padding-bottom: 60px;
 
 }
 
@@ -292,23 +292,28 @@ header .jumbotron span{
 
 .person {
     text-align: center;
-    padding-bottom: 0px;
     font-size: 16px;
 }
 .person .caption p {
+    margin: 10px 0px 10px 0px;
     font-size: 20px;
 }
 
-.title {
+.title h2 {
     text-align: center;
-    font-size: 26px;
+    font-size: 35px;
     margin-bottom: 10px;
 }
 
-.links {
-    text-align: center;
+.link1 {
+    display: inline-block;
+    margin-right: 10px;
+    padding-bottom: 40px;
+}
 
-    margin: 10px 80px 50px 80px;
+.link2 {
+    display: inline-block;
+    padding-bottom: 40px;
 }
 
 /*-----------KONIEC FEATURE TEAM----------------*/
