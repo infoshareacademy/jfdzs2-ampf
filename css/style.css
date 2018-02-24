@@ -117,7 +117,7 @@ header .jumbotron span{
 
 /*Feature-Info General*/
 .feature-info {
-    padding-top: 60px;
+    padding-top: 90px;
 }
 
 
@@ -125,6 +125,7 @@ header .jumbotron span{
     text-align: center;
     font-size: 35px;
     color: black;
+    padding: 35px 0 5px 0;
 }
 
 .info-set {
@@ -165,7 +166,7 @@ header .jumbotron span{
 
 /*Feature Functions - General*/
 .feature-functions {
-    padding: 60px 0 60px;
+    padding-top: 90px;
 }
 
 .function-detail {
@@ -184,13 +185,14 @@ header .jumbotron span{
     font-size: 16px;
     padding: 10px 0;
     color: black;
+
 }
 
 .feature-functions h2 {
     font-size: 35px;
     text-align: center;
     color: black;
-    margin-bottom: 30px;
+    padding: 35px 0;
 }
 
 /*Feature Functions - Pictures*/
@@ -212,7 +214,7 @@ header .jumbotron span{
 /*-----------FEATURE-FORM--------------------*/
 
 .subscribe {
-    padding-bottom: 60px;
+    padding-top: 90px;
 }
 
 .subscribe form {
@@ -221,16 +223,11 @@ header .jumbotron span{
     margin-top: 1em;
 }
 
-.title h2 {
+.subscribe h2 {
     font-size: 35px;
     color: black;
     text-align: center;
     padding: 1em;
-}
-
-.form h1     {
-    color: black;
-    justify-content: center;
 }
 
 .top {
@@ -244,7 +241,7 @@ header .jumbotron span{
     color: grey;
     text-align: center;
     padding-top: 1em;
-    }
+}
 
 .sub-button {
     width: 100%;
@@ -273,36 +270,40 @@ header .jumbotron span{
 /*-----------Feature TEAM----------------------------*/
 
 .team {
-    padding-bottom: 60px;
+    padding: 90px 0;
 
 }
 
 .team .title {
     margin: 10px;
 }
+
 .img-circle {
     max-width: 100%;
     border: solid 5px #29B200;
     border-radius: 150px;
 }
+
 .icon {
     max-width: 40px;
-
 }
 
 .person {
     text-align: center;
     font-size: 16px;
 }
+
 .person .caption p {
     margin: 10px 0px 10px 0px;
     font-size: 20px;
 }
 
-.title h2 {
+.team h2 {
     text-align: center;
     font-size: 35px;
     margin-bottom: 10px;
+    padding: 35px 0;
+    color: black;
 }
 
 .link1 {
