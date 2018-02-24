@@ -254,10 +254,12 @@ header {
 .link1 {
     display: inline-block;
     margin-right: 10px;
+    padding-bottom: 40px;
 }
 
 .link2 {
     display: inline-block;
+    padding-bottom: 40px;
 }
 
 /*-----------KONIEC FEATURE TEAM----------------*/
