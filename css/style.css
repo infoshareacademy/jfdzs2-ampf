@@ -4,6 +4,7 @@
 /*********************************************************************************/
 
 body {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     padding-top: 101px;
     position: relative;
@@ -44,7 +45,6 @@ nav a.navbar-brand {
 }
 
 .navbar-default .navbar-nav > li > a {
-    font-family: 'Montserrat', sans-serif;
     color: #333333;
 }
 
@@ -54,38 +54,6 @@ nav a.navbar-brand {
 
 .navbar-default .navbar-nav > li > a:focus {
     color: #29B200;
-}
-
-/*********************************************************************************/
-/* Navigation Menu Links Offset                                                  */
-/*********************************************************************************/
-
-#feature-info:before {
-    content:"";
-    display: block;
-    height: 101px; /* fixed header height*/
-    margin: -101px 0 0; /* negative fixed header height */
-}
-
-#feature-functions:before {
-    content:"";
-    display: block;
-    height: 101px; /* fixed header height*/
-    margin: -101px 0 0; /* negative fixed header height */
-}
-
-#feature-form:before {
-    content:"";
-    display: block;
-    height: 101px; /* fixed header height*/
-    margin: -101px 0 0; /* negative fixed header height */
-}
-
-#feature-team:before {
-    content:"";
-    display: block;
-    height: 101px; /* fixed header height*/
-    margin: -101px 0 0; /* negative fixed header height */
 }
 
 /*********************************************************************************/
@@ -102,17 +70,16 @@ header {
 header .jumbotron {
     background: transparent;
     text-align: center;
+    padding-top: 200px;
 }
 
 header .jumbotron h1 {
-    font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-style: normal;
     line-height: 1.5em;
 }
 
 header .jumbotron span{
-    font-family: 'Playfair Display', serif;
     font-weight: 400;
     font-style: italic;
 }
@@ -127,7 +94,6 @@ header .jumbotron span{
 
 .feature-info h2 {
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
     font-size: 35px;
     color: black;
     padding: 35px 0 35px 0;
@@ -147,7 +113,6 @@ header .jumbotron span{
 }
 
 .info-text p {
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     text-align: center;
     color: black;
@@ -188,15 +153,12 @@ header .jumbotron span{
 /*Feature Functions - Text*/
 
 .functions-text p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
     padding: 10px 0;
     color: black;
 
 }
 
 .feature-functions h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 35px;
     text-align: center;
     color: black;
@@ -232,7 +194,6 @@ header .jumbotron span{
 }
 
 .subscribe h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 35px;
     color: black;
     text-align: center;
@@ -240,14 +201,12 @@ header .jumbotron span{
 }
 
 .top {
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     color: black;
     text-align: center;
 }
 
 .bottom {
-    font-family: 'Montserrat', sans-serif;
     font-size: 10px;
     color: grey;
     text-align: center;
@@ -260,16 +219,13 @@ header .jumbotron span{
 }
 
 .form-control {
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
     border: solid #29B200 2px;
     font-size: 16px;
 }
 
 .btn {
-    font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 16px;
     background-color: #29B200;
     padding: 5px;
 }
@@ -307,13 +263,11 @@ header .jumbotron span{
 }
 
 .person .caption p {
-    font-family: 'Montserrat', sans-serif;
     margin: 10px 0px 10px 0px;
     font-size: 20px;
 }
 
 .team h2 {
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
     font-size: 35px;
     margin-bottom: 10px;
