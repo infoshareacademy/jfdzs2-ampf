@@ -212,7 +212,7 @@ header .jumbotron span{
 /*-----------FEATURE-FORM--------------------*/
 
 .subscribe {
-    margin-top: 20px;
+    padding-bottom: 60px;
 }
 
 .subscribe form {
@@ -221,8 +221,8 @@ header .jumbotron span{
     margin-top: 1em;
 }
 
-.title {
-    font-size: 26px;
+.title h2 {
+    font-size: 35px;
     color: black;
     text-align: center;
     padding: 1em;
@@ -243,8 +243,8 @@ header .jumbotron span{
     font-size: 10px;
     color: grey;
     text-align: center;
-    padding: 0.5em;
-}
+    padding-top: 1em;
+    }
 
 .sub-button {
     width: 100%;
