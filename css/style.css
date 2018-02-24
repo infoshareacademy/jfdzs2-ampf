@@ -189,8 +189,8 @@ header {
     font-size: 10px;
     color: grey;
     text-align: center;
-    padding: 0.5em;
-}
+    padding-top: 1em;
+    }
 
 .sub-button {
     width: 100%;
