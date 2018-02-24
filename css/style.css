@@ -5,32 +5,31 @@
 
 body {
     font-size: 16px;
-    padding-top: 91px;
+    padding-top: 101px;
+    position: relative;
 }
-
 
 /*********************************************************************************/
 /* Navigation Bar                                                                */
 /*********************************************************************************/
 
 nav.navbar {
-    padding: 20px 0;
+    padding: 25px 0 0 0;
+}
+
+nav div.navbar-header {
+    padding-bottom: 25px;
 }
 
 nav .navbar-collapse {
     float: right;
 }
 
-nav .navbar-brand {
-    padding: 0;
-}
-
 nav .navbar-brand img {
-    width: 125px;
+    height: 80px;
     background: #f8f8f8;
-    border-radius: 50%;
     float: left;
-    margin: 0 15px;
+    margin: -15px 15px 0 15px;
 }
 
 nav a.navbar-brand {
@@ -38,30 +37,87 @@ nav a.navbar-brand {
     line-height: 50px;
     font-weight: bold;
     font-size: 50px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #29B200;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
     color: #29B200;
 }
 
 /*********************************************************************************/
-/* Navigation Bar                                                                */
+/* Navigation Menu Links Offset                                                  */
+/*********************************************************************************/
+
+#feature-info:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-functions:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-form:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+#feature-team:before {
+    content:"";
+    display: block;
+    height: 101px; /* fixed header height*/
+    margin: -101px 0 0; /* negative fixed header height */
+}
+
+/*********************************************************************************/
+/* Header                                                                        */
 /*********************************************************************************/
 
 header {
-    height: calc(100vh - 91px);
+    height: calc(100vh - 101px);
     background-image: url(../images/header-background.jpg);
     background-size: cover;
     background-position: center;
 }
 
-/*********************************************************************************/
-/*                                                                               */
-/*********************************************************************************/
+header .jumbotron {
+    background: transparent;
+    text-align: center;
+}
 
+header .jumbotron h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.5em;
+}
 
-/*------------FEATURE INFO ----------FILIP*/
+header .jumbotron span{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/*------------FEATURE INFO ----------*/
 
 /*Feature-Info General*/
 .feature-info {
-    margin-top: 20px;
+    padding-top: 60px;
 }
 
 
@@ -78,7 +134,7 @@ header {
     margin-top: 30px;
 }
 
-/*Feature-Info Teksty*/
+/*Feature-Info Texts*/
 
 .info-text {
     margin-top: 10px;
@@ -91,7 +147,7 @@ header {
     margin: 0;
 }
 
-/*Feature-Info Zdjęcia*/
+/*Feature-Info Icons*/
 
 .picture-info {
     text-align: center;
@@ -103,14 +159,13 @@ header {
     text-align: center;
 }
 
-/*-----------KONIEC FEATURE INFO----------------*/
+/*-----------END FEATURE INFO----------------*/
 
-/*------------FEATURE FUNCTIONS ----------FILIP*/
+/*------------FEATURE FUNCTIONS ----------*/
 
 /*Feature Functions - General*/
 .feature-functions {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    padding: 60px 0 60px;
 }
 
 .function-detail {
@@ -118,20 +173,16 @@ header {
     flex-direction: column;
 }
 
-.icon-function {
-    margin: 15px 0 15px 0;
-}
-
 .functions-text {
     text-align: center;
+
 }
 
 /*Feature Functions - Text*/
 
 .functions-text p {
     font-size: 16px;
-    border-top: solid 3px #29B200;
-    padding-top: 10px;
+    padding: 10px 0;
     color: black;
 }
 
@@ -146,6 +197,9 @@ header {
 
 .icon-function {
     text-align: center;
+    border-bottom: solid 5px #29B200;
+    padding-bottom: 15px;
+
 }
 
 .icon-function img {
@@ -153,12 +207,12 @@ header {
     opacity: 0.8;
 }
 
-/*-----------KONIEC FEATURE FUNCTIONS----------------*/
+/*-----------END FEATURE FUNCTIONS----------------*/
 
 /*-----------FEATURE-FORM--------------------*/
 
 .subscribe {
-    margin-top: 20px;
+    padding-bottom: 60px;
 }
 
 .subscribe form {
@@ -167,8 +221,8 @@ header {
     margin-top: 1em;
 }
 
-.title {
-    font-size: 26px;
+.title h2 {
+    font-size: 35px;
     color: black;
     text-align: center;
     padding: 1em;
@@ -189,8 +243,8 @@ header {
     font-size: 10px;
     color: grey;
     text-align: center;
-    padding: 0.5em;
-}
+    padding-top: 1em;
+    }
 
 .sub-button {
     width: 100%;
@@ -267,7 +321,7 @@ header {
 /*-----------------MEDIA------------------------*/
 @media all and (min-width: 768px) {
 
-    /*Media do Feature-Info*/
+    /*Media for Feature-Info*/
     .picture-info img {
         width: 80px;
     }
@@ -284,24 +338,38 @@ header {
 
     .info-set {
         flex-direction: row;
+
     }
 
-    /*Media do Feature-Functions*/
-
-
-    .functions-text p {
-        border-top: solid 5px #29B200;
-    }
+    /*Media for Feature-Functions*/
 
     .icon-function img {
         width: 80px;
     }
 }
 
-/*Media do feature -form*/
-
 @media screen and (max-width: 768px){
+
+    /*Media Navbar*/
+
+    nav .container > .navbar-collapse {
+        margin-right: 0;
+    }
+
+    .navbar-default .navbar-collapse {
+        width: 100%;
+    }
+
+    /*Media do feature -form*/
+
     .btn {
         margin-top: 10px
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 992px) {
+    /*Media Header*/
+    header .jumbotron h1 {
+        font-size: 52px;
     }
 }
