@@ -213,21 +213,17 @@ header .jumbotron span{
     padding-top: 1em;
 }
 
-.sub-button {
-    width: 100%;
-    color: grey;
-}
-
-.form-control {
+.email-input {
     text-align: center;
     border: solid #29B200 2px;
     font-size: 16px;
 }
 
-.btn {
+.green-button {
     color: white;
     background-color: #29B200;
     padding: 5px;
+    width: 100%;
 }
 
 .icon {
@@ -332,7 +328,7 @@ header .jumbotron span{
 
     /*Media do feature -form*/
 
-    .btn {
+    .green-button {
         margin-top: 10px
     }
 }
