@@ -236,6 +236,40 @@ header .jumbotron span{
 
 /*--------------KONIEC feature FORM--------------*/
 
+/*--------------START feature GAME--------------*/
+
+#game {
+    display: none;
+    padding-top: 90px;
+}
+
+.game,
+.instruction-box,
+.top-score-box {
+    text-align: center;
+    border: solid 5px #29B200;
+    border-radius: 5px;
+}
+
+
+.game {
+    height: 540px;
+}
+
+.top-score-box p {
+    text-align: left;
+}
+
+.top-score-box,
+.instruction-box {
+    height: 270px;
+    max-width: 100%;
+    font-size: 12px;
+    vertical-align: center;
+}
+
+/*--------------END feature GAME--------------*/
+
 /*-----------Feature TEAM----------------------------*/
 
 .team {
