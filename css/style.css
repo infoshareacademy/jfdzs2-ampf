@@ -239,7 +239,7 @@ header .jumbotron span{
 /*--------------START feature GAME--------------*/
 
 #game {
-    display: none;
+    /*display: none;*/
     padding-top: 90px;
 }
 
@@ -269,6 +269,39 @@ header .jumbotron span{
 }
 
 /*--------------END feature GAME--------------*/
+
+/*********************************************************************************/
+/* Game Box Styling                                                              */
+/*********************************************************************************/
+
+.game-box {
+
+}
+
+.game-box .game-box-row{
+    margin: auto;
+    width: 800px;
+    height: 500px;
+    background-image: url(../images/game-background.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.game-box .game-dude-left, .game-box .game-dude-right {
+    height: 150px;
+    position: absolute;
+    top: 320px;
+}
+
+.game-box .game-dude-left {
+    left: 0;
+}
+
+.game-box .game-dude-right {
+    left: 500px
+}
+
 
 /*-----------Feature TEAM----------------------------*/
 
