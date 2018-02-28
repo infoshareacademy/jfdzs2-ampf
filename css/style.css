@@ -60,28 +60,17 @@ nav a.navbar-brand {
 /* Header                                                                        */
 /*********************************************************************************/
 
-header {
-    height: calc(100vh - 101px);
-    background-image: url(../images/header-background.jpg);
-    background-size: cover;
-    background-position: center;
+#carousel-intro {
+    padding-top: 90px;
 }
 
-header .jumbotron {
-    background: transparent;
-    text-align: center;
-    padding-top: 200px;
-}
-
-header .jumbotron h1 {
-    font-weight: 700;
-    font-style: normal;
-    line-height: 1.5em;
-}
-
-header .jumbotron span{
-    font-weight: 400;
+.sneak-peak {
+    color: white;
+    font-size: 35px;
+    text-shadow: 2px 2px 6px #29B200;
+    font-family: 'Montserrat', sans-serif;
     font-style: italic;
+    font-weight: bold;
 }
 
 /*------------FEATURE INFO ----------*/
@@ -323,6 +312,14 @@ header .jumbotron span{
 /*-----------KONIEC FEATURE TEAM----------------*/
 
 /*-----------------MEDIA------------------------*/
+
+@media all and (max-width: 630px){
+    .sneak-peak {
+        font-size: 16px;
+    }
+
+}
+
 @media all and (min-width: 768px) {
 
     /*Media for Feature-Info*/
