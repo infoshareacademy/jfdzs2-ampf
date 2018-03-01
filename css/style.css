@@ -275,7 +275,7 @@ header .jumbotron span{
 /*********************************************************************************/
 
 .game-box {
-
+    margin-top: 50px;
 }
 
 .game-box .game-box-row{
@@ -299,9 +299,95 @@ header .jumbotron span{
 }
 
 .game-box .game-dude-right {
-    left: 500px
+    left: 500px;
 }
 
+.game-box .healthy {
+    position: absolute;
+    height: 75px;
+}
+
+.game-box .apple {
+    left: 0;
+}
+
+.game-box .carrot {
+    left: 100px;
+}
+
+.game-box .pear {
+    left: 200px;
+}
+
+.game-box .aubergine {
+    left: 300px;
+}
+
+.game-box .strawberry {
+    left: 400px;
+}
+
+.game-box .un-healthy {
+    position: absolute;
+    height: 75px;
+}
+
+.game-box .fries {
+    left: 500px;
+}
+
+.game-box .cupcake {
+    left: 600px;
+}
+
+.game-box .pizza {
+    left: 700px;
+}
+
+.game-box .icecream {
+    left: 0px;
+    top: 100px;
+}
+
+.game-box .burger {
+    left: 100px;
+    top: 100px;
+}
+
+.game-box .cake {
+    left: 200px;
+    top: 100px;
+}
+
+.game-box .hotdog {
+    left: 300px;
+    top: 100px;
+}
+
+.game-box .sprite {
+    left: 425px;
+    top: 100px;
+}
+
+.game-box .donut {
+    left: 500px;
+    top: 100px;
+}
+
+.game-box .steak {
+    left: 600px;
+    top: 100px;
+}
+
+.game-box .whiskey {
+    left: 750px;
+    top: 100px;
+}
+
+.game-box .chocolate {
+    left: 0px;
+    top: 200px;
+}
 
 /*-----------Feature TEAM----------------------------*/
 
