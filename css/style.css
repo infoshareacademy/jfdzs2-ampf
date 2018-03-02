@@ -278,115 +278,121 @@ header .jumbotron span{
     margin-top: 50px;
 }
 
-.game-box .game-box-row{
+.game-box-container {
     margin: auto;
     width: 800px;
     height: 500px;
-    background-image: url(../images/game-background.png);
+    background-image: url(../images/game_assets/background.png);
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
-.game-box .game-dude-left, .game-box .game-dude-right {
-    height: 150px;
+.game-box-container div.game-dude-left, .game-box div.game-dude-right {
+    width: 81.25px;
     position: absolute;
     top: 320px;
 }
 
-.game-box .game-dude-left {
+.game-box-container div.game-dude-left {
     left: 0;
 }
 
-.game-box .game-dude-right {
+.game-box-container div.game-dude-right {
     left: 500px;
 }
 
-.game-box .healthy {
+.game-box-container div.healthy {
     position: absolute;
-    height: 75px;
+    width: 75px;
 }
 
-.game-box .apple {
+.game-box-container div.apple {
     left: 0;
 }
 
-.game-box .carrot {
+.game-box-container div.carrot {
     left: 100px;
+    width: 100px;
 }
 
-.game-box .pear {
+.game-box-container div.pear {
     left: 200px;
 }
 
-.game-box .aubergine {
+.game-box-container div.aubergine {
     left: 300px;
 }
 
-.game-box .strawberry {
+.game-box-container div.strawberry {
     left: 400px;
 }
 
-.game-box .un-healthy {
+.game-box-container div.un-healthy {
     position: absolute;
-    height: 75px;
+    width: 75px;
 }
 
-.game-box .fries {
+.game-box-container div.fries {
     left: 500px;
 }
 
-.game-box .cupcake {
+.game-box-container div.cupcake {
     left: 600px;
 }
 
-.game-box .pizza {
+.game-box-container div.pizza {
     left: 700px;
 }
 
-.game-box .icecream {
+.game-box-container div.icecream {
     left: 0px;
     top: 100px;
 }
 
-.game-box .burger {
+.game-box-container div.burger {
     left: 100px;
     top: 100px;
 }
 
-.game-box .cake {
+.game-box-container div.cake {
     left: 200px;
     top: 100px;
 }
 
-.game-box .hotdog {
+.game-box-container div.hotdog {
     left: 300px;
     top: 100px;
+    width: 100px;
 }
 
-.game-box .sprite {
+.game-box-container div.sprite {
     left: 425px;
     top: 100px;
+    width: 45px;
 }
 
-.game-box .donut {
+.game-box-container div.donut {
     left: 500px;
     top: 100px;
 }
 
-.game-box .steak {
+.game-box-container div.steak {
     left: 600px;
     top: 100px;
+    width: 100px;
 }
 
-.game-box .whiskey {
+.game-box-container div.whiskey {
     left: 750px;
     top: 100px;
+    width: 40px;
 }
 
-.game-box .chocolate {
+.game-box-container div.chocolate {
     left: 0px;
     top: 200px;
+    width: 100px;
 }
 
 /*-----------Feature TEAM----------------------------*/
