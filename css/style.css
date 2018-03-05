@@ -289,7 +289,6 @@ header .jumbotron span{
 }
 
 .game-box-container div.game-dude-left, .game-box div.game-dude-right {
-    width: 81.25px;
     position: absolute;
     top: 320px;
 }
@@ -304,7 +303,6 @@ header .jumbotron span{
 
 .game-box-container div.healthy {
     position: absolute;
-    width: 75px;
 }
 
 .game-box-container div.apple {
@@ -313,7 +311,6 @@ header .jumbotron span{
 
 .game-box-container div.carrot {
     left: 100px;
-    width: 100px;
 }
 
 .game-box-container div.pear {
@@ -326,23 +323,26 @@ header .jumbotron span{
 
 .game-box-container div.strawberry {
     left: 400px;
+    top: 40px;
 }
 
 .game-box-container div.un-healthy {
     position: absolute;
-    width: 75px;
 }
 
 .game-box-container div.fries {
     left: 500px;
+    top: 40px;
 }
 
 .game-box-container div.cupcake {
     left: 600px;
+    top: 40px;
 }
 
 .game-box-container div.pizza {
     left: 700px;
+    top: 40px;
 }
 
 .game-box-container div.icecream {
@@ -363,36 +363,105 @@ header .jumbotron span{
 .game-box-container div.hotdog {
     left: 300px;
     top: 100px;
-    width: 100px;
 }
 
 .game-box-container div.sprite {
     left: 425px;
-    top: 100px;
-    width: 45px;
+    top: 140px;
 }
 
 .game-box-container div.donut {
     left: 500px;
-    top: 100px;
+    top: 140px;
 }
 
 .game-box-container div.steak {
     left: 600px;
-    top: 100px;
-    width: 100px;
+    top: 140px;
 }
 
 .game-box-container div.whiskey {
-    left: 750px;
-    top: 100px;
-    width: 40px;
+    left: 735px;
+    top: 140px;
+    transform: rotate(45deg);
 }
 
 .game-box-container div.chocolate {
     left: 0px;
     top: 200px;
-    width: 100px;
+}
+
+.game-box-container div.button {
+    position: absolute;
+}
+
+.game-box-container div.play {
+    top: 200px;
+    left: 150px;
+}
+
+.game-box-container div.instructions {
+    top: 260px;
+    left: 150px;
+}
+
+.game-box-container div.restart {
+    top: 320px;
+    left: 150px;
+}
+
+.game-box-container div.pause {
+    top: 380px;
+    left: 150px;
+}
+
+.game-box-container div.resume {
+    top: 440px;
+    left: 150px;
+}
+
+.game-box-container div.sound-on {
+    top: 200px;
+    left: 305px;
+}
+
+.game-box-container div.sound-off {
+    top: 200px;
+    left: 365px;
+}
+
+.game-box-container div.score-board {
+    top: 10px;
+    left: 440px;
+    position: absolute;
+}
+
+.game-box-container div.win-message {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    background-color: rgba(56, 56, 56, 0.8);
+}
+
+.game-box-container .win-message img {
+    margin: auto;
+    margin-top: 213px;
+}
+
+.game-box-container div.lose-message {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    background-color: rgba(56, 56, 56, 0.8);
+}
+
+.game-box-container .lose-message img {
+    margin: auto;
+    margin-top: 213px;
 }
 
 /*-----------Feature TEAM----------------------------*/
