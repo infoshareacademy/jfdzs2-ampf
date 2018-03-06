@@ -31,7 +31,8 @@ nav .navbar-collapse {
 }
 
 nav .navbar-brand img {
-    height: 80px;
+    max-width: 220px;
+    max-height: 80px;
     background: #f8f8f8;
     float: left;
     margin: -15px 15px 0 15px;
@@ -317,7 +318,15 @@ header .jumbotron span{
         width: 80px;
     }
 }
+@media screen and (min-width: 338px){
 
+    /*Navbar Logo Image resize*/
+
+    nav .navbar-brand img {
+        max-width: none;
+    }
+
+}
 @media screen and (max-width: 768px){
 
     /*Media Navbar*/
