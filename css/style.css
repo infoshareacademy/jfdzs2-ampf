@@ -60,10 +60,6 @@ nav a.navbar-brand {
 /* Header                                                                        */
 /*********************************************************************************/
 
-#carousel-intro {
-    padding-top: 90px;
-}
-
 .sneak-peak {
     color: white;
     font-size: 35px;
@@ -71,10 +67,8 @@ nav a.navbar-brand {
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-weight: bold;
-}
-
-.icon-control {
-    top: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
 }
 
 /*------------FEATURE INFO ----------*/
@@ -229,40 +223,6 @@ nav a.navbar-brand {
 
 /*--------------KONIEC feature FORM--------------*/
 
-/*--------------START feature GAME--------------*/
-
-#game {
-    display: none;
-    padding-top: 90px;
-}
-
-.game,
-.instruction-box,
-.top-score-box {
-    text-align: center;
-    border: solid 5px #29B200;
-    border-radius: 5px;
-}
-
-
-.game {
-    height: 540px;
-}
-
-.top-score-box p {
-    text-align: left;
-}
-
-.top-score-box,
-.instruction-box {
-    height: 270px;
-    max-width: 100%;
-    font-size: 12px;
-    vertical-align: center;
-}
-
-/*--------------END feature GAME--------------*/
-
 /*-----------Feature TEAM----------------------------*/
 
 .team {
@@ -372,9 +332,3 @@ nav a.navbar-brand {
     }
 }
 
-@media all and (min-width: 768px) and (max-width: 992px) {
-    /*Media Header*/
-    header .jumbotron h1 {
-        font-size: 52px;
-    }
-}
