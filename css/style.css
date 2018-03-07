@@ -59,6 +59,16 @@ nav a.navbar-brand {
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
+.full-height-carousel-item {
+    height: calc(100vh - 101px);
+}
+
+.carousel-inner .full-height-carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: auto;
+}
 
 .sneak-peak {
     color: white;
@@ -70,6 +80,7 @@ nav a.navbar-brand {
     background-color: rgba(0, 0, 0, 0.4);
     border-radius: 25px;
 }
+
 
 /*------------FEATURE INFO ----------*/
 
@@ -285,6 +296,12 @@ nav a.navbar-brand {
 }
 
 @media all and (min-width: 768px) {
+
+    /*.carousel-inner .full-height-carousel-item img {*/
+        /*height: auto;*/
+        /*width: 100%;*/
+    /*}*/
+
 
     /*Media for Feature-Info*/
     .picture-info img {
