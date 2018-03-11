@@ -24,6 +24,17 @@
 
 // - RUCH LUDZIKA -
 
+function movePlayer {
+
+
+
+}
+
+document.addEventListener('keydown', movePlayer)
+
+
+
+
 
 // - KOLIZJE -
 
