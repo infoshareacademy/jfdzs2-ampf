@@ -302,12 +302,6 @@ nav a.navbar-brand {
 
 @media all and (min-width: 768px) {
 
-    /*.carousel-inner .full-height-carousel-item img {*/
-        /*height: auto;*/
-        /*width: 100%;*/
-    /*}*/
-
-
     /*Media for Feature-Info*/
     .picture-info img {
         width: 80px;
