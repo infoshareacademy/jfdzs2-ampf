@@ -32,7 +32,7 @@ function randomizeAndReturnItems (tableOfItems) {
     return chosenItem;
 }
 
-randomizeAndReturnItems(fallingItems);
+randomizeAndReturnItems(gameItemsCollection);
 
 // - POZYCJONOWANIE OWOCÓW -
 
