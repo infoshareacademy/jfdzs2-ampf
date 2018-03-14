@@ -1,5 +1,7 @@
 // - PODSTAWOWE INFO -
-
+var playerPosition;
+var fallingItems = [];
+var chosenItem;
 
 // - OBIEKTY -
 
@@ -15,6 +17,22 @@
 
 // - RANDOMIZOWANIE OWOCÓW -
 
+function collectingItems () {
+    var items = document.querySelectorAll('.game-box-container div.game-item');
+    var i;
+
+    for (i=0; i<items.length; i++) {fallingItems.push(items[i])}
+}
+
+collectingItems();
+
+
+function randomizeItems (tableOfItems) {
+    chosenItem = tableOfItems[Math.floor(Math.random()*tableOfItems.length)];
+    return chosenItem;
+}
+
+randomizeItems(fallingItems);
 
 // - POZYCJONOWANIE OWOCÓW -
 
@@ -24,13 +42,40 @@
 
 // - RUCH LUDZIKA -
 
-function movePlayer {
+function positionPlayer () {
+    document.querySelector('.game-box-container div.game-dude').style.left = '350px';
+    playerPosition = parseInt(document.querySelector('.game-box-container div.game-dude').style.left);
+}
 
+positionPlayer();
+
+function movePlayer (event) {
+
+    switch (event.keyCode) {
+
+        case 37:
+            document.querySelector('.game-box-container div.game-dude img').src="images/game_assets/dude-right.png";
+            if (playerPosition>0) {
+                document.querySelector('.game-box-container div.game-dude').style.left = (playerPosition - 3).toString() + 'px';
+                playerPosition -= 3;
+            }
+
+            break;
+        case 39:
+            document.querySelector('.game-box-container div.game-dude img').src="images/game_assets/dude-left.png";
+            if (playerPosition<719) {
+                document.querySelector('.game-box-container div.game-dude').style.left = (playerPosition + 3).toString() + 'px';
+                playerPosition += 3;
+            }
+            break;
+
+    }
 
 
 }
 
-document.addEventListener('keydown', movePlayer)
+
+document.addEventListener('keydown', movePlayer);
 
 
 

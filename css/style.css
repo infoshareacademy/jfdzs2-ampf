@@ -288,17 +288,10 @@ header .jumbotron span{
     position: relative;
 }
 
-.game-box-container div.game-dude-left, .game-box div.game-dude-right {
+.game-box-container div.game-dude {
     position: absolute;
     top: 345px;
-}
-
-.game-box-container div.game-dude-left {
     left: 0;
-}
-
-.game-box-container div.game-dude-right {
-    left: 500px;
 }
 
 .game-box-container div.healthy {
