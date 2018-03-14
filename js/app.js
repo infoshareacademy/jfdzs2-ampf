@@ -1,6 +1,6 @@
 // - PODSTAWOWE INFO -
 var playerPosition;
-var fallingItems = [];
+var gameItemsCollection = [];
 var chosenItem;
 
 // - OBIEKTY -
@@ -17,22 +17,22 @@ var chosenItem;
 
 // - RANDOMIZOWANIE OWOCÓW -
 
-function collectingItems () {
+function collectingGameItems () {
     var items = document.querySelectorAll('.game-box-container div.game-item');
     var i;
 
-    for (i=0; i<items.length; i++) {fallingItems.push(items[i])}
+    for (i=0; i<items.length; i++) {gameItemsCollection.push(items[i])}
 }
 
-collectingItems();
+collectingGameItems();
 
 
-function randomizeItems (tableOfItems) {
+function randomizeAndReturnItems (tableOfItems) {
     chosenItem = tableOfItems[Math.floor(Math.random()*tableOfItems.length)];
     return chosenItem;
 }
 
-randomizeItems(fallingItems);
+randomizeAndReturnItems(fallingItems);
 
 // - POZYCJONOWANIE OWOCÓW -
 
