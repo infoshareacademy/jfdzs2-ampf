@@ -1,9 +1,16 @@
 // - PODSTAWOWE INFO -
+function getElement(selector) {
+    return document.querySelector('.game-box-container ' + selector);
+}
+
 var playerPosition;
 var gameItemsCollection = [];
 var chosenItem;
 
 // - OBIEKTY -
+
+
+var playerNode = getElement('div.game-dude');
 
 
 // - STARTOWANIE GRY -
@@ -17,18 +24,19 @@ var chosenItem;
 
 // - RANDOMIZOWANIE OWOCÓW -
 
-function collectingGameItems () {
+function collectingGameItems() {
     var items = document.querySelectorAll('.game-box-container div.game-item');
-    var i;
 
-    for (i=0; i<items.length; i++) {gameItemsCollection.push(items[i])}
+    for (var i = 0; i < items.length; i++) {
+        gameItemsCollection.push(items[i])
+    }
 }
 
 collectingGameItems();
 
 
-function randomizeAndReturnItems (tableOfItems) {
-    chosenItem = tableOfItems[Math.floor(Math.random()*tableOfItems.length)];
+function randomizeAndReturnItems(tableOfItems) {
+    chosenItem = tableOfItems[Math.floor(Math.random() * tableOfItems.length)];
     return chosenItem;
 }
 
@@ -42,43 +50,41 @@ randomizeAndReturnItems(gameItemsCollection);
 
 // - RUCH LUDZIKA -
 
-function positionPlayer () {
-    document.querySelector('.game-box-container div.game-dude').style.left = '350px';
-    playerPosition = parseInt(document.querySelector('.game-box-container div.game-dude').style.left);
+function positionPlayer() {
+    playerNode.style.left = '350px';
+    playerPosition = parseInt(playerNode.style.left);
 }
 
 positionPlayer();
 
-function movePlayer (event) {
-
-    switch (event.keyCode) {
-
-        case 37:
-            document.querySelector('.game-box-container div.game-dude img').src="images/game_assets/dude-right.png";
-            if (playerPosition>0) {
-                document.querySelector('.game-box-container div.game-dude').style.left = (playerPosition - 3).toString() + 'px';
-                playerPosition -= 3;
-            }
-
-            break;
-        case 39:
-            document.querySelector('.game-box-container div.game-dude img').src="images/game_assets/dude-left.png";
-            if (playerPosition<719) {
-                document.querySelector('.game-box-container div.game-dude').style.left = (playerPosition + 3).toString() + 'px';
-                playerPosition += 3;
-            }
-            break;
-
+function movePlayerLeft() {
+    playerNode.style.backgroundImage = "url('images/game_assets/dude-left.png')";
+    if (playerPosition > 0) {
+        playerNode.style.left = (playerPosition - 15).toString() + 'px';
+        playerPosition -= 15;
     }
-
-
 }
 
+function movePlayerRight() {
+    playerNode.style.backgroundImage = "url('images/game_assets/dude-right.png')";
+    if (playerPosition < 719) {
+        playerNode.style.left = (playerPosition + 15).toString() + 'px';
+        playerPosition += 15;
+    }
+}
 
-document.addEventListener('keydown', movePlayer);
+function onKeyDown(event) {
+    switch (event.keyCode) {
+        case 37:
+            movePlayerLeft();
+            break;
+        case 39:
+            movePlayerRight();
+            break;
+    }
+}
 
-
-
+document.addEventListener('keydown', onKeyDown);
 
 
 // - KOLIZJE -

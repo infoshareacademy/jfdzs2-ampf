@@ -292,6 +292,9 @@ header .jumbotron span{
     position: absolute;
     top: 345px;
     left: 0;
+    height: 150px;
+    width: 81px;
+    background-image: url("../images/game_assets/dude-left.png");
 }
 
 .game-box-container div.healthy {
