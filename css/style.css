@@ -31,10 +31,11 @@ nav .navbar-collapse {
 }
 
 nav .navbar-brand img {
-    height: 80px;
+    height: 70px;
     background: #f8f8f8;
     float: left;
-    margin: -15px 15px 0 15px;
+    margin: -10px 15px 0 15px;
+
 }
 
 nav a.navbar-brand {
@@ -291,6 +292,12 @@ header .jumbotron span{
 /*-----------------MEDIA------------------------*/
 @media all and (min-width: 768px) {
 
+    nav .navbar-brand img {
+        height: 80px;
+        margin-top: -15px;
+    }
+
+
     /*Media for Feature-Info*/
     .picture-info img {
         width: 80px;
@@ -318,7 +325,7 @@ header .jumbotron span{
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
 
     /*Media Navbar*/
 
