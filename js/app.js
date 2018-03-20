@@ -15,130 +15,152 @@ const gameItemsCollection = [
     {   name: "apple",
         height: 89,
         width: 75,
-        image: "images/game_assets/apple.png",
+        image: "url('images/game_assets/apple.png')",
         points: -5,
         healthy: true
     },
     {   name: "carrot",
         height: 94,
         width: 100,
-        image: "images/game_assets/carrot.png",
+        image: "url('images/game_assets/carrot.png')",
         points: -5,
         healthy: true
     },
     {   name: "pear",
         height: 80,
         width: 80,
-        image: "images/game_assets/pear.png",
+        image: "url('images/game_assets/pear.png')",
         points: -5,
         healthy: true
     },
     {   name: "aubergine",
         height: 83,
         width: 75,
-        image: "images/game_assets/aubergine.png",
+        image: "url('images/game_assets/aubergine.png')",
         points: -5,
         healthy: true
     },
     {   name: "strawberry",
         height: 75,
         width: 75,
-        image: "images/game_assets/strawberry.png",
+        image: "url('images/game_assets/strawberry.png')",
         points: -5,
         healthy: true
     },
     {   name: "fries",
         height: 92,
         width: 75,
-        image: "images/game_assets/fries.png",
+        image: "url('images/game_assets/fries.png')",
         points: 5,
         healthy: false
     },
     {   name: "cupcake",
         height: 83,
         width: 85,
-        image: "images/game_assets/cupcake.png",
+        image: "url('images/game_assets/cupcake.png')",
         points: 5,
         healthy: false
     },
     {   name: "pizza",
         height: 92,
         width: 95,
-        image: "images/game_assets/pizza.png",
+        image: "url('images/game_assets/pizza.png')",
         points: 10,
         healthy: false
     },
     {   name: "icecream",
         height: 90,
         width: 95,
-        image: "images/game_assets/icecream.png",
+        image: "url('images/game_assets/icecream.png')",
         points: 5,
         healthy: false
     },
     {   name: "burger",
         height: 87,
         width: 90,
-        image: "images/game_assets/icecream.png",
+        image: "url('images/game_assets/burger.png')",
         points: 15,
         healthy: false
     },
     {   name: "cake",
         height: 81,
         width: 85,
-        image: "images/game_assets/cake.png",
+        image: "url('images/game_assets/cake.png')",
         points: 10,
-        healthy: false
-    },
-    {   name: "cake",
-        height: 100,
-        width: 100,
-        image: "images/game_assets/cake.png",
-        points: 5,
         healthy: false
     },
     {   name: "hotdog",
         height: 76,
         width: 100,
-        image: "images/game_assets/hotdog.png",
+        image: "url('images/game_assets/hotdog.png')",
         points: 15,
         healthy: false
     },
     {   name: "sprite",
         height: 75,
         width: 45,
-        image: "images/game_assets/sprite.png",
+        image: "url('images/game_assets/sprite.png')",
         points: 5,
         healthy: false
     },
     {   name: "donut",
         height: 73,
         width: 80,
-        image: "images/game_assets/donut.png",
+        image: "url('images/game_assets/donut.png')",
         points: 10,
         healthy: false
     },
     {   name: "steak",
         height: 74,
         width: 95,
-        image: "images/game_assets/steak.png",
+        image: "url('images/game_assets/steak.png')",
         points: 5,
         healthy: false
     },
     {   name: "whiskey",
         height: 109,
         width: 35,
-        image: "images/game_assets/whiskey.png",
+        image: "url('images/game_assets/whiskey.png')",
         points: 50,
         healthy: false
     },
     {   name: "chocolate",
-        height: 69,
-        width: 120,
-        image: "images/game_assets/chocolate.png",
+        height: 57,
+        width: 100,
+        image: "url('images/game_assets/chocolate.png')",
         points: 20,
         healthy: false
     }
 ];
+
+const gameCorridors = [
+    {   name: "corridor1",
+        middleFromLeft: 50
+    },
+    {   name: "corridor2",
+        middleFromLeft: 150
+    },
+    {   name: "corridor3",
+        middleFromLeft: 250
+    },
+    {   name: "corridor4",
+        middleFromLeft: 350
+    },
+    {   name: "corridor5",
+        middleFromLeft: 450
+    },
+    {   name: "corridor6",
+        middleFromLeft: 550
+    },
+    {   name: "corridor7",
+        middleFromLeft: 650
+    },
+    {   name: "corridor8",
+        middleFromLeft: 750
+    }
+];
+
+
 
 // - STARTOWANIE GRY -
 
@@ -151,21 +173,66 @@ const gameItemsCollection = [
 
 // - RANDOMIZOWANIE OWOCÓW -
 
-
-
-
 function randomizeAndReturnItems(tableOfItems) {
     chosenItem = tableOfItems[Math.floor(Math.random() * tableOfItems.length)];
     return chosenItem;
 }
 
-randomizeAndReturnItems(gameItemsCollection);
 
-// - POZYCJONOWANIE OWOCÓW -
+
+
+// - AKTYWNE ELEMENTY -
+
+
+
+
+
 
 
 // - SPADANIE OWOCÓW -
 
+function setStylePositionAbsolute (gameItemNode) {
+    gameItemNode.style.position = "absolute";
+}
+
+function addStyleHeight (gameItem, gameItemNode) {
+    gameItemNode.style.height = gameItem.height.toString() + 'px';
+}
+
+function addStyleWidth (gameItem, gameItemNode) {
+    gameItemNode.style.width = gameItem.width.toString() + 'px';
+}
+
+function addBackgroundImage (gameItem, gameItemNode) {
+    gameItemNode.style.backgroundImage = gameItem.image;
+}
+
+function addStyleLeft (gameItem, gameItemNode, gameCorridor) {
+    gameItemNode.style.left = (gameCorridor.middleFromLeft - (gameItem.width)/2).toString()+ 'px';
+}
+
+function createItemNodeForFallingItemsInsideGame () {
+    var randomizedItemNode = document.createElement("div");
+    playerNode.parentNode.insertBefore(randomizedItemNode,playerNode);
+    return randomizedItemNode
+}
+
+
+function positionRandomGameItemInTheCenterOfRandomCorridor () {
+    var randomizedItem = randomizeAndReturnItems(gameItemsCollection);
+    var randomizedCorridor = randomizeAndReturnItems(gameCorridors);
+    var randomizedItemNode = createItemNodeForFallingItemsInsideGame ();
+    setStylePositionAbsolute(randomizedItemNode);
+    addStyleHeight(randomizedItem,randomizedItemNode);
+    addStyleWidth(randomizedItem,randomizedItemNode);
+    addBackgroundImage(randomizedItem,randomizedItemNode);
+    addStyleLeft(randomizedItem,randomizedItemNode,randomizedCorridor);
+
+    randomizedItemNode.style.top = "20px"; // To się powinno zmienić bo przedmioty będą spadały jakby z ponad planszy
+
+}
+
+positionRandomGameItemInTheCenterOfRandomCorridor();
 
 // - RUCH LUDZIKA -
 
