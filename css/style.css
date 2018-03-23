@@ -288,6 +288,41 @@ header .jumbotron span{
 
 /*-----------KONIEC FEATURE TEAM----------------*/
 
+/*---------- START FEATURE COOKIES--------------*/
+
+.cookie-message {
+    background-color: rgba(41, 178, 0, 0.8);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: white;
+    display: block;
+}
+
+.cookie-message a {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.cookie-message p {
+    padding: 10px;
+    margin: 0px;
+}
+
+.cookie-message img {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.cookie-button {
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(41, 178, 0, 0.8);
+    border: solid 1px white;
+}
+
+/*-----------END FEATURE COOKIES----------------*/
+
 /*-----------------MEDIA------------------------*/
 @media all and (min-width: 768px) {
 
