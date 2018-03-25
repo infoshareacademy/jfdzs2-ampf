@@ -276,6 +276,7 @@ header .jumbotron span{
 
 .game-box {
     margin-top: 50px;
+    display: none;
 }
 
 .game-box-container {
@@ -295,6 +296,7 @@ header .jumbotron span{
     height: 150px;
     width: 81px;
     background-image: url("../images/game_assets/dude-left.png");
+    display: none;
 }
 
 .game-box-container div.healthy {

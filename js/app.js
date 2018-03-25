@@ -8,8 +8,9 @@ var chosenItem;
 
 // - OBIEKTY -
 
-
 var playerNode = getElement('div.game-dude');
+var playButton = getElement('.play');
+var instructionButton = getElement('.instructions');
 
 const gameItemsCollection = [
     {   name: "apple",
@@ -164,8 +165,33 @@ const gameCorridors = [
 
 // - STARTOWANIE GRY -
 
+function initializingGame () {
+    if (screen.width>800) {
+        var submitButton = document.querySelector(".sub-button");
+        submitButton.addEventListener('click', showGame);
+    }
+}
+
+function showGame () {
+    var game = document.querySelector(".game-box");
+    setStyleDisplayBlock(game);
+    playButtonEvent();
+}
+
+function playButtonEvent () {
+    playButton.addEventListener('click', startGame);
+}
+
 
 // - WYŚWIETLANIE INSTRUKCJI -
+
+function instructionButtonEvent () {
+    instructionButton.addEventListener('click',showInstruction);
+}
+
+function showInstruction () {
+
+}
 
 
 // - WYŚWIETLANIE - WYNIKOW -
@@ -190,6 +216,15 @@ function randomizeAndReturnItems(tableOfItems) {
 
 
 // - SPADANIE OWOCÓW -
+
+function setStyleDisplayNone (item) {
+    item.style.display = "none";
+}
+
+function setStyleDisplayBlock (item) {
+    item.style.display = "block";
+}
+
 
 function setStylePositionAbsolute (gameItemNode) {
     gameItemNode.style.position = "absolute";
@@ -270,9 +305,22 @@ function onKeyDown(event) {
     }
 }
 
-positionRandomGameItemInTheCenterOfRandomCorridor();
-positionPlayer();
-document.addEventListener('keydown', onKeyDown);
+function startGame () {
+    playButton.removeEventListener('click', startGame);
+    setStyleDisplayNone(playButton);
+    instructionButton.removeEventListener('click',showInstruction);
+    setStyleDisplayNone(instructionButton);
+    setStyleDisplayBlock(playerNode);
+    positionRandomGameItemInTheCenterOfRandomCorridor();
+    positionPlayer();
+    document.addEventListener('keydown', onKeyDown);
+
+}
+
+initializingGame ();
+
+
+
 
 
 // - KOLIZJE -
