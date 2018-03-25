@@ -232,30 +232,30 @@ function positionRandomGameItemInTheCenterOfRandomCorridor () {
 
 }
 
-positionRandomGameItemInTheCenterOfRandomCorridor();
+
 
 // - RUCH LUDZIKA -
 
 function positionPlayer() {
-    playerNode.style.left = '350px';
+    playerNode.style.left = '400px';
     playerPosition = parseInt(playerNode.style.left);
 }
 
-positionPlayer();
+
 
 function movePlayerLeft() {
     playerNode.style.backgroundImage = "url('images/game_assets/dude-left.png')";
     if (playerPosition > 0) {
-        playerNode.style.left = (playerPosition - 2).toString() + 'px';
-        playerPosition -= 2;
+        playerNode.style.left = (playerPosition - 20).toString() + 'px';
+        playerPosition -= 20;
     }
 }
 
 function movePlayerRight() {
     playerNode.style.backgroundImage = "url('images/game_assets/dude-right.png')";
     if (playerPosition < 719) {
-        playerNode.style.left = (playerPosition + 2).toString() + 'px';
-        playerPosition += 2;
+        playerNode.style.left = (playerPosition + 20).toString() + 'px';
+        playerPosition += 20;
     }
 }
 
@@ -270,6 +270,8 @@ function onKeyDown(event) {
     }
 }
 
+positionRandomGameItemInTheCenterOfRandomCorridor();
+positionPlayer();
 document.addEventListener('keydown', onKeyDown);
 
 

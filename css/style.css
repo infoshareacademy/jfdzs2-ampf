@@ -291,7 +291,7 @@ header .jumbotron span{
 .game-box-container div.game-dude {
     position: absolute;
     top: 345px;
-    left: 0;
+    left: 400px;
     height: 150px;
     width: 81px;
     background-image: url("../images/game_assets/dude-left.png");
