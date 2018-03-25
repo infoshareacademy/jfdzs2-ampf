@@ -182,7 +182,6 @@ function playButtonEvent () {
     playButton.addEventListener('click', startGame);
 }
 
-
 // - WYŚWIETLANIE INSTRUKCJI -
 
 function instructionButtonEvent () {
@@ -191,8 +190,8 @@ function instructionButtonEvent () {
 
 function showInstruction () {
 
-}
 
+}
 
 // - WYŚWIETLANIE - WYNIKOW -
 
@@ -252,22 +251,18 @@ function createItemNodeForFallingItemsInsideGame () {
     return randomizedItemNode
 }
 
-
 function positionRandomGameItemInTheCenterOfRandomCorridor () {
     var randomizedItem = randomizeAndReturnItems(gameItemsCollection);
     var randomizedCorridor = randomizeAndReturnItems(gameCorridors);
-    var randomizedItemNode = createItemNodeForFallingItemsInsideGame ();
+    var randomizedItemNode = createItemNodeForFallingItemsInsideGame();
     setStylePositionAbsolute(randomizedItemNode);
-    addStyleHeight(randomizedItem,randomizedItemNode);
-    addStyleWidth(randomizedItem,randomizedItemNode);
-    addBackgroundImage(randomizedItem,randomizedItemNode);
-    addStyleLeft(randomizedItem,randomizedItemNode,randomizedCorridor);
+    addStyleHeight(randomizedItem, randomizedItemNode);
+    addStyleWidth(randomizedItem, randomizedItemNode);
+    addBackgroundImage(randomizedItem, randomizedItemNode);
+    addStyleLeft(randomizedItem, randomizedItemNode, randomizedCorridor);
 
     randomizedItemNode.style.top = "20px"; // To się powinno zmienić bo przedmioty będą spadały jakby z ponad planszy
-
 }
-
-
 
 // - RUCH LUDZIKA -
 
@@ -275,8 +270,6 @@ function positionPlayer() {
     playerNode.style.left = '400px';
     playerPosition = parseInt(playerNode.style.left);
 }
-
-
 
 function movePlayerLeft() {
     playerNode.style.backgroundImage = "url('images/game_assets/dude-left.png')";
