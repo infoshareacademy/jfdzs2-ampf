@@ -296,17 +296,32 @@ header .jumbotron span{
     text-align: center;
     color: white;
     display: block;
+    position: fixed;
+    top: 101px;
+    right: 0px;
+    width: 35%;
+    height: auto;
 }
 
 .cookie-message a {
     color: white;
     text-decoration: none;
-    font-size: 10px;
+    font-size: 12px;
+
+
 }
 
-.cookie-message p {
-    padding: 10px;
+.turn-it-off {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 15px;
+
+}
+.cookies-text {
+    padding: 10px 60px 5px 60px;
     margin: 0px;
+    font-size: 22px;
 }
 
 .cookie-message img {
@@ -315,8 +330,8 @@ header .jumbotron span{
 }
 
 .cookie-button {
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 20px 30px 20px 30px;
+    margin: 15px;
     background-color: rgba(41, 178, 0, 0.8);
     border: solid 1px white;
 }
@@ -324,6 +339,13 @@ header .jumbotron span{
 /*-----------END FEATURE COOKIES----------------*/
 
 /*-----------------MEDIA------------------------*/
+
+@media all and (max-width: 768px) {
+    .cookie-message {
+        width: 100%;
+    }
+}
+
 @media all and (min-width: 768px) {
 
     /*Media for Feature-Info*/
