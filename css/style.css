@@ -292,6 +292,49 @@ nav a.navbar-brand {
 
 /*-----------KONIEC FEATURE TEAM----------------*/
 
+/*********************************************************************************/
+/* TEAM IMAGES FLIP                                                         */
+/*********************************************************************************/
+.fixed-height-person-container {
+    max-width: 218px;
+    height: 218px;
+    margin: auto;
+}
+.card-flip-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 800px;
+}
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+.card-flip-container:hover .card {
+    transform: rotateY(180deg);
+}
+.card figure {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+.card .front {
+}
+.card .back {
+    transform: rotateY(180deg);
+    max-width: 218px;
+    height: 218px;
+    background: radial-gradient(circle, #e7e7e7 100px, white 100px);
+    border-radius: 50%;
+    border: solid 5px #29B200;
+}
+
 /*-----------------MEDIA------------------------*/
 
 @media all and (max-width: 630px){

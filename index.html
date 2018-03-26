@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Feed Me</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="fonts/fonts.css">
     <link rel="icon" href="images/favicon.ico">
@@ -308,7 +308,14 @@
 
         <div class="row">
             <div class="person col-sm-4">
-                <img src="images/fb.jpg" alt="Burakowski" class="img-circle img-thumbnail">
+                <div class="fixed-height-person-container">
+                <div class="card-flip-container">
+                    <div class="card">
+                        <figure class="front"><img src="images/fb.jpg" alt="Burakowski" class="img-circle img-thumbnail"></figure>
+                        <figure class="back"></figure>
+                    </div>
+                </div>
+                </div>
                 <div class="caption">
                     <p>Filip Burakowski</p>
                 </div>
@@ -320,8 +327,16 @@
                     <a href="https://github.com/karoob"><img src="images/gh.png" alt="GH" class="social-icon"></a>
                 </div>
             </div>
+
             <div class="person col-sm-4">
-                <img src="images/ms.jpg" alt="Sołtykiewicz" class="img-circle img-thumbnail">
+                <div class="fixed-height-person-container">
+                    <div class="card-flip-container">
+                        <div class="card">
+                            <figure class="front"><img src="images/ms.jpg" alt="Burakowski" class="img-circle img-thumbnail"></figure>
+                            <figure class="back"></figure>
+                        </div>
+                    </div>
+                </div>
                 <div class="caption">
                     <p>Maciej Sołtykiewicz</p>
                 </div>
@@ -334,8 +349,16 @@
                                                                     class="social-icon"></a>
                 </div>
             </div>
+
             <div class="person col-sm-4">
-                <img src="images/ps.jpg" alt="Skwirowski" class="img-circle img-thumbnail">
+                <div class="fixed-height-person-container">
+                    <div class="card-flip-container">
+                        <div class="card">
+                            <figure class="front"><img src="images/ps.jpg" alt="Burakowski" class="img-circle img-thumbnail"></figure>
+                            <figure class="back"></figure>
+                        </div>
+                    </div>
+                </div>
                 <div class="caption">
                     <p>Paweł Skwirowski</p>
                 </div>
