@@ -11,6 +11,9 @@ var chosenItem;
 var playerNode = getElement('div.game-dude');
 var playButton = getElement('.play');
 var instructionButton = getElement('.instructions');
+var instructionArea = getElement('.game-instruction');
+var submitButton = document.querySelector(".sub-button");
+
 
 const gameItemsCollection = [
     {   name: "apple",
@@ -167,7 +170,6 @@ const gameCorridors = [
 
 function initializingGame () {
     if (screen.width>800) {
-        var submitButton = document.querySelector(".sub-button");
         submitButton.addEventListener('click', showGame);
     }
 }
@@ -176,6 +178,8 @@ function showGame () {
     var game = document.querySelector(".game-box");
     setStyleDisplayBlock(game);
     playButtonEvent();
+    instructionButtonEvent ();
+    submitButton.removeEventListener('click',showGame);
 }
 
 function playButtonEvent () {
@@ -189,8 +193,10 @@ function instructionButtonEvent () {
 }
 
 function showInstruction () {
-
-
+    setStyleDisplayBlock(instructionArea);
+    instructionButton.removeEventListener('click',showInstruction);
+    setStyleDisplayNone(instructionButton);
+    playButton.style.top = 260 + 'px';
 }
 
 // - WYŚWIETLANIE - WYNIKOW -
@@ -222,6 +228,14 @@ function setStyleDisplayNone (item) {
 
 function setStyleDisplayBlock (item) {
     item.style.display = "block";
+}
+
+function setBackgroundColorToGrey (item) {
+    item.style.backgroundColor = "rgba(56, 56, 56, 0.8)";
+}
+
+function turnOffBackgroundColor (item) {
+    item.style.backgroundColor = "none";
 }
 
 
@@ -303,6 +317,7 @@ function startGame () {
     setStyleDisplayNone(playButton);
     instructionButton.removeEventListener('click',showInstruction);
     setStyleDisplayNone(instructionButton);
+    setStyleDisplayNone(instructionArea);
     setStyleDisplayBlock(playerNode);
     positionRandomGameItemInTheCenterOfRandomCorridor();
     positionPlayer();
