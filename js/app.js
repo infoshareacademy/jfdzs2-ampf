@@ -8,8 +8,12 @@ var chosenItem;
 
 // - OBIEKTY -
 
-
 var playerNode = getElement('div.game-dude');
+var playButton = getElement('.play');
+var instructionButton = getElement('.instructions');
+var instructionArea = getElement('.game-instruction');
+var submitButton = document.querySelector(".sub-button");
+var greyBackground = getElement('.grey-background');
 
 const gameItemsCollection = [
     {   name: "apple",
@@ -164,9 +168,36 @@ const gameCorridors = [
 
 // - STARTOWANIE GRY -
 
+function initializingGame () {
+    if (screen.width>800) {
+        submitButton.addEventListener('click', showGame);
+    }
+}
+
+function showGame () {
+    var game = document.querySelector(".game-box");
+    setStyleDisplayBlock(game);
+    playButtonEvent();
+    instructionButtonEvent ();
+    submitButton.removeEventListener('click',showGame);
+}
+
+function playButtonEvent () {
+    playButton.addEventListener('click', startGame);
+}
 
 // - WYŚWIETLANIE INSTRUKCJI -
 
+function instructionButtonEvent () {
+    instructionButton.addEventListener('click',showInstruction);
+}
+
+function showInstruction () {
+    setStyleDisplayBlock(instructionArea);
+    instructionButton.removeEventListener('click',showInstruction);
+    setStyleDisplayNone(instructionButton);
+    playButton.style.top = 260 + 'px';
+}
 
 // - WYŚWIETLANIE - WYNIKOW -
 
@@ -190,6 +221,23 @@ function randomizeAndReturnItems(tableOfItems) {
 
 
 // - SPADANIE OWOCÓW -
+
+function setStyleDisplayNone (item) {
+    item.style.display = "none";
+}
+
+function setStyleDisplayBlock (item) {
+    item.style.display = "block";
+}
+
+function setBackgroundColorToGrey (item) {
+    item.style.backgroundColor = "rgba(56, 56, 56, 0.8)";
+}
+
+function turnOffBackgroundColor (item) {
+    item.style.backgroundColor = "none";
+}
+
 
 function setStylePositionAbsolute (gameItemNode) {
     gameItemNode.style.position = "absolute";
@@ -217,22 +265,18 @@ function createItemNodeForFallingItemsInsideGame () {
     return randomizedItemNode
 }
 
-
 function positionRandomGameItemInTheCenterOfRandomCorridor () {
     var randomizedItem = randomizeAndReturnItems(gameItemsCollection);
     var randomizedCorridor = randomizeAndReturnItems(gameCorridors);
-    var randomizedItemNode = createItemNodeForFallingItemsInsideGame ();
+    var randomizedItemNode = createItemNodeForFallingItemsInsideGame();
     setStylePositionAbsolute(randomizedItemNode);
-    addStyleHeight(randomizedItem,randomizedItemNode);
-    addStyleWidth(randomizedItem,randomizedItemNode);
-    addBackgroundImage(randomizedItem,randomizedItemNode);
-    addStyleLeft(randomizedItem,randomizedItemNode,randomizedCorridor);
+    addStyleHeight(randomizedItem, randomizedItemNode);
+    addStyleWidth(randomizedItem, randomizedItemNode);
+    addBackgroundImage(randomizedItem, randomizedItemNode);
+    addStyleLeft(randomizedItem, randomizedItemNode, randomizedCorridor);
 
     randomizedItemNode.style.top = "20px"; // To się powinno zmienić bo przedmioty będą spadały jakby z ponad planszy
-
 }
-
-
 
 // - RUCH LUDZIKA -
 
@@ -240,8 +284,6 @@ function positionPlayer() {
     playerNode.style.left = '400px';
     playerPosition = parseInt(playerNode.style.left);
 }
-
-
 
 function movePlayerLeft() {
     playerNode.style.backgroundImage = "url('images/game_assets/dude-left.png')";
@@ -270,9 +312,24 @@ function onKeyDown(event) {
     }
 }
 
-positionRandomGameItemInTheCenterOfRandomCorridor();
-positionPlayer();
-document.addEventListener('keydown', onKeyDown);
+function startGame () {
+    playButton.removeEventListener('click', startGame);
+    setStyleDisplayNone(playButton);
+    instructionButton.removeEventListener('click',showInstruction);
+    setStyleDisplayNone(instructionButton);
+    setStyleDisplayNone(instructionArea);
+    setStyleDisplayBlock(playerNode);
+    positionRandomGameItemInTheCenterOfRandomCorridor();
+    positionPlayer();
+    setStyleDisplayNone(greyBackground);
+    document.addEventListener('keydown', onKeyDown);
+
+}
+
+initializingGame ();
+
+
+
 
 
 // - KOLIZJE -
