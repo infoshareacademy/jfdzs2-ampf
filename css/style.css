@@ -269,6 +269,12 @@ header .jumbotron span{
     background-image: url("../images/game_assets/dude-left.png");
     display: none;
 }
+.game-box-container div.grey-background {
+    height: 500px;
+    width: 800px;
+    background-color: rgba(56, 56, 56, 0.8);
+    position: absolute;
+}
 
 .game-box-container div.button {
     position: absolute;

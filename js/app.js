@@ -13,7 +13,7 @@ var playButton = getElement('.play');
 var instructionButton = getElement('.instructions');
 var instructionArea = getElement('.game-instruction');
 var submitButton = document.querySelector(".sub-button");
-
+var greyBackground = getElement('.grey-background');
 
 const gameItemsCollection = [
     {   name: "apple",
@@ -321,6 +321,7 @@ function startGame () {
     setStyleDisplayBlock(playerNode);
     positionRandomGameItemInTheCenterOfRandomCorridor();
     positionPlayer();
+    setStyleDisplayNone(greyBackground);
     document.addEventListener('keydown', onKeyDown);
 
 }
