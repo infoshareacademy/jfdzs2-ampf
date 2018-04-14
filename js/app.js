@@ -230,15 +230,6 @@ function setStyleDisplayBlock (item) {
     item.style.display = "block";
 }
 
-function setBackgroundColorToGrey (item) {
-    item.style.backgroundColor = "rgba(56, 56, 56, 0.8)";
-}
-
-function turnOffBackgroundColor (item) {
-    item.style.backgroundColor = "none";
-}
-
-
 function setStylePositionAbsolute (gameItemNode) {
     gameItemNode.style.position = "absolute";
 }

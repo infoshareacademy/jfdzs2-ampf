@@ -257,7 +257,6 @@ header .jumbotron span{
     background-size: cover;
     background-position: center;
     position: relative;
-
 }
 
 .game-box-container div.game-dude {
@@ -273,7 +272,7 @@ header .jumbotron span{
     height: 500px;
     width: 800px;
     background-color: rgba(56, 56, 56, 0.8);
-    position: absolute;
+    position: relative;
 }
 
 .game-box-container div.button {
@@ -327,18 +326,18 @@ header .jumbotron span{
     position: absolute;
     width: 800px;
     height: 500px;
-
 }
 
 .game-box-container div.game-instruction {
     top: 0px;
     left: 0px;
     width: 800px;
-    height: 500px;
     text-align: center;
     font-size: 20px;
     padding: 30px;
     display: none;
+    color: black;
+    position: absolute;
 }
 
 .game-box-container .win-message img {
