@@ -288,17 +288,68 @@ nav a.navbar-brand {
 
 /*-----------KONIEC FEATURE TEAM----------------*/
 
+/*---------- START FEATURE COOKIES--------------*/
+
+.cookie-message {
+    background-color: rgba(41, 178, 0, 0.8);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: white;
+    display: block;
+    position: fixed;
+    top: 101px;
+    right: 0px;
+    width: 35%;
+    height: auto;
+}
+
+.cookie-message a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+
+
+}
+
+.turn-it-off {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    margin-top: 15px;
+
+}
+.cookies-text {
+    padding: 10px 60px 5px 60px;
+    margin: 0px;
+    font-size: 22px;
+}
+
+.cookie-message img {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.cookie-button {
+    padding: 20px 30px 20px 30px;
+    margin: 15px 0px 30px 0px;
+    background-color: rgba(41, 178, 0, 0.8);
+    border: solid 1px white;
+}
+
+/*-----------END FEATURE COOKIES----------------*/
+
 /*-----------------MEDIA------------------------*/
 
 @media all and (max-width: 630px){
     .sneak-peak {
         font-size: 20px;
     }
-
 }
 
 @media all and (min-width: 768px) {
-
+    .cookie-message {
+        width: 100%;
+    }
     nav .navbar-brand img {
         height: 80px;
         margin-top: -15px;
@@ -350,4 +401,3 @@ nav a.navbar-brand {
         margin-top: 10px
     }
 }
-
