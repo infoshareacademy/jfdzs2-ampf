@@ -314,11 +314,10 @@ function startGame () {
     positionPlayer();
     setStyleDisplayNone(greyBackground);
     document.addEventListener('keydown', onKeyDown);
-
 }
 
-initializingGame ();
-
+// initializingGame (); ROZKOMENTOWAĆ PÓŹNIEJ
+startGame();
 
 
 
