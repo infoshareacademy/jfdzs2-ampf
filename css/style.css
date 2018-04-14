@@ -31,10 +31,11 @@ nav .navbar-collapse {
 }
 
 nav .navbar-brand img {
-    height: 80px;
+    height: 70px;
     background: #f8f8f8;
     float: left;
-    margin: -15px 15px 0 15px;
+    margin: -10px 15px 0 15px;
+
 }
 
 nav a.navbar-brand {
@@ -59,31 +60,34 @@ nav a.navbar-brand {
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
-
-header {
+.full-height-carousel-item {
     height: calc(100vh - 101px);
-    background-image: url(../images/header-background.jpg);
-    background-size: cover;
-    background-position: center;
 }
 
-header .jumbotron {
-    background: transparent;
-    text-align: center;
-    padding-top: 200px;
+.carousel-inner .full-height-carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin: auto;
 }
 
-header .jumbotron h1 {
-    font-weight: 700;
-    font-style: normal;
-    line-height: 1.5em;
+.sneak-peak {
+    width: 100%;
+    color: white;
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0%;
+
 }
 
-header .jumbotron span{
-    font-weight: 400;
-    font-style: italic;
+.slide1 {
+    background-image: url(../images/full-fridge.jpg);
+    filter: blur(3px);
+    width: 100%;
+    height: 1000px;
 }
-
 /*------------FEATURE INFO ----------*/
 
 /*Feature-Info General*/
@@ -340,13 +344,21 @@ header .jumbotron span{
 
 /*-----------------MEDIA------------------------*/
 
-@media all and (max-width: 768px) {
-    .cookie-message {
-        width: 100%;
+@media all and (max-width: 630px){
+    .sneak-peak {
+        font-size: 20px;
     }
 }
 
 @media all and (min-width: 768px) {
+    .cookie-message {
+        width: 100%;
+    }
+    nav .navbar-brand img {
+        height: 80px;
+        margin-top: -15px;
+    }
+
 
     /*Media for Feature-Info*/
     .picture-info img {
@@ -375,7 +387,7 @@ header .jumbotron span{
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
 
     /*Media Navbar*/
 
@@ -391,12 +403,5 @@ header .jumbotron span{
 
     .btn {
         margin-top: 10px
-    }
-}
-
-@media all and (min-width: 768px) and (max-width: 992px) {
-    /*Media Header*/
-    header .jumbotron h1 {
-        font-size: 52px;
     }
 }

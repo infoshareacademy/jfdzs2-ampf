@@ -12,145 +12,196 @@
 
 <body id="preview" data-spy="scroll" data-target="#menu-dropdown">
 
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="index.html" class="navbar-brand">
-                    <img src="images/nav-page-logo.png">
-                </a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-dropdown">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="menu-dropdown">
-                <ul class="nav navbar-nav" role="tablist">
-                    <li ><a href="#preview">Witaj!</a></li>
-                    <li><a href="#information">Pomysł</a></li>
-                    <li><a href="#functions">Szczegóły</a></li>
-                    <li><a href="#sign-in">Dołącz</a></li>
-                    <li><a href="#our-team">O nas</a></li>
-                </ul>
-            </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand">
+                <img src="images/nav-page-logo.png">
+            </a>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-dropdown">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
-    </nav>
+        <div class="collapse navbar-collapse" id="menu-dropdown">
+            <ul class="nav navbar-nav" role="tablist">
+                <li><a href="#preview">Witaj!</a></li>
+                <li><a href="#information">Pomysł</a></li>
+                <li><a href="#functions">Szczegóły</a></li>
+                <li><a href="#sign-in">Dołącz</a></li>
+                <li><a href="#our-team">O nas</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-    <header>
-        <div class="jumbotron">
-            <div class="container">
-                <h1>Pokaż nam co masz w lodówce, a
-                    <span>Omelette Du Fromage</span> będzie prosty jak nigdy.
-                </h1>
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="carousel-intro" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-intro" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-intro" data-slide-to="1"></li>
+                    <li data-target="#carousel-intro" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active full-height-carousel-item">
+                        <img src="images/full-fridge.jpg" alt="fridge">
+                        <div class="sneak-peak carousel-caption">
+                            <p>
+                                Pełna, a dalej nie wiesz co z tym zrobić?
+                            </p>
+                            <p>
+                                Pomożemy Ci okiełznać twoją lodówkę!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item full-height-carousel-item">
+                        <img src="images/nice-food.jpg" alt="food">
+                        <div class="sneak-peak carousel-caption">
+                            <p>
+                                Dzięki nam gotowanie stanie się łatwiejsze!
+                            </p>
+                            <p>
+                                Już nigdy nie zabraknie Ci pomysłów na smaczny posiłek!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item full-height-carousel-item">
+                        <img src="images/fruit-salad.jpg" alt="salad">
+                        <div class="sneak-peak carousel-caption">
+                            <p>
+                                Odchudzanie, problemy zdrowotne, zmiana stylu życia?
+                            </p>
+                            <p>
+                                To nie problem! Dopasujemy przepisy do twoich potrzeb!
+                            </p>
+                        </div>
+                    </div>
+
+                    <a class="left carousel-control" href="#carousel-intro" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-intro" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
 <!-- !!!FEATURE INFO!!! -->
-    <section id="information" class="feature-info">
+<section id="information" class="feature-info">
 
-        <div class="container">
+    <div class="container">
 
-            <h2>Funkcje aplikacji <img src="images/feedicon.svg" alt="icon" class="icon"> <span class="logo-font">feed&#160me!</span></h2>
+        <h2>Funkcje aplikacji <img src="images/feedicon.svg" alt="icon" class="icon"> <span class="logo-font">feed&#160me!</span>
+        </h2>
 
-            <div class="row equal">
-                <div class="info-set col-xs-12 col-md-6">
-                    <div class="picture-info col-xs-12 col-sm-3">
-                        <img src="images/information-icon1.svg" alt="InfoLogo1">
-                    </div>
-                    <div class="info-text col-xs-12 col-sm-9">
-                        <p>
-                            Największa baza 360 000 przepisów z ponad 80 000 produktów.
-                        </p>
-                    </div>
+        <div class="row equal">
+            <div class="info-set col-xs-12 col-md-6">
+                <div class="picture-info col-xs-12 col-sm-3">
+                    <img src="images/information-icon1.svg" alt="InfoLogo1">
                 </div>
-
-                <div class="info-set col-xs-12 col-md-6">
-                    <div class="picture-info col-xs-12 col-sm-3">
-                        <img src="images/information-icon2.svg" alt="InfoLogo2">
-                    </div>
-                    <div class="info-text col-xs-12 col-sm-9">
-                        <p>
-                            Znajdź interesujące Cię przepisy i wygeneruj listę brakujących składników
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row equal">
-
-                <div class="info-set col-xs-12 col-md-6">
-                    <div class="picture-info col-xs-12 col-sm-3">
-                        <img src="images/information-icon3.svg" alt="InfoLogo3">
-                    </div>
-                    <div class="info-text col-xs-12 col-sm-9">
-                        <p>
-                            Uzyskaj wiedzę o kaloryczności oraz alergenach swoich dań.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="info-set col-xs-12 col-md-6">
-                    <div class="picture-info col-xs-12 col-sm-3">
-                        <img src="images/information-icon4.svg" alt="InfoLogo4">
-                    </div>
-                    <div class="info-text col-xs-12 col-sm-9">
-                        <p>
-                            Przepisy serwowane w najlepszych restauracjach świata, jak i proste i szybkie dania.
-                        </p>
-                    </div>
+                <div class="info-text col-xs-12 col-sm-9">
+                    <p>
+                        Największa baza 360 000 przepisów z ponad 80 000 produktów.
+                    </p>
                 </div>
             </div>
-            <div class="row equal">
 
-                <div class="info-set col-xs-12 col-md-6">
-                    <div class="picture-info col-xs-12 col-sm-3">
-                        <img src="images/information-icon5.svg" alt="InfoLogo5">
-                    </div>
-                    <div class="info-text col-xs-12 col-sm-9">
-                        <p>
-                            Zaplanuj posiłki na podstawie zawartości swojej lodówki.
-                        </p>
-                    </div>
+            <div class="info-set col-xs-12 col-md-6">
+                <div class="picture-info col-xs-12 col-sm-3">
+                    <img src="images/information-icon2.svg" alt="InfoLogo2">
                 </div>
-
-                <div class="info-set col-xs-12 col-md-6">
-                    <div class="picture-info col-xs-12 col-sm-3">
-                        <img src="images/information-icon6.svg" alt="InfoLogo6">
-                    </div>
-                    <div class="info-text col-xs-12 col-sm-9">
-                        <p>
-                            Znajdź inspiracje w sekcjach najbardziej popularne / najnowsze / najczęstsze.
-                        </p>
-                    </div>
+                <div class="info-text col-xs-12 col-sm-9">
+                    <p>
+                        Znajdź interesujące Cię przepisy i wygeneruj listę brakujących składników
+                    </p>
                 </div>
             </div>
-            <div class="row equal">
 
-                <div class="info-set col-xs-12 col-md-6">
-                    <div class="picture-info col-xs-12 col-sm-3">
-                        <img src="images/information-icon7.svg" alt="InfoLogo7">
-                    </div>
-                    <div class="info-text col-xs-12 col-sm-9">
-                        <p>
-                            Zaskocz bliskich przepisami na każdą okazję.
-                        </p>
-                    </div>
+        </div>
+        <div class="row equal">
+
+            <div class="info-set col-xs-12 col-md-6">
+                <div class="picture-info col-xs-12 col-sm-3">
+                    <img src="images/information-icon3.svg" alt="InfoLogo3">
                 </div>
+                <div class="info-text col-xs-12 col-sm-9">
+                    <p>
+                        Uzyskaj wiedzę o kaloryczności oraz alergenach swoich dań.
+                    </p>
+                </div>
+            </div>
 
-                <div class="info-set col-xs-12 col-md-6">
-                    <div class="picture-info col-xs-12 col-sm-3">
-                        <img src="images/information-icon8.svg" alt="InfoLogo8">
-                    </div>
-                    <div class="info-text col-xs-12 col-sm-9">
-                        <p>
-                            Wybierz składniki i zacznij swoją przygodę z kuchniami świata.
-                        </p>
-                    </div>
+            <div class="info-set col-xs-12 col-md-6">
+                <div class="picture-info col-xs-12 col-sm-3">
+                    <img src="images/information-icon4.svg" alt="InfoLogo4">
+                </div>
+                <div class="info-text col-xs-12 col-sm-9">
+                    <p>
+                        Przepisy serwowane w najlepszych restauracjach świata, jak i proste i szybkie dania.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="row equal">
+
+            <div class="info-set col-xs-12 col-md-6">
+                <div class="picture-info col-xs-12 col-sm-3">
+                    <img src="images/information-icon5.svg" alt="InfoLogo5">
+                </div>
+                <div class="info-text col-xs-12 col-sm-9">
+                    <p>
+                        Zaplanuj posiłki na podstawie zawartości swojej lodówki.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-set col-xs-12 col-md-6">
+                <div class="picture-info col-xs-12 col-sm-3">
+                    <img src="images/information-icon6.svg" alt="InfoLogo6">
+                </div>
+                <div class="info-text col-xs-12 col-sm-9">
+                    <p>
+                        Znajdź inspiracje w sekcjach najbardziej popularne / najnowsze / najczęstsze.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row equal">
+
+            <div class="info-set col-xs-12 col-md-6">
+                <div class="picture-info col-xs-12 col-sm-3">
+                    <img src="images/information-icon7.svg" alt="InfoLogo7">
+                </div>
+                <div class="info-text col-xs-12 col-sm-9">
+                    <p>
+                        Zaskocz bliskich przepisami na każdą okazję.
+                    </p>
+                </div>
+            </div>
+
+            <div class="info-set col-xs-12 col-md-6">
+                <div class="picture-info col-xs-12 col-sm-3">
+                    <img src="images/information-icon8.svg" alt="InfoLogo8">
+                </div>
+                <div class="info-text col-xs-12 col-sm-9">
+                    <p>
+                        Wybierz składniki i zacznij swoją przygodę z kuchniami świata.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!--!!!END FEATURE INFO!!!-->
 
@@ -158,61 +209,61 @@
 
 <section id="functions" class="feature-functions">
 
-        <div class="container">
-          
-            <h2>Jeszcze więcej</h2>
+    <div class="container">
 
-            <div class="row">
+        <h2>Jeszcze więcej</h2>
 
-                <div class="function-detail col-xs-12 col-sm-6 col-md-3">
+        <div class="row">
 
-                    <figure class="col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0 icon-function">
-                        <img src="images/functions-icon1.svg" alt="Icon1">
-                    </figure>
-                    <div class="col-xs-12 functions-text">
-                        <p>
-                            Wybierz składniki i zacznij swoją przygodę z kuchniami świata.
-                        </p>
-                    </div>
+            <div class="function-detail col-xs-12 col-sm-6 col-md-3">
+
+                <figure class="col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0 icon-function">
+                    <img src="images/functions-icon1.svg" alt="Icon1">
+                </figure>
+                <div class="col-xs-12 functions-text">
+                    <p>
+                        Wybierz składniki i zacznij swoją przygodę z kuchniami świata.
+                    </p>
                 </div>
+            </div>
 
-                <div class="function-detail col-xs-12 col-sm-6 col-md-3">
-                    <figure class="col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0 icon-function">
-                        <img src="images/functions-icon2.svg" alt="Icon2">
-                    </figure>
-                    <div class="col-xs-12 functions-text">
-                        <p>
-                            Podręczny asystent każdego szefa kuchni.
-                        </p>
-                    </div>
+            <div class="function-detail col-xs-12 col-sm-6 col-md-3">
+                <figure class="col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0 icon-function">
+                    <img src="images/functions-icon2.svg" alt="Icon2">
+                </figure>
+                <div class="col-xs-12 functions-text">
+                    <p>
+                        Podręczny asystent każdego szefa kuchni.
+                    </p>
                 </div>
+            </div>
 
-                <div class="clearfix visible-sm-block"></div>
+            <div class="clearfix visible-sm-block"></div>
 
-                <div class="function-detail col-xs-12 col-sm-6 col-md-3">
-                    <figure class="col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0 icon-function">
-                        <img src="images/functions-icon3.svg" alt="Icon3">
-                    </figure>
-                    <div class="col-xs-12 functions-text">
-                        <p>
-                            Rejestracja i gotowe.
-                        </p>
-                    </div>
+            <div class="function-detail col-xs-12 col-sm-6 col-md-3">
+                <figure class="col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0 icon-function">
+                    <img src="images/functions-icon3.svg" alt="Icon3">
+                </figure>
+                <div class="col-xs-12 functions-text">
+                    <p>
+                        Rejestracja i gotowe.
+                    </p>
                 </div>
+            </div>
 
-                <div class="function-detail col-xs-12 col-sm-6 col-md-3">
-                    <figure class="col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0 icon-function">
-                        <img src="images/functions-icon4.svg" alt="Icon4">
-                    </figure>
-                    <div class="col-xs-12 functions-text">
-                        <p>
-                            Z FeedMe nie masz ograniczeń.
-                        </p>
-                    </div>
+            <div class="function-detail col-xs-12 col-sm-6 col-md-3">
+                <figure class="col-xs-10 col-xs-push-1 col-sm-12 col-sm-push-0 icon-function">
+                    <img src="images/functions-icon4.svg" alt="Icon4">
+                </figure>
+                <div class="col-xs-12 functions-text">
+                    <p>
+                        Z FeedMe nie masz ograniczeń.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 <!--END FEATURE FUNCTIONS-->
 
@@ -252,16 +303,18 @@
 
 <section id="our-team" class="team">
     <div class="container">
-        <h2>Aplikację <img src="images/feedicon.svg" alt="icon" class="icon"> <span class="logo-font">feed&#160me!</span> dostarczyli dla Ciebie</h2>
+        <h2>Aplikację <img src="images/feedicon.svg" alt="icon" class="icon"> <span
+                class="logo-font">feed&#160me!</span> dostarczyli dla Ciebie</h2>
 
         <div class="row">
             <div class="person col-sm-4">
                 <img src="images/fb.jpg" alt="Burakowski" class="img-circle img-thumbnail">
                 <div class="caption">
-                    <p>Filip  Burakowski</p>
+                    <p>Filip Burakowski</p>
                 </div>
                 <div class="link1">
-                    <a href="https://www.facebook.com/filip.burakowski"><img src="images/fb.ico" alt="FB" class="social-icon"></a>
+                    <a href="https://www.facebook.com/filip.burakowski"><img src="images/fb.ico" alt="FB"
+                                                                             class="social-icon"></a>
                 </div>
                 <div class="link2">
                     <a href="https://github.com/karoob"><img src="images/gh.png" alt="GH" class="social-icon"></a>
@@ -273,19 +326,22 @@
                     <p>Maciej Sołtykiewicz</p>
                 </div>
                 <div class="link1">
-                    <a href="https://www.facebook.com/profile.php?id=100000778704485"><img src="images/fb.ico" alt="FB" class="social-icon"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100000778704485"><img src="images/fb.ico" alt="FB"
+                                                                                           class="social-icon"></a>
                 </div>
                 <div class="link2">
-                    <a href="https://github.com/soltykiewiczm"><img src="images/gh.png" alt="GH" class="social-icon"></a>
+                    <a href="https://github.com/soltykiewiczm"><img src="images/gh.png" alt="GH"
+                                                                    class="social-icon"></a>
                 </div>
             </div>
             <div class="person col-sm-4">
                 <img src="images/ps.jpg" alt="Skwirowski" class="img-circle img-thumbnail">
                 <div class="caption">
-                    <p>Paweł  Skwirowski</p>
+                    <p>Paweł Skwirowski</p>
                 </div>
                 <div class="link1">
-                    <a href="https://www.facebook.com/profile.php?id=1721775710"><img src="images/fb.ico" alt="FB" class="social-icon"></a>
+                    <a href="https://www.facebook.com/profile.php?id=1721775710"><img src="images/fb.ico" alt="FB"
+                                                                                      class="social-icon"></a>
                 </div>
                 <div class="link2">
                     <a href="https://github.com/skwirowski"><img src="images/gh.png" alt="GH" class="social-icon"></a>
@@ -326,16 +382,17 @@
     </script>
 <!--!!! END FEATURE COOKIES!!!-->
 
-    <!-- jQuery Core 3.3.1 -->
-    <script
-            src="http://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    <!-- Latest compiled and minified JavaScript Bootstrap v3.3.7 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
+
+<!-- jQuery Core 3.3.1 -->
+<script
+        src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript Bootstrap v3.3.7 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
 
 </body>
 </html>
