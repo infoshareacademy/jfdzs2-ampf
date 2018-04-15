@@ -19,6 +19,7 @@ const gameItemsCollection = [
     {   name: "apple",
         height: 89,
         width: 75,
+        radius: 45,
         image: "url('images/game_assets/apple.png')",
         points: -5,
         healthy: true
@@ -26,6 +27,7 @@ const gameItemsCollection = [
     {   name: "carrot",
         height: 94,
         width: 100,
+        radius: 47,
         image: "url('images/game_assets/carrot.png')",
         points: -5,
         healthy: true
@@ -33,6 +35,7 @@ const gameItemsCollection = [
     {   name: "pear",
         height: 80,
         width: 80,
+        radius: 40,
         image: "url('images/game_assets/pear.png')",
         points: -5,
         healthy: true
@@ -40,6 +43,7 @@ const gameItemsCollection = [
     {   name: "aubergine",
         height: 83,
         width: 75,
+        radius: 42,
         image: "url('images/game_assets/aubergine.png')",
         points: -5,
         healthy: true
@@ -47,6 +51,7 @@ const gameItemsCollection = [
     {   name: "strawberry",
         height: 75,
         width: 75,
+        radius: 37,
         image: "url('images/game_assets/strawberry.png')",
         points: -5,
         healthy: true
@@ -54,6 +59,7 @@ const gameItemsCollection = [
     {   name: "fries",
         height: 92,
         width: 75,
+        radius: 46,
         image: "url('images/game_assets/fries.png')",
         points: 5,
         healthy: false
@@ -61,6 +67,7 @@ const gameItemsCollection = [
     {   name: "cupcake",
         height: 83,
         width: 85,
+        radius: 42,
         image: "url('images/game_assets/cupcake.png')",
         points: 5,
         healthy: false
@@ -68,6 +75,7 @@ const gameItemsCollection = [
     {   name: "pizza",
         height: 92,
         width: 95,
+        radius: 46,
         image: "url('images/game_assets/pizza.png')",
         points: 10,
         healthy: false
@@ -75,6 +83,7 @@ const gameItemsCollection = [
     {   name: "icecream",
         height: 90,
         width: 95,
+        radius: 45,
         image: "url('images/game_assets/icecream.png')",
         points: 5,
         healthy: false
@@ -82,6 +91,7 @@ const gameItemsCollection = [
     {   name: "burger",
         height: 87,
         width: 90,
+        radius: 44,
         image: "url('images/game_assets/burger.png')",
         points: 15,
         healthy: false
@@ -89,6 +99,7 @@ const gameItemsCollection = [
     {   name: "cake",
         height: 81,
         width: 85,
+        radius: 41,
         image: "url('images/game_assets/cake.png')",
         points: 10,
         healthy: false
@@ -96,6 +107,7 @@ const gameItemsCollection = [
     {   name: "hotdog",
         height: 76,
         width: 100,
+        radius: 38,
         image: "url('images/game_assets/hotdog.png')",
         points: 15,
         healthy: false
@@ -103,6 +115,7 @@ const gameItemsCollection = [
     {   name: "sprite",
         height: 75,
         width: 45,
+        radius: 37,
         image: "url('images/game_assets/sprite.png')",
         points: 5,
         healthy: false
@@ -110,6 +123,7 @@ const gameItemsCollection = [
     {   name: "donut",
         height: 73,
         width: 80,
+        radius: 37,
         image: "url('images/game_assets/donut.png')",
         points: 10,
         healthy: false
@@ -117,6 +131,7 @@ const gameItemsCollection = [
     {   name: "steak",
         height: 74,
         width: 95,
+        radius: 37,
         image: "url('images/game_assets/steak.png')",
         points: 5,
         healthy: false
@@ -124,6 +139,7 @@ const gameItemsCollection = [
     {   name: "whiskey",
         height: 109,
         width: 35,
+        radius:54,
         image: "url('images/game_assets/whiskey.png')",
         points: 50,
         healthy: false
@@ -131,6 +147,7 @@ const gameItemsCollection = [
     {   name: "chocolate",
         height: 57,
         width: 100,
+        radius: 30,
         image: "url('images/game_assets/chocolate.png')",
         points: 20,
         healthy: false
@@ -333,6 +350,16 @@ initializingGame ();
 
 
 // - KOLIZJE -
+
+function collision (playerNode, [activeItem]) {
+    var lengthA = playerNode.posX - activeItem.posX,
+        lengthB = 77.5 - activeItem.posY,
+        distance = Math.sqrt(lengthA * lengthA + lengthB * lengthB);
+
+    if (distance < 75 + activeItem.radius) {
+        alert("collison fuckers");
+    }
+}
 
 
 // - KONIEC GRY -
