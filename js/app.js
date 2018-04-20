@@ -5,7 +5,11 @@ function getElement(selector) {
 
 var playerPosition;
 var chosenItem;
-var lenghtOfGame = 2;
+var keysPressed = {
+    37: false,
+    39: false
+};
+
 
 var activeElements = [];
 
@@ -19,7 +23,7 @@ var instructionButton = getElement('.instructions');
 var instructionArea = getElement('.game-instruction');
 var submitButton = document.querySelector(".sub-button");
 var greyBackground = getElement('.grey-background');
-
+var lenghtOfGame = 0;
 const gameItemsCollection = [
     {   name: "apple",
         height: 89,
@@ -179,10 +183,12 @@ function initializingGame () {
     }
 }
 
-function timeStart () {
+function timeStart (time) {
+    lenghtOfGame = time;
+
     if (lenghtOfGame>0) {
         setTimeout(function(){
-            timeStart();
+            timeStart(time-1);
             --lenghtOfGame
         },1000)
     }
@@ -194,9 +200,14 @@ function timeStart () {
 function stopGame () {
     document.removeEventListener('keydown', onKeyDown);
     clearInterval(interval);
+    setStyleDisplayBlock(greyBackground);
+    setStyleDisplayNone(playerNode);
     removeAllActiveElements ();
     activeElements = [];
-    setStyleDisplayBlock(greyBackground);
+    showGame();
+    setStyleDisplayBlock(playButton);
+    setStyleDisplayBlock(instructionButton);
+
 }
 
 function showGame () {
@@ -362,14 +373,21 @@ function movePlayerRight() {
 }
 
 function onKeyDown(event) {
-    switch (event.keyCode) {
-        case 37:
-            movePlayerLeft();
-            break;
-        case 39:
-            movePlayerRight();
-            break;
-    }
+    keysPressed[event.which] = true;
+}
+
+function onKeyUp(event) {
+    keysPressed[event.which] = false;
+}
+
+function playerMoving () {
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keyup', onKeyUp);
+    setInterval(function(){
+        if (keysPressed[37]) {movePlayerLeft()}
+        else
+            if (keysPressed[39]) {movePlayerRight()}
+    },100)
 }
 
 function startGame () {
@@ -381,9 +399,9 @@ function startGame () {
     setStyleDisplayNone(greyBackground);
     setStyleDisplayBlock(playerNode);
     positionPlayer();
-    document.addEventListener('keydown', onKeyDown);
+    playerMoving();
     createNewActiveItems();
-    timeStart();
+    timeStart(30);
 }
 
 
