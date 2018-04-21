@@ -3,27 +3,27 @@ function getElement(selector) {
     return document.querySelector('.game-box-container ' + selector);
 }
 
-var playerPosition;
-var chosenItem;
-var keysPressed = {
+let playerPosition;
+let chosenItem;
+let keysPressed = {
     37: false,
     39: false
 };
 
-var activeElements = [];
+let activeElements = [];
 
-var randomizingInterval;
-var movingPlayerInterval;
+let randomizingInterval;
+let movingPlayerInterval;
 
 // - OBIEKTY -
 
-var playerNode = getElement('div.game-dude');
-var playButton = getElement('.play');
-var instructionButton = getElement('.instructions');
-var instructionArea = getElement('.game-instruction');
-var submitButton = document.querySelector(".sub-button");
-var greyBackground = getElement('.grey-background');
-var lenghtOfGame = 0;
+let playerNode = getElement('div.game-dude');
+let playButton = getElement('.play');
+let instructionButton = getElement('.instructions');
+let instructionArea = getElement('.game-instruction');
+let submitButton = document.querySelector(".sub-button");
+let greyBackground = getElement('.grey-background');
+
 const gameItemsCollection = [
     {   name: "apple",
         height: 89,
@@ -184,8 +184,7 @@ function initializingGame () {
 }
 
 function timeStart (time) {
-    lenghtOfGame = time;
-
+    let lenghtOfGame = time;
     if (lenghtOfGame>0) {
         setTimeout(function(){
             timeStart(time-1);
@@ -209,11 +208,10 @@ function stopGame () {
     setStyleDisplayBlock(instructionButton);
     playButton.style.top = 200 + 'px';
     setStyleDisplayBlock(playButton);
-
 }
 
 function showGame () {
-    var game = document.querySelector(".game-box");
+    let game = document.querySelector(".game-box");
     setStyleDisplayBlock(game);
     playButtonEvent();
     instructionButtonEvent ();
@@ -252,7 +250,7 @@ function randomizeAndReturnItems(tableOfItems) {
 }
 
 function randomizeAndReturnMiddleOfRandomCorridor (gameCorridor) {
-    var randomCorridor =  gameCorridor[Math.floor(Math.random() * gameCorridor.length)];
+    let randomCorridor =  gameCorridor[Math.floor(Math.random() * gameCorridor.length)];
     return randomCorridor.middleFromLeft
 }
 
@@ -266,17 +264,19 @@ function createNewActiveItems () {
     );
 }
 
+
+
 function createElement() {
-    var randomizedGameObject = randomizeAndReturnItems(gameItemsCollection);
-    var createdObject = returnObjectElement (randomizedGameObject);
+    let randomizedGameObject = randomizeAndReturnItems(gameItemsCollection);
+    let createdObject = returnObjectElement (randomizedGameObject);
     pushActiveElementToArray(createdObject);
 }
 
 function returnObjectElement (chosenItem) {
-    var objectNode = createItemNodeForFallingItemsInsideGame ();
-    var possitionFromLeft = randomizeAndReturnMiddleOfRandomCorridor(gameCorridors);
-    var possitionFromTop = 1;
-    var activeObject = {
+    let objectNode = createItemNodeForFallingItemsInsideGame ();
+    let possitionFromLeft = randomizeAndReturnMiddleOfRandomCorridor(gameCorridors);
+    let possitionFromTop = 1;
+    let activeObject = {
         type: chosenItem,
         top: possitionFromTop,
         left: possitionFromLeft - (chosenItem.width)/2,
@@ -337,7 +337,7 @@ function addStyleTop (object) {
 }
 
 function createItemNodeForFallingItemsInsideGame () {
-    var randomizedItemNode = document.createElement("div");
+    let randomizedItemNode = document.createElement("div");
     playerNode.parentNode.insertBefore(randomizedItemNode,playerNode);
     return randomizedItemNode
 }
@@ -347,9 +347,9 @@ function addActiveElementClass (object) {
 }
 
 function removeAllActiveElements() {
-    var collection = document.getElementsByClassName("active-game-element");
-    var collectionLenght = collection.length;
-    for (var i = 0; i < collectionLenght; i++) {
+    let collection = document.getElementsByClassName("active-game-element");
+    let collectionLenght = collection.length;
+    for (let i = 0; i < collectionLenght; i++) {
         collection[0].remove();
     }
 }
@@ -392,7 +392,7 @@ function playerMoving () {
     if (keysPressed[37]) {movePlayerLeft()}
         else
     if (keysPressed[39]) {movePlayerRight()}
-    },100)
+    },50)
 }
 
 function startGame () {
