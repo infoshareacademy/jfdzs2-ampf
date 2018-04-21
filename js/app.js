@@ -198,15 +198,16 @@ function timeStart (time) {
 }
 
 function stopGame () {
-    document.removeEventListener('keydown', onKeyDown);
-    clearInterval(interval);
-    setStyleDisplayBlock(greyBackground);
     setStyleDisplayNone(playerNode);
+    clearInterval(interval);
+    document.removeEventListener('keydown', onKeyDown);
+    setStyleDisplayBlock(greyBackground);
     removeAllActiveElements ();
-    activeElements = [];
-    showGame();
-    setStyleDisplayBlock(playButton);
+    playButton.addEventListener('click',startGame);
+    instructionButton.addEventListener('click',showInstruction);
     setStyleDisplayBlock(instructionButton);
+    playButton.style.top = 200 + 'px';
+    setStyleDisplayBlock(playButton);
 
 }
 
@@ -229,9 +230,11 @@ function instructionButtonEvent () {
 }
 
 function showInstruction () {
-    setStyleDisplayBlock(instructionArea);
     instructionButton.removeEventListener('click',showInstruction);
     setStyleDisplayNone(instructionButton);
+    playButton.addEventListener('click',startGame);
+    setStyleDisplayBlock(instructionArea);
+    setStyleDisplayBlock(playButton);
     playButton.style.top = 260 + 'px';
 }
 
@@ -289,13 +292,13 @@ function pushActiveElementToArray (activeElement) {
 }
 
 function setStylesForItemNode(object){
+    addActiveElementClass (object);
     addStyleWidth (object);
     addStyleHeight (object);
     setStylePositionAbsolute (object);
     addStyleLeft (object);
     addStyleTop (object);
     addBackgroundImage (object);
-    addActiveElementClass (object);
 }
 
 // - SPADANIE OWOCÓW -
@@ -401,7 +404,7 @@ function startGame () {
     positionPlayer();
     playerMoving();
     createNewActiveItems();
-    timeStart(30);
+    timeStart(5);
 }
 
 
