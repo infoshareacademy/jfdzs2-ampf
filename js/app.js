@@ -10,10 +10,10 @@ var keysPressed = {
     39: false
 };
 
-
 var activeElements = [];
 
-var interval;
+var randomizingInterval;
+var movingPlayerInterval;
 
 // - OBIEKTY -
 
@@ -199,7 +199,8 @@ function timeStart (time) {
 
 function stopGame () {
     setStyleDisplayNone(playerNode);
-    clearInterval(interval);
+    clearInterval(randomizingInterval);
+    clearInterval(movingPlayerInterval);
     document.removeEventListener('keydown', onKeyDown);
     setStyleDisplayBlock(greyBackground);
     removeAllActiveElements ();
@@ -259,7 +260,7 @@ function randomizeAndReturnMiddleOfRandomCorridor (gameCorridor) {
 // - AKTYWNE ELEMENTY -
 
 function createNewActiveItems () {
-    interval = setInterval(function () {
+    randomizingInterval = setInterval(function () {
         createElement();
         },1000
     );
@@ -345,9 +346,10 @@ function addActiveElementClass (object) {
     object.ref.classList.add('active-game-element');
 }
 
-function removeAllActiveElements () {
+function removeAllActiveElements() {
     var collection = document.getElementsByClassName("active-game-element");
-    for (var i=0; i<=collection.length; i++) {
+    var collectionLenght = collection.length;
+    for (var i = 0; i < collectionLenght; i++) {
         collection[0].remove();
     }
 }
@@ -386,10 +388,10 @@ function onKeyUp(event) {
 function playerMoving () {
     document.addEventListener('keydown', onKeyDown);
     document.addEventListener('keyup', onKeyUp);
-    setInterval(function(){
-        if (keysPressed[37]) {movePlayerLeft()}
+    movingPlayerInterval = setInterval(function(){
+    if (keysPressed[37]) {movePlayerLeft()}
         else
-            if (keysPressed[39]) {movePlayerRight()}
+    if (keysPressed[39]) {movePlayerRight()}
     },100)
 }
 
