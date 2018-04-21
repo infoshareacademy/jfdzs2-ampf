@@ -292,7 +292,7 @@ function createElement() {
 function returnObjectElement (chosenItem) {
     let objectNode = createItemNodeForFallingItemsInsideGame ();
     let possitionFromLeft = randomizeAndReturnMiddleOfRandomCorridor(gameCorridors);
-    let possitionFromTop = 1;
+    let possitionFromTop = 400;
     let activeObject = {
         type: chosenItem,
         top: possitionFromTop,
@@ -436,15 +436,23 @@ startGame(); // WYWALIĆ PÓŹNIEJ
 
 // - KOLIZJE -
 
-function collision (playerNode, [activeItem]) {
-    var lengthA = playerNode.posX - activeItem.posX,
-        lengthB = 77.5 - activeItem.posY,
+function collision (activeObject) {
+    var playerNodePosX = parseInt(playerNode.style.left)+ 41,
+        playerNodePosY = 420;
+
+    var lengthA = playerNodePosX - activeObject.posX,
+        lengthB = playerNodePosY - activeObject.posY,
         distance = Math.sqrt(lengthA * lengthA + lengthB * lengthB);
 
-    if (distance < 75 + activeItem.radius) {
-        alert("collison fuckers");
+    if (distance < 75 + activeObject.type.radius) {
+        console.log('koluizja')
     }
 }
+setInterval(function () {
+    activeElements.forEach(function (activeObject) {
+        collision(activeObject);
+    }),1000
+});
 
 
 // - KONIEC GRY -
