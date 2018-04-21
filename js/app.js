@@ -3,17 +3,26 @@ function getElement(selector) {
     return document.querySelector('.game-box-container ' + selector);
 }
 
-var playerPosition;
-var chosenItem;
+let playerPosition;
+let chosenItem;
+let keysPressed = {
+    37: false,
+    39: false
+};
+
+let activeElements = [];
+
+let randomizingInterval;
+let movingPlayerInterval;
 
 // - OBIEKTY -
 
-var playerNode = getElement('div.game-dude');
-var playButton = getElement('.play');
-var instructionButton = getElement('.instructions');
-var instructionArea = getElement('.game-instruction');
-var submitButton = document.querySelector(".sub-button");
-var greyBackground = getElement('.grey-background');
+let playerNode = getElement('div.game-dude');
+let playButton = getElement('.play');
+let instructionButton = getElement('.instructions');
+let instructionArea = getElement('.game-instruction');
+let submitButton = document.querySelector(".sub-button");
+let greyBackground = getElement('.grey-background');
 
 const gameItemsCollection = [
     {   name: "apple",
@@ -191,8 +200,35 @@ function initializingGame () {
     }
 }
 
+function timeStart (time) {
+    let lenghtOfGame = time;
+    if (lenghtOfGame>0) {
+        setTimeout(function(){
+            timeStart(time-1);
+            --lenghtOfGame
+        },1000)
+    }
+    else {
+        stopGame()
+    }
+}
+
+function stopGame () {
+    setStyleDisplayNone(playerNode);
+    clearInterval(randomizingInterval);
+    clearInterval(movingPlayerInterval);
+    document.removeEventListener('keydown', onKeyDown);
+    setStyleDisplayBlock(greyBackground);
+    removeAllActiveElements ();
+    playButton.addEventListener('click',startGame);
+    instructionButton.addEventListener('click',showInstruction);
+    setStyleDisplayBlock(instructionButton);
+    playButton.style.top = 200 + 'px';
+    setStyleDisplayBlock(playButton);
+}
+
 function showGame () {
-    var game = document.querySelector(".game-box");
+    let game = document.querySelector(".game-box");
     setStyleDisplayBlock(game);
     playButtonEvent();
     instructionButtonEvent ();
@@ -210,13 +246,17 @@ function instructionButtonEvent () {
 }
 
 function showInstruction () {
-    setStyleDisplayBlock(instructionArea);
     instructionButton.removeEventListener('click',showInstruction);
     setStyleDisplayNone(instructionButton);
+    playButton.addEventListener('click',startGame);
+    setStyleDisplayBlock(instructionArea);
+    setStyleDisplayBlock(playButton);
     playButton.style.top = 260 + 'px';
 }
 
 // - WYŚWIETLANIE - WYNIKOW -
+
+
 
 
 // - RANDOMIZOWANIE OWOCÓW -
@@ -226,16 +266,58 @@ function randomizeAndReturnItems(tableOfItems) {
     return chosenItem;
 }
 
-
+function randomizeAndReturnMiddleOfRandomCorridor (gameCorridor) {
+    let randomCorridor =  gameCorridor[Math.floor(Math.random() * gameCorridor.length)];
+    return randomCorridor.middleFromLeft
+}
 
 
 // - AKTYWNE ELEMENTY -
 
+function createNewActiveItems () {
+    randomizingInterval = setInterval(function () {
+        createElement();
+        },1000
+    );
+}
 
 
 
+function createElement() {
+    let randomizedGameObject = randomizeAndReturnItems(gameItemsCollection);
+    let createdObject = returnObjectElement (randomizedGameObject);
+    pushActiveElementToArray(createdObject);
+}
 
+function returnObjectElement (chosenItem) {
+    let objectNode = createItemNodeForFallingItemsInsideGame ();
+    let possitionFromLeft = randomizeAndReturnMiddleOfRandomCorridor(gameCorridors);
+    let possitionFromTop = 1;
+    let activeObject = {
+        type: chosenItem,
+        top: possitionFromTop,
+        left: possitionFromLeft - (chosenItem.width)/2,
+        posX: possitionFromLeft,
+        posY: possitionFromTop + chosenItem.height/2,
+        ref: objectNode
+    };
+    setStylesForItemNode(activeObject);
+    return activeObject
+}
 
+function pushActiveElementToArray (activeElement) {
+    activeElements.push(activeElement);
+}
+
+function setStylesForItemNode(object){
+    addActiveElementClass (object);
+    addStyleWidth (object);
+    addStyleHeight (object);
+    setStylePositionAbsolute (object);
+    addStyleLeft (object);
+    addStyleTop (object);
+    addBackgroundImage (object);
+}
 
 // - SPADANIE OWOCÓW -
 
@@ -247,52 +329,46 @@ function setStyleDisplayBlock (item) {
     item.style.display = "block";
 }
 
-function setBackgroundColorToGrey (item) {
-    item.style.backgroundColor = "rgba(56, 56, 56, 0.8)";
+function setStylePositionAbsolute (object) {
+    object.ref.style.position = "absolute";
 }
 
-function turnOffBackgroundColor (item) {
-    item.style.backgroundColor = "none";
+function addStyleHeight (object) {
+    object.ref.style.height = object.type.height + 'px';
 }
 
-
-function setStylePositionAbsolute (gameItemNode) {
-    gameItemNode.style.position = "absolute";
+function addStyleWidth (object) {
+    object.ref.style.width = object.type.width + 'px';
 }
 
-function addStyleHeight (gameItem, gameItemNode) {
-    gameItemNode.style.height = gameItem.height.toString() + 'px';
+function addBackgroundImage (object) {
+    object.ref.style.backgroundImage = object.type.image;
 }
 
-function addStyleWidth (gameItem, gameItemNode) {
-    gameItemNode.style.width = gameItem.width.toString() + 'px';
+function addStyleLeft (object) {
+    object.ref.style.left = object.left + 'px';
 }
 
-function addBackgroundImage (gameItem, gameItemNode) {
-    gameItemNode.style.backgroundImage = gameItem.image;
-}
-
-function addStyleLeft (gameItem, gameItemNode, gameCorridor) {
-    gameItemNode.style.left = (gameCorridor.middleFromLeft - (gameItem.width)/2).toString()+ 'px';
+function addStyleTop (object) {
+    object.ref.style.top = object.top + 'px';
 }
 
 function createItemNodeForFallingItemsInsideGame () {
-    var randomizedItemNode = document.createElement("div");
+    let randomizedItemNode = document.createElement("div");
     playerNode.parentNode.insertBefore(randomizedItemNode,playerNode);
     return randomizedItemNode
 }
 
-function positionRandomGameItemInTheCenterOfRandomCorridor () {
-    var randomizedItem = randomizeAndReturnItems(gameItemsCollection);
-    var randomizedCorridor = randomizeAndReturnItems(gameCorridors);
-    var randomizedItemNode = createItemNodeForFallingItemsInsideGame();
-    setStylePositionAbsolute(randomizedItemNode);
-    addStyleHeight(randomizedItem, randomizedItemNode);
-    addStyleWidth(randomizedItem, randomizedItemNode);
-    addBackgroundImage(randomizedItem, randomizedItemNode);
-    addStyleLeft(randomizedItem, randomizedItemNode, randomizedCorridor);
+function addActiveElementClass (object) {
+    object.ref.classList.add('active-game-element');
+}
 
-    randomizedItemNode.style.top = "20px"; // To się powinno zmienić bo przedmioty będą spadały jakby z ponad planszy
+function removeAllActiveElements() {
+    let collection = document.getElementsByClassName("active-game-element");
+    let collectionLenght = collection.length;
+    for (let i = 0; i < collectionLenght; i++) {
+        collection[0].remove();
+    }
 }
 
 // - RUCH LUDZIKA -
@@ -319,32 +395,41 @@ function movePlayerRight() {
 }
 
 function onKeyDown(event) {
-    switch (event.keyCode) {
-        case 37:
-            movePlayerLeft();
-            break;
-        case 39:
-            movePlayerRight();
-            break;
-    }
+    keysPressed[event.which] = true;
+}
+
+function onKeyUp(event) {
+    keysPressed[event.which] = false;
+}
+
+function playerMoving () {
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('keyup', onKeyUp);
+    movingPlayerInterval = setInterval(function(){
+    if (keysPressed[37]) {movePlayerLeft()}
+        else
+    if (keysPressed[39]) {movePlayerRight()}
+    },50)
 }
 
 function startGame () {
     playButton.removeEventListener('click', startGame);
-    setStyleDisplayNone(playButton);
     instructionButton.removeEventListener('click',showInstruction);
+    setStyleDisplayNone(playButton);
     setStyleDisplayNone(instructionButton);
     setStyleDisplayNone(instructionArea);
-    setStyleDisplayBlock(playerNode);
-    positionRandomGameItemInTheCenterOfRandomCorridor();
-    positionPlayer();
     setStyleDisplayNone(greyBackground);
-    document.addEventListener('keydown', onKeyDown);
-
+    setStyleDisplayBlock(playerNode);
+    positionPlayer();
+    playerMoving();
+    createNewActiveItems();
+    timeStart(5);
 }
 
-initializingGame ();
 
+
+// initializingGame (); ROZKOMENTOWAĆ PÓŹNIEJ
+startGame(); // WYWALIĆ PÓŹNIEJ
 
 
 
