@@ -2,7 +2,7 @@
 function getElement(selector) {
     return document.querySelector('.game-box-container ' + selector);
 }
-
+let totalScore = 0;
 let playerPosition;
 let chosenItem;
 let keysPressed = {
@@ -14,6 +14,7 @@ let activeElements = [];
 
 let randomizingInterval;
 let movingPlayerInterval;
+let collisionsInterval;
 
 // - OBIEKTY -
 
@@ -118,7 +119,7 @@ const gameItemsCollection = [
         width: 100,
         radius: 38,
         image: "url('images/game_assets/hotdog.png')",
-        points: 15,
+        points: 10,
         healthy: false
     },
     {   name: "sprite",
@@ -142,7 +143,7 @@ const gameItemsCollection = [
         width: 95,
         radius: 37,
         image: "url('images/game_assets/steak.png')",
-        points: 5,
+        points: 10,
         healthy: false
     },
     {   name: "whiskey",
@@ -217,6 +218,7 @@ function stopGame () {
     setStyleDisplayNone(playerNode);
     clearInterval(randomizingInterval);
     clearInterval(movingPlayerInterval);
+    clearInterval(collisionsInterval);
     document.removeEventListener('keydown', onKeyDown);
     setStyleDisplayBlock(greyBackground);
     removeAllActiveElements ();
@@ -225,6 +227,7 @@ function stopGame () {
     setStyleDisplayBlock(instructionButton);
     playButton.style.top = 200 + 'px';
     setStyleDisplayBlock(playButton);
+
 }
 
 function showGame () {
@@ -251,7 +254,7 @@ function showInstruction () {
     playButton.addEventListener('click',startGame);
     setStyleDisplayBlock(instructionArea);
     setStyleDisplayBlock(playButton);
-    playButton.style.top = 260 + 'px';
+    playButton.style.top = 320 + 'px';
 }
 
 // - WYŚWIETLANIE - WYNIKOW -
@@ -395,12 +398,15 @@ function movePlayerRight() {
 }
 
 function onKeyDown(event) {
+    event.preventDefault();
     keysPressed[event.which] = true;
+
 }
 
 function onKeyUp(event) {
     keysPressed[event.which] = false;
 }
+
 
 function playerMoving () {
     document.addEventListener('keydown', onKeyDown);
@@ -422,8 +428,11 @@ function startGame () {
     setStyleDisplayBlock(playerNode);
     positionPlayer();
     playerMoving();
+    collisions();
+    totalScore=0;
+    displayScore(totalScore);
     createNewActiveItems();
-    timeStart(5);
+    timeStart(20);
 }
 
 
@@ -435,25 +444,35 @@ startGame(); // WYWALIĆ PÓŹNIEJ
 
 
 // - KOLIZJE -
+function collisions () {
+    collisionsInterval = setInterval(function () {
+        activeElements.forEach(function (activeObject,index) {
+            let playerNodePosX = parseInt(playerNode.style.left)+ 41,
+                playerNodePosY = 420,
+                lengthA = playerNodePosX - activeObject.posX,
+                lengthB = playerNodePosY - activeObject.posY,
+                distance = Math.sqrt(lengthA * lengthA + lengthB * lengthB);
 
-function collision (activeObject) {
-    var playerNodePosX = parseInt(playerNode.style.left)+ 41,
-        playerNodePosY = 420;
-
-    var lengthA = playerNodePosX - activeObject.posX,
-        lengthB = playerNodePosY - activeObject.posY,
-        distance = Math.sqrt(lengthA * lengthA + lengthB * lengthB);
-
-    if (distance < 75 + activeObject.type.radius) {
-        console.log('kolizja')
-    }
+            if (distance < 70 + activeObject.type.radius) {
+                activeObject.ref.remove();
+                totalScore+=activeObject.type.points;
+                activeElements.splice(index,1);
+                displayScore(totalScore);
+            }
+        })
+    },50)
 }
-setInterval(function () {
-    activeElements.forEach(function (activeObject) {
-        collision(activeObject);
-    }),1000
-});
 
+function displayScore (totalScore) {
+    let scoreToDisplay = `<p>TWÓJ WYNIK: ${totalScore}</p>`,
+        scoreNode = getElement('.score-board');
+    scoreNode.removeChild(scoreNode.firstChild);
+    scoreNode.innerHTML = scoreToDisplay;
+}
+
+function saveScore (totalScore) {
+
+}
 
 // - KONIEC GRY -
 

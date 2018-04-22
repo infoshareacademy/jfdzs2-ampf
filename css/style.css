@@ -316,8 +316,9 @@ header .jumbotron span{
 
 .game-box-container div.score-board {
     top: 10px;
-    left: 440px;
     position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
 }
 
 .game-box-container div.win-message {
@@ -334,10 +335,11 @@ header .jumbotron span{
     width: 800px;
     text-align: center;
     font-size: 20px;
-    padding: 30px;
+    padding: 60px;
     display: none;
-    color: black;
+    color: white;
     position: absolute;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .game-box-container .win-message img {
