@@ -57,6 +57,10 @@ nav a.navbar-brand {
     color: #29B200;
 }
 
+.language-icon {
+    width: 25px;
+    margin-right: 25px;
+}
 /*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
@@ -489,8 +493,8 @@ nav a.navbar-brand {
         width: 100%;
     }
     nav .navbar-brand img {
-        height: 80px;
-        margin-top: -15px;
+        height: 50px;
+        margin-top: -5px;
     }
 
 
@@ -539,19 +543,21 @@ nav a.navbar-brand {
         margin-top: 10px
     }
 }
-@media all and (min-width: 992px){
+@media all and (min-width: 992px) {
     /*TEAM IMAGES FLIP CARD*/
     .fixed-height-person-container {
         width: 218px;
         height: 218px;
         margin: auto;
     }
+
     .card-flip-container {
         width: 100%;
         height: 100%;
         position: relative;
         perspective: 800px;
     }
+
     .card {
         width: 100%;
         height: 100%;
@@ -559,9 +565,11 @@ nav a.navbar-brand {
         transform-style: preserve-3d;
         transition: transform 1s;
     }
+
     .card-flip-container:hover .card {
         transform: rotateY(180deg);
     }
+
     .card figure {
         margin: 0;
         display: block;
@@ -570,8 +578,10 @@ nav a.navbar-brand {
         height: 100%;
         backface-visibility: hidden;
     }
+
     .card .front {
     }
+
     .card .back {
         transform: rotateY(180deg);
         max-width: 218px;
@@ -580,24 +590,30 @@ nav a.navbar-brand {
         border-radius: 50%;
         border: solid 5px #29B200;
     }
+
     /*SOCIAL MEDIA ICONS*/
     .social-icons li {
         margin: 7px 0;
         display: block;
     }
+
     .social-icons .fab {
         color: rgba(255, 255, 255, 0.8);
         box-shadow: none;
         transition: all 0.3s ease-in-out;
     }
+
     .social-icons .fab:hover, .social-icons .fab:active {
         color: #FFF;
         box-shadow: 1px 1px 3px #333;
         transform: scale(1.1);
     }
+
     .person .desktop-visibility {
         display: block;
     }
+
     .person .mobile-visibility {
         display: none;
     }
+}
