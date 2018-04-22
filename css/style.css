@@ -236,6 +236,129 @@ nav a.navbar-brand {
 
 /*--------------KONIEC feature FORM--------------*/
 
+
+
+
+/*********************************************************************************/
+/* Game Box Styling                                                              */
+/*********************************************************************************/
+
+.game-box {
+    margin-top: 50px;
+    /*display: none;  ROZKOMENTOWAĆ PÓŻNIEJ */
+
+}
+
+.game-box-container {
+    margin: auto;
+    width: 800px;
+    height: 500px;
+    background-image: url('../images/game_assets/background.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.game-box-container div.game-dude {
+    position: absolute;
+    top: 345px;
+    left: 400px;
+    height: 150px;
+    width: 81px;
+    background-image: url("../images/game_assets/dude-left.png");
+    display: none;
+}
+.game-box-container div.grey-background {
+    height: 500px;
+    width: 800px;
+    background-color: rgba(56, 56, 56, 0.8);
+    position: relative;
+}
+
+.game-box-container div.button {
+    position: absolute;
+}
+
+.game-box-container div.play {
+    top: 200px;
+    left: 325px;
+}
+
+.game-box-container div.instructions {
+    top: 260px;
+    left: 237px;
+}
+
+.game-box-container div.restart {
+    top: 320px;
+    left: 150px;
+}
+
+.game-box-container div.pause {
+    top: 380px;
+    left: 150px;
+}
+
+.game-box-container div.resume {
+    top: 440px;
+    left: 150px;
+}
+
+.game-box-container div.sound-on {
+    top: 200px;
+    left: 305px;
+}
+
+.game-box-container div.sound-off {
+    top: 200px;
+    left: 365px;
+}
+
+.game-box-container div.score-board {
+    top: 10px;
+    left: 440px;
+    position: absolute;
+}
+
+.game-box-container div.win-message {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 800px;
+    height: 500px;
+}
+
+.game-box-container div.game-instruction {
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    text-align: center;
+    font-size: 20px;
+    padding: 30px;
+    display: none;
+    color: black;
+    position: absolute;
+}
+
+.game-box-container .win-message img {
+    margin: auto;
+    margin-top: 213px;
+}
+
+.game-box-container div.lose-message {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    background-color: rgba(56, 56, 56, 0.8);
+}
+
+.game-box-container .lose-message img {
+    margin: auto;
+    margin-top: 213px;
+}
+
 /*-----------Feature TEAM----------------------------*/
 
 .team {
