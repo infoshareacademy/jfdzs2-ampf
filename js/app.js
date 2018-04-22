@@ -445,7 +445,7 @@ function collision (activeObject) {
         distance = Math.sqrt(lengthA * lengthA + lengthB * lengthB);
 
     if (distance < 75 + activeObject.type.radius) {
-        console.log('koluizja')
+        console.log('kolizja')
     }
 }
 setInterval(function () {
