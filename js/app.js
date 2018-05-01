@@ -9,9 +9,8 @@ let keysPressed = {
     37: false,
     39: false
 };
-
+let savedScore = [0,0,0,0,0];
 let activeElements = [];
-
 let randomizingInterval;
 let movingPlayerInterval;
 let collisionsInterval;
@@ -24,6 +23,8 @@ let instructionButton = getElement('.instructions');
 let instructionArea = getElement('.game-instruction');
 let submitButton = document.querySelector(".sub-button");
 let greyBackground = getElement('.grey-background');
+let topScoresBoard = getElement('.top-score-board');
+
 
 const gameItemsCollection = [
     {   name: "apple",
@@ -222,11 +223,17 @@ function stopGame () {
     document.removeEventListener('keydown', onKeyDown);
     setStyleDisplayBlock(greyBackground);
     removeAllActiveElements ();
+    saveAndPresentScore(totalScore);
+    presentTopScores ();
+    setStyleDisplayBlock(topScoresBoard);
+    playButton.style.top = 375 + 'px';
+    instructionButton.style.top = 375 + 'px';
+    playButton.style.left = 108 + 'px';
+    instructionButton.style.left = 366 + 'px';
+    setStyleDisplayBlock(instructionButton);
+    setStyleDisplayBlock(playButton);
     playButton.addEventListener('click',startGame);
     instructionButton.addEventListener('click',showInstruction);
-    setStyleDisplayBlock(instructionButton);
-    playButton.style.top = 200 + 'px';
-    setStyleDisplayBlock(playButton);
 
 }
 
@@ -251,10 +258,12 @@ function instructionButtonEvent () {
 function showInstruction () {
     instructionButton.removeEventListener('click',showInstruction);
     setStyleDisplayNone(instructionButton);
+    setStyleDisplayNone(topScoresBoard);
     playButton.addEventListener('click',startGame);
     setStyleDisplayBlock(instructionArea);
     setStyleDisplayBlock(playButton);
     playButton.style.top = 320 + 'px';
+    playButton.style.left = 325 + 'px';
 }
 
 // - WYŚWIETLANIE - WYNIKOW -
@@ -424,6 +433,7 @@ function startGame () {
     setStyleDisplayNone(playButton);
     setStyleDisplayNone(instructionButton);
     setStyleDisplayNone(instructionArea);
+    setStyleDisplayNone(topScoresBoard);
     setStyleDisplayNone(greyBackground);
     setStyleDisplayBlock(playerNode);
     positionPlayer();
@@ -432,7 +442,7 @@ function startGame () {
     totalScore=0;
     displayScore(totalScore);
     createNewActiveItems();
-    timeStart(20);
+    timeStart(3);
 }
 
 
@@ -444,6 +454,7 @@ startGame(); // WYWALIĆ PÓŹNIEJ
 
 
 // - KOLIZJE -
+
 function collisions () {
     collisionsInterval = setInterval(function () {
         activeElements.forEach(function (activeObject,index) {
@@ -454,14 +465,22 @@ function collisions () {
                 distance = Math.sqrt(lengthA * lengthA + lengthB * lengthB);
 
             if (distance < 70 + activeObject.type.radius) {
-                activeObject.ref.remove();
                 totalScore+=activeObject.type.points;
                 activeElements.splice(index,1);
+                activeObject.ref.remove();
                 displayScore(totalScore);
             }
         })
     },50)
 }
+
+
+
+// - KONIEC GRY -
+
+
+// - LICZENIE PUNKTÓW -
+
 
 function displayScore (totalScore) {
     let scoreToDisplay = `<p>TWÓJ WYNIK: ${totalScore}</p>`,
@@ -470,26 +489,37 @@ function displayScore (totalScore) {
     scoreNode.innerHTML = scoreToDisplay;
 }
 
-function saveScore (totalScore) {
+function saveAndPresentScore (totalScore) {
+    let retrievedSavedScore = JSON.parse(localStorage.getItem('topScoresAMPFGame')),
+        allScores = [],
+        sortedTopScores = [];
 
+    if (retrievedSavedScore) {
+        allScores = retrievedSavedScore.concat(savedScore)
+    }
+
+    allScores.push(totalScore);
+    sortedTopScores = allScores.sort(function(a,b){return b-a});
+    if (sortedTopScores.length>5) {sortedTopScores.splice(5)}
+    localStorage.setItem('topScoresAMPFGame',JSON.stringify(sortedTopScores));
 }
 
-// - KONIEC GRY -
+function presentTopScores () {
+    let topScores = JSON.parse(localStorage.getItem('topScoresAMPFGame')),
+        topScoresToDisplay =
+                            `<div>
+                            <h2>NAJLEPSZE WYNIKI:</h2>
+                            <h3>1. ${topScores[0]}</h3>
+                            <h3>2. ${topScores[1]}</h3>
+                            <h3>3. ${topScores[2]}</h3>
+                            <h3>4. ${topScores[3]}</h3>
+                            <h3>5. ${topScores[4]}</h3>
+                            </div>`,
+        TopScoreNode = getElement('.top-score-board');
+    TopScoreNode.removeChild(TopScoreNode.firstChild);
 
-
-// - LICZENIE PUNKTÓW -
-
-
-// - WYŚWIETLANIE PUNKTÓW -
-
-
-// - MUZYKA -
-
-
-// - EFEKTY MUZYCZNE (BEKI I INNE) -
-
-
-// - PAUZA -
+    TopScoreNode.innerHTML = topScoresToDisplay;
+}
 
 
 // - WZNOWIENIE -
