@@ -129,8 +129,8 @@ const gameItemsCollection = [
         healthy: false
     },
     {   name: "chocolate",
-        height: 57,
-        width: 100,
+        height: 120,
+        width: 69,
         image: "url('images/game_assets/chocolate.png')",
         points: 20,
         healthy: false
@@ -252,6 +252,7 @@ function addStyleLeft (gameItem, gameItemNode, gameCorridor) {
 
 function createItemNodeForFallingItemsInsideGame () {
     var randomizedItemNode = document.createElement("div");
+    randomizedItemNode.classList.add("randomItem");
     playerNode.parentNode.insertBefore(randomizedItemNode,playerNode);
     return randomizedItemNode
 }
@@ -266,7 +267,34 @@ function positionRandomGameItemInTheCenterOfRandomCorridor () {
     addBackgroundImage(randomizedItem, randomizedItemNode);
     addStyleLeft(randomizedItem, randomizedItemNode, randomizedCorridor);
 
-    randomizedItemNode.style.top = "20px"; // To się powinno zmienić bo przedmioty będą spadały jakby z ponad planszy
+    // randomizedItemNode.style.top = "20px";
+    // To się powinno zmienić bo przedmioty będą spadały jakby z ponad planszy
+}
+
+function gameItemsMovement () {
+    var movingItem = document.getElementsByClassName("randomItem")[0],
+        itemInitialPosition = parseInt(getComputedStyle(movingItem).top.slice(0,-2)),
+        itemInitialOpacity = getComputedStyle(movingItem).opacity,
+        interval = setInterval(frame, 250);
+
+    function frame () {
+        if (movingItem.style.top === "400px") {
+            setInterval(function () {
+                if (itemInitialOpacity > 0) {
+                    itemInitialOpacity -= 0.1;
+                    movingItem.style.opacity = itemInitialOpacity;
+                    movingItem.style.transition = "opacity 125ms linear 0s";
+                } else {
+                    movingItem.remove();
+                }
+            }, 125);
+            clearInterval(interval);
+        } else {
+            itemInitialPosition += 20;
+            movingItem.style.top = itemInitialPosition + "px";
+            movingItem.style.transition = "top 250ms linear 0s";
+        }
+    }
 }
 
 // - RUCH LUDZIKA -
@@ -318,6 +346,7 @@ function startGame () {
 
 // initializingGame (); ROZKOMENTOWAĆ PÓŹNIEJ
 startGame();
+gameItemsMovement();
 
 
 
