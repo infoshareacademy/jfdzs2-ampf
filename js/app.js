@@ -14,6 +14,7 @@ let activeElements = [];
 let randomizingInterval;
 let movingPlayerInterval;
 let collisionsInterval;
+let activeObjectFallingInterval;
 
 // - OBIEKTY -
 
@@ -156,9 +157,9 @@ const gameItemsCollection = [
         healthy: false
     },
     {   name: "chocolate",
-        height: 57,
-        width: 100,
-        radius: 30,
+        height: 120,
+        width: 69,
+        radius: 60,
         image: "url('images/game_assets/chocolate.png')",
         points: 20,
         healthy: false
@@ -220,6 +221,7 @@ function stopGame () {
     clearInterval(randomizingInterval);
     clearInterval(movingPlayerInterval);
     clearInterval(collisionsInterval);
+    clearInterval(activeObjectFallingInterval);
     document.removeEventListener('keydown', onKeyDown);
     setStyleDisplayBlock(greyBackground);
     removeAllActiveElements ();
@@ -289,7 +291,7 @@ function randomizeAndReturnMiddleOfRandomCorridor (gameCorridor) {
 function createNewActiveItems () {
     randomizingInterval = setInterval(function () {
         createElement();
-        },1000
+        },500
     );
 }
 
@@ -304,7 +306,7 @@ function createElement() {
 function returnObjectElement (chosenItem) {
     let objectNode = createItemNodeForFallingItemsInsideGame ();
     let possitionFromLeft = randomizeAndReturnMiddleOfRandomCorridor(gameCorridors);
-    let possitionFromTop = 400;
+    let possitionFromTop = 2;
     let activeObject = {
         type: chosenItem,
         top: possitionFromTop,
@@ -329,6 +331,7 @@ function setStylesForItemNode(object){
     addStyleLeft (object);
     addStyleTop (object);
     addBackgroundImage (object);
+    addStyleOpacity (object);
 }
 
 // - SPADANIE OWOCÓW -
@@ -361,9 +364,15 @@ function addStyleLeft (object) {
     object.ref.style.left = object.left + 'px';
 }
 
+function addStyleOpacity (object) {
+    object.ref.style.opacity = 1;
+}
+
 function addStyleTop (object) {
     object.ref.style.top = object.top + 'px';
 }
+
+
 
 function createItemNodeForFallingItemsInsideGame () {
     let randomizedItemNode = document.createElement("div");
@@ -442,7 +451,8 @@ function startGame () {
     totalScore=0;
     displayScore(totalScore);
     createNewActiveItems();
-    timeStart(3);
+    timeStart(40);
+    activeObjectsFalling();
 }
 
 
@@ -464,7 +474,7 @@ function collisions () {
                 lengthB = playerNodePosY - activeObject.posY,
                 distance = Math.sqrt(lengthA * lengthA + lengthB * lengthB);
 
-            if (distance < 70 + activeObject.type.radius) {
+            if (distance < 65 + activeObject.type.radius) {
                 totalScore+=activeObject.type.points;
                 activeElements.splice(index,1);
                 activeObject.ref.remove();
@@ -474,7 +484,26 @@ function collisions () {
     },50)
 }
 
+function activeObjectsFalling () {
+    activeObjectFallingInterval = setInterval(function(){
+        let fallingSpeed = 1.5;
+        activeElements.forEach(function(activeObject,index) {
+            if (activeObject.top<(500-activeObject.type.height)) {
+                activeObject.top+=fallingSpeed;
+                activeObject.posY+=fallingSpeed;
+                activeObject.ref.style.top=activeObject.top+'px'
+            }
+            else if (activeObject.ref.style.opacity > 0) {
+                    activeObject.ref.style.opacity -= 0.03;
+                }
+            else {
+                    activeElements.splice(index, 1);
+                    activeObject.ref.remove();
+            }
 
+        })
+    },5)
+}
 
 // - KONIEC GRY -
 
