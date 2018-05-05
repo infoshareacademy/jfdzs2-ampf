@@ -245,8 +245,9 @@ header .jumbotron span{
 
 .game-box {
     margin-top: 50px;
-    /*display: none;  ROZKOMENTOWAĆ PÓŻNIEJ */
-
+    display: none;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
 }
 
 .game-box-container {
@@ -289,37 +290,29 @@ header .jumbotron span{
     left: 237px;
 }
 
-.game-box-container div.restart {
-    top: 320px;
-    left: 150px;
-}
-
-.game-box-container div.pause {
-    top: 380px;
-    left: 150px;
-}
-
-.game-box-container div.resume {
-    top: 440px;
-    left: 150px;
-}
-
-.game-box-container div.sound-on {
-    top: 200px;
-    left: 305px;
-}
-
-.game-box-container div.sound-off {
-    top: 200px;
-    left: 365px;
-}
-
 .game-box-container div.score-board {
     top: 10px;
     position: absolute;
-    font-family: 'Press Start 2P', cursive;
-    color: white;
 }
+
+.game-box-container div.game-difficulty {
+    top: 180px;
+    text-align: center;
+    position: absolute;
+    display: none;
+    width: 800px;
+}
+
+.game-box-container div.easy {
+    top: 100px;
+    left: 140px;
+}
+
+.game-box-container div.hard {
+    top: 100px;
+    left: 450px;
+}
+
 
 .game-box-container div.top-score-board {
     top: 10px;
@@ -327,16 +320,7 @@ header .jumbotron span{
     display: none;
     text-align: center;
     padding: 60px 145px 0;
-    font-family: 'Press Start 2P', cursive;
     color: white;
-}
-
-.game-box-container div.win-message {
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    width: 800px;
-    height: 500px;
 }
 
 .game-box-container div.game-instruction {
@@ -347,28 +331,7 @@ header .jumbotron span{
     font-size: 20px;
     padding: 60px;
     display: none;
-    color: white;
     position: absolute;
-    font-family: 'Press Start 2P', cursive;
-}
-
-.game-box-container .win-message img {
-    margin: auto;
-    margin-top: 213px;
-}
-
-.game-box-container div.lose-message {
-    top: 0px;
-    left: 0px;
-    position: absolute;
-    width: 800px;
-    height: 500px;
-    background-color: rgba(56, 56, 56, 0.8);
-}
-
-.game-box-container .lose-message img {
-    margin: auto;
-    margin-top: 213px;
 }
 
 /*-----------Feature TEAM----------------------------*/

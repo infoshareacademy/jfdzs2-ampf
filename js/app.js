@@ -2,6 +2,7 @@
 function getElement(selector) {
     return document.querySelector('.game-box-container ' + selector);
 }
+
 let totalScore = 0;
 let playerPosition;
 let chosenItem;
@@ -9,6 +10,7 @@ let keysPressed = {
     37: false,
     39: false
 };
+let difficulty = 5;
 let savedScore = [0,0,0,0,0];
 let activeElements = [];
 let randomizingInterval;
@@ -21,10 +23,13 @@ let activeObjectFallingInterval;
 let playerNode = getElement('div.game-dude');
 let playButton = getElement('.play');
 let instructionButton = getElement('.instructions');
+let easyButton = getElement('.easy');
+let hardButton = getElement('.hard');
 let instructionArea = getElement('.game-instruction');
 let submitButton = document.querySelector(".sub-button");
 let greyBackground = getElement('.grey-background');
 let topScoresBoard = getElement('.top-score-board');
+let gameDifficulty = getElement('.game-difficulty');
 
 
 const gameItemsCollection = [
@@ -216,6 +221,22 @@ function timeStart (time) {
     }
 }
 
+function startGame () {
+    easyButton.removeEventListener('click',easyStart);
+    hardButton.removeEventListener('click',hardStart);
+    setStyleDisplayNone(gameDifficulty);
+    setStyleDisplayNone(greyBackground);
+    setStyleDisplayBlock(playerNode);
+    positionPlayer();
+    playerMoving();
+    collisions();
+    totalScore=0;
+    displayScore(totalScore);
+    createNewActiveItems();
+    timeStart(40);
+    activeObjectsFalling();
+}
+
 function stopGame () {
     setStyleDisplayNone(playerNode);
     clearInterval(randomizingInterval);
@@ -234,9 +255,8 @@ function stopGame () {
     instructionButton.style.left = 366 + 'px';
     setStyleDisplayBlock(instructionButton);
     setStyleDisplayBlock(playButton);
-    playButton.addEventListener('click',startGame);
+    playButton.addEventListener('click',chooseDifficulty);
     instructionButton.addEventListener('click',showInstruction);
-
 }
 
 function showGame () {
@@ -248,10 +268,8 @@ function showGame () {
 }
 
 function playButtonEvent () {
-    playButton.addEventListener('click', startGame);
+    playButton.addEventListener('click', chooseDifficulty);
 }
-
-// - WYŚWIETLANIE INSTRUKCJI -
 
 function instructionButtonEvent () {
     instructionButton.addEventListener('click',showInstruction);
@@ -261,19 +279,12 @@ function showInstruction () {
     instructionButton.removeEventListener('click',showInstruction);
     setStyleDisplayNone(instructionButton);
     setStyleDisplayNone(topScoresBoard);
-    playButton.addEventListener('click',startGame);
+    playButton.addEventListener('click',chooseDifficulty);
     setStyleDisplayBlock(instructionArea);
     setStyleDisplayBlock(playButton);
     playButton.style.top = 320 + 'px';
     playButton.style.left = 325 + 'px';
 }
-
-// - WYŚWIETLANIE - WYNIKOW -
-
-
-
-
-// - RANDOMIZOWANIE OWOCÓW -
 
 function randomizeAndReturnItems(tableOfItems) {
     chosenItem = tableOfItems[Math.floor(Math.random() * tableOfItems.length)];
@@ -285,17 +296,12 @@ function randomizeAndReturnMiddleOfRandomCorridor (gameCorridor) {
     return randomCorridor.middleFromLeft
 }
 
-
-// - AKTYWNE ELEMENTY -
-
 function createNewActiveItems () {
     randomizingInterval = setInterval(function () {
         createElement();
         },500
     );
 }
-
-
 
 function createElement() {
     let randomizedGameObject = randomizeAndReturnItems(gameItemsCollection);
@@ -306,7 +312,7 @@ function createElement() {
 function returnObjectElement (chosenItem) {
     let objectNode = createItemNodeForFallingItemsInsideGame ();
     let possitionFromLeft = randomizeAndReturnMiddleOfRandomCorridor(gameCorridors);
-    let possitionFromTop = 2;
+    let possitionFromTop = 0;
     let activeObject = {
         type: chosenItem,
         top: possitionFromTop,
@@ -324,7 +330,6 @@ function pushActiveElementToArray (activeElement) {
 }
 
 function setStylesForItemNode(object){
-    addActiveElementClass (object);
     addStyleWidth (object);
     addStyleHeight (object);
     setStylePositionAbsolute (object);
@@ -333,8 +338,6 @@ function setStylesForItemNode(object){
     addBackgroundImage (object);
     addStyleOpacity (object);
 }
-
-// - SPADANIE OWOCÓW -
 
 function setStyleDisplayNone (item) {
     item.style.display = "none";
@@ -380,19 +383,12 @@ function createItemNodeForFallingItemsInsideGame () {
     return randomizedItemNode
 }
 
-function addActiveElementClass (object) {
-    object.ref.classList.add('active-game-element');
-}
-
 function removeAllActiveElements() {
-    let collection = document.getElementsByClassName("active-game-element");
-    let collectionLenght = collection.length;
-    for (let i = 0; i < collectionLenght; i++) {
-        collection[0].remove();
+    for (let i=activeElements.length; i>0; i--) {
+        activeElements[0].ref.remove();
+        activeElements.splice(0,1)
     }
 }
-
-// - RUCH LUDZIKA -
 
 function positionPlayer() {
     playerNode.style.left = '400px';
@@ -403,7 +399,7 @@ function movePlayerLeft() {
     playerNode.style.backgroundImage = "url('images/game_assets/dude-left.png')";
     if (playerPosition > 0) {
         playerNode.style.left = (playerPosition - 20).toString() + 'px';
-        playerPosition -= 20;
+        playerPosition -= 10;
     }
 }
 
@@ -411,14 +407,13 @@ function movePlayerRight() {
     playerNode.style.backgroundImage = "url('images/game_assets/dude-right.png')";
     if (playerPosition < 719) {
         playerNode.style.left = (playerPosition + 20).toString() + 'px';
-        playerPosition += 20;
+        playerPosition += 10;
     }
 }
 
 function onKeyDown(event) {
     event.preventDefault();
     keysPressed[event.which] = true;
-
 }
 
 function onKeyUp(event) {
@@ -433,37 +428,10 @@ function playerMoving () {
     if (keysPressed[37]) {movePlayerLeft()}
         else
     if (keysPressed[39]) {movePlayerRight()}
-    },50)
-}
-
-function startGame () {
-    playButton.removeEventListener('click', startGame);
-    instructionButton.removeEventListener('click',showInstruction);
-    setStyleDisplayNone(playButton);
-    setStyleDisplayNone(instructionButton);
-    setStyleDisplayNone(instructionArea);
-    setStyleDisplayNone(topScoresBoard);
-    setStyleDisplayNone(greyBackground);
-    setStyleDisplayBlock(playerNode);
-    positionPlayer();
-    playerMoving();
-    collisions();
-    totalScore=0;
-    displayScore(totalScore);
-    createNewActiveItems();
-    timeStart(40);
-    activeObjectsFalling();
+    },35)
 }
 
 
-
-// initializingGame (); ROZKOMENTOWAĆ PÓŹNIEJ
-startGame(); // WYWALIĆ PÓŹNIEJ
-
-
-
-
-// - KOLIZJE -
 
 function collisions () {
     collisionsInterval = setInterval(function () {
@@ -502,13 +470,8 @@ function activeObjectsFalling () {
             }
 
         })
-    },5)
+    },difficulty)
 }
-
-// - KONIEC GRY -
-
-
-// - LICZENIE PUNKTÓW -
 
 
 function displayScore (totalScore) {
@@ -550,12 +513,30 @@ function presentTopScores () {
     TopScoreNode.innerHTML = topScoresToDisplay;
 }
 
+function chooseDifficulty () {
+    playButton.removeEventListener('click', chooseDifficulty);
+    instructionButton.removeEventListener('click',showInstruction);
+    setStyleDisplayNone(playButton);
+    setStyleDisplayNone(instructionButton);
+    setStyleDisplayNone(instructionArea);
+    setStyleDisplayNone(topScoresBoard);
+    setStyleDisplayBlock(gameDifficulty);
+    easyButton.addEventListener('click',easyStart);
+    hardButton.addEventListener('click',hardStart);
+}
 
-// - WZNOWIENIE -
+function easyStart () {
+    difficulty = 5;
+    startGame()
+}
+
+function hardStart () {
+    difficulty = 1.5;
+    startGame()
+}
 
 
-// - RESTART -
-
+initializingGame ();
 
 
 
