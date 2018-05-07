@@ -30,7 +30,7 @@ let submitButton = document.querySelector(".sub-button");
 let greyBackground = getElement('.grey-background');
 let topScoresBoard = getElement('.top-score-board');
 let gameDifficulty = getElement('.game-difficulty');
-
+let collisionSound;
 
 const gameItemsCollection = [
     {   name: "apple",
@@ -198,9 +198,20 @@ const gameCorridors = [
     }
 ];
 
-
-
-// - STARTOWANIE GRY -
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    };
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
 
 function initializingGame () {
     if (screen.width>800) {
@@ -434,6 +445,7 @@ function playerMoving () {
 
 
 function collisions () {
+    collisionSound = new sound('sounds/coin-object.wav');
     collisionsInterval = setInterval(function () {
         activeElements.forEach(function (activeObject,index) {
             let playerNodePosX = parseInt(playerNode.style.left)+ 41,
@@ -447,6 +459,7 @@ function collisions () {
                 activeElements.splice(index,1);
                 activeObject.ref.remove();
                 displayScore(totalScore);
+                collisionSound.play();
             }
         })
     },50)
