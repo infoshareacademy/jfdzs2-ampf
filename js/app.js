@@ -242,7 +242,7 @@ function startGame () {
     totalScore=0;
     displayScore(totalScore);
     createNewActiveItems();
-    timeStart(40);
+    timeStart(10);
     activeObjectsFalling();
 }
 
@@ -498,10 +498,14 @@ function saveAndPresentScore (totalScore) {
         sortedTopScores = [];
 
     if (retrievedSavedScore) {
-        allScores = retrievedSavedScore.concat(savedScore)
+        allScores = retrievedSavedScore.concat(savedScore);
+        allScores.push(totalScore);
+    }
+    if (!retrievedSavedScore) {
+        savedScore.push(totalScore);
+        allScores = savedScore;
     }
 
-    allScores.push(totalScore);
     sortedTopScores = allScores.sort(function(a,b){return b-a});
     if (sortedTopScores.length>5) {sortedTopScores.splice(5)}
     localStorage.setItem('topScoresAMPFGame',JSON.stringify(sortedTopScores));
