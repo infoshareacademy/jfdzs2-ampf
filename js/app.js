@@ -204,14 +204,15 @@ function initializingGame () {
 function timeStart (time) {
     let lenghtOfGame = time;
     if (lenghtOfGame>0) {
+        displayTime(lenghtOfGame);
         setTimeout(function(){
             timeStart(time-1);
             --lenghtOfGame;
-            displayTime(lenghtOfGame)
+
         },1000)
     }
     else {
-        stopGame()
+        stopGame();
     }
 }
 
@@ -251,6 +252,7 @@ function stopGame () {
     setStyleDisplayBlock(playButton);
     playButton.addEventListener('click',chooseDifficulty);
     instructionButton.addEventListener('click',showInstruction);
+    displayTime(40);
 }
 
 function showGame () {
@@ -392,7 +394,7 @@ function positionPlayer() {
 function movePlayerLeft() {
     playerNode.style.backgroundImage = "url('images/game_assets/dude-left.png')";
     if (playerPosition > 0) {
-        playerNode.style.left = (playerPosition - 20).toString() + 'px';
+        playerNode.style.left = (playerPosition - 10).toString() + 'px';
         playerPosition -= 10;
     }
 }
@@ -400,7 +402,7 @@ function movePlayerLeft() {
 function movePlayerRight() {
     playerNode.style.backgroundImage = "url('images/game_assets/dude-right.png')";
     if (playerPosition < 719) {
-        playerNode.style.left = (playerPosition + 20).toString() + 'px';
+        playerNode.style.left = (playerPosition + 10).toString() + 'px';
         playerPosition += 10;
     }
 }
@@ -422,7 +424,7 @@ function playerMoving () {
     if (keysPressed[37]) {movePlayerLeft()}
         else
     if (keysPressed[39]) {movePlayerRight()}
-    },35)
+    },25)
 }
 
 
@@ -450,7 +452,6 @@ function collisions () {
                 activeElements.splice(index,1);
                 activeObject.ref.remove();
                 displayScore(totalScore);
-
             }
         })
     },10)
