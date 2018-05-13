@@ -196,7 +196,7 @@ const gameCorridors = [
 ];
 
 function initializingGame () {
-    if (screen.width>800) {
+    if (screen.width>1200) {
         submitButton.addEventListener('click', showGame);
     }
 }
