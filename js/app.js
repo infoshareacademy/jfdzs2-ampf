@@ -18,17 +18,16 @@ let collisionsInterval;
 let activeObjectFallingInterval;
 
 
-let playerNode = getElement('div.game-dude');
-let playButton = getElement('.play');
-let instructionButton = getElement('.instructions');
-let easyButton = getElement('.easy');
-let hardButton = getElement('.hard');
-let instructionArea = getElement('.game-instruction');
-let submitButton = document.querySelector(".sub-button");
-let greyBackground = getElement('.grey-background');
+const playerNode = getElement('div.game-dude');
+const playButton = getElement('.play');
+const instructionButton = getElement('.instructions');
+const easyButton = getElement('.easy');
+const hardButton = getElement('.hard');
+const instructionArea = getElement('.game-instruction');
+const submitButton = document.querySelector(".sub-button");
+const greyBackground = getElement('.grey-background');
 let topScoresBoard = getElement('.top-score-board');
 let gameDifficulty = getElement('.game-difficulty');
-let collisionSound;
 
 const gameItemsCollection = [
     {   name: "apple",
@@ -196,21 +195,6 @@ const gameCorridors = [
     }
 ];
 
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
-    };
-    this.stop = function(){
-        this.sound.pause();
-    }
-}
-
 function initializingGame () {
     if (screen.width>800) {
         submitButton.addEventListener('click', showGame);
@@ -222,7 +206,8 @@ function timeStart (time) {
     if (lenghtOfGame>0) {
         setTimeout(function(){
             timeStart(time-1);
-            --lenghtOfGame
+            --lenghtOfGame;
+            displayTime(lenghtOfGame)
         },1000)
     }
     else {
@@ -443,7 +428,6 @@ function playerMoving () {
 
 
 function collisions () {
-    collisionSound = new sound('sounds/coin-object.wav');
     collisionsInterval = setInterval(function () {
         activeElements.forEach(function (activeObject,index) {
             let playerNodePosX = parseInt(playerNode.style.left)+ 41,
@@ -454,13 +438,22 @@ function collisions () {
 
             if (distance < 65 + activeObject.type.radius) {
                 totalScore+=activeObject.type.points;
+                if (activeObject.type.healthy === true) {
+                    const collisionSoundBad = new Audio('sounds/game-burp.wav');
+
+                    collisionSoundBad.play();
+                }
+                else {
+                    const collisionSoundGood = new Audio('sounds/game-bite.wav');
+                    collisionSoundGood.play();
+                }
                 activeElements.splice(index,1);
                 activeObject.ref.remove();
                 displayScore(totalScore);
-                collisionSound.play();
+
             }
         })
-    },50)
+    },10)
 }
 
 function activeObjectsFalling () {
@@ -490,6 +483,13 @@ function displayScore (totalScore) {
         scoreNode = getElement('.score-board');
     scoreNode.removeChild(scoreNode.firstChild);
     scoreNode.innerHTML = scoreToDisplay;
+}
+
+function displayTime (time) {
+    let timeToDisplay = `<p>CZAS: ${time}s</p>`,
+        timeNode = getElement('.time-left-board');
+    timeNode.removeChild(timeNode.firstChild);
+    timeNode.innerHTML = timeToDisplay;
 }
 
 function saveAndPresentScore (totalScore) {

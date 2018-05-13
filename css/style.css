@@ -293,6 +293,12 @@ nav a.navbar-brand {
     position: absolute;
 }
 
+.game-box-container div.time-left-board {
+    top: 10px;
+    position: absolute;
+    left: 650px;
+}
+
 .game-box-container div.game-difficulty {
     top: 180px;
     text-align: center;
