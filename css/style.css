@@ -464,9 +464,7 @@ nav a.navbar-brand {
 }
 
 @media all and (min-width: 768px) {
-    .cookie-message {
-        width: 100%;
-    }
+
     nav .navbar-brand img {
         height: 80px;
         margin-top: -15px;
@@ -516,6 +514,10 @@ nav a.navbar-brand {
 
     .btn-green {
         margin-top: 10px
+    }
+
+    .cookie-message {
+        width: 100%;
     }
 }
 @media all and (min-width: 992px){
